@@ -2,51 +2,63 @@
 <head>
 	<title>MataTaman</title>
 	<!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" /> -->
-	<!-- <link rel="stylesheet" href="css/style.css" /> -->
+	<link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 	<div class="container">
 		<div class="header">
-			MataTaman
+			<div class="left-header">
+				<img src="images/logobandung.png" >.
+			</div>
+			<div class="right-header">
+				MataTaman
+			</div>
 		</div>
 		<div class="navbar">
 			<ul>
-				<li>Home</li>
-				<li>Artikel</li>
-				<li>Buat Artikel</li>
-				<li>Taman</li>
-				<li>Instansi</li>
+				<li><a href="admin_index.php">Home</a></li>
+				<li><a href="admin_list_artikel.php">Artikel</a></li>
+				<li><a href="buat_artikel.php">Buat Artikel</a></li>
+				<li><a href="admin_taman.php">Taman</a></li>
+				<li><a href="admin_instansi.php">Instansi</a></li>
 			</ul>
-		</div>
+		</div>	
 		<div class="content">
-			<div class="tabel">
-				<table>
-					<tr>
-						<td>Taman</td>
-						<td>Kategori</td>
-						<td>Isi Aduan</td>
-						<td>Tanggal</td>
-						<td>Status</td>
-						<td>Aksi</td>
-					</tr>
-					<tr>
-						<td>Taman Lansia</td>
-						<td>Sampah</td>
-						<td>Banyak banget sampahnyaaa</td>
-						<td>2/2/2015</td>
-						<td>Terkirim</td>
-						<td>ubah status   pesan    hapus</td>
-					</tr>
-					<tr>
-						<td>Taman Jomblo</td>
-						<td>Jomblo</td>
-						<td>Ada yang ga jomblo</td>
-						<td>12/2/2015</td>
-						<td>Selesai</td>
-						<td>ubah status   pesan    hapus</td>
-					</tr>
-				</table>
+			<div class="aduan">
+				<div class="judul_hal">
+					ADUAN TAMAN  <!-- ganti sama nama taman yang dicari -->
+				</div>
+				<!-- ini diulang -->
+				<div class="post_aduan">					
+					<div class="foto_aduan">
+						<img src="images/header.jpg"/>
+					</div>
+					<div class="paket_aduan">
+						<div class="judul_aduan">
+							judul aduan (?)
+						</div>
+						<div class="ket_aduan">
+							keterangan aduan
+						</div>
+						<div class="isi_aduan">
+							isi aduan Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							llorem	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</div>
+					</div>
+				</div>
+				<!-- sampe sini -->
+				
 			</div>
 			
 		</div>

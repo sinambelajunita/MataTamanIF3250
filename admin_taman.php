@@ -2,34 +2,40 @@
 <head>
 	<title>MataTaman</title>
 	<!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" /> -->
-	<!-- <link rel="stylesheet" href="css/style.css" /> -->
+	<link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 	<div class="container">
 		<div class="header">
-			MataTaman
+			<div class="left-header">
+				<img src="images/logobandung.png" >.
+			</div>
+			<div class="right-header">
+				MataTaman
+			</div>
 		</div>
 		<div class="navbar">
 			<ul>
-				<li>Home</li>
-				<li>Artikel</li>
-				<li>Buat Artikel</li>
-				<li>Taman</li>
-				<li>Instansi</li>
+				<li><a href="admin_index.php">Home</a></li>
+				<li><a href="admin_list_artikel.php">Artikel</a></li>
+				<li><a href="buat_artikel.php">Buat Artikel</a></li>
+				<li><a href="admin_taman.php">Taman</a></li>
+				<li><a href="admin_instansi.php">Instansi</a></li>
 			</ul>
 		</div>
 		<div class="content">
-			<div class="judul_hal">
-				DAFTAR TAMAN
-			</div>
-			<div class="tabel">
-				<table>
+			<div class="aduan">
+				<div class="judul_hal">
+					DAFTAR TAMAN  <!-- ganti sama nama taman yang dicari -->
+				</div>			
+				<div class="tabel">
+					<table>
 					<tr>
-						<td>Nama Taman</td>
-						<td>Lokasi</td>
-						<td>Kontak</td>
-						<td>Aksi</td>
+						<th>Nama Taman</th>
+						<th>Lokasi</th>
+						<th>Kontak</th>
+						<th>Aksi</th>
 					</tr>
 					<tr>
 						<td>Taman Jomblo</td>
@@ -44,6 +50,7 @@
 						<td>hapus</td>
 					</tr>
 				</table>
+				</div>	
 			</div>
 			<div class="forminput">
 				<form action="#">
@@ -55,7 +62,7 @@
 					<br>Lokasi <br>
 					<textarea></textarea>
 					<br>Telepon <br> 
-					<input type="text" name="taman_telp">
+					<input type="text" name="taman_telp"><br>
 					<button type="submit" value="tambahTaman">Tambah</button>
 				</form>
 			</div>

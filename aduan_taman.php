@@ -23,33 +23,40 @@
 			</ul>
 		</div>
 		<div class="content">			
-			<div class="tabel">
+			<div class="aduan">
 				<div class="judul_hal">
-					NAMA TAMAN  <!-- ganti sama nama taman yang dicari -->
+					ADUAN "NAMA TAMAN"  <!-- ganti sama nama taman yang dicari -->
 				</div>
-				<table>
-					<tr>
-						<th>Taman</th>
-						<th>Kategori</th>
-						<th>Isi Aduan</th>
-						<th>Tanggal</th>
-						<th>Status</th>
-					</tr>
-					<tr>
-						<td>Taman Lansia</td>
-						<td>Sampah</td>
-						<td>Banyak banget sampahnyaaa</td>
-						<td>2/2/2015</td>
-						<td>Terkirim</td>
-					</tr>
-					<tr>
-						<td>Taman Jomblo</td>
-						<td>Jomblo</td>
-						<td>Ada yang ga jomblo</td>
-						<td>12/2/2015</td>
-						<td>Selesai</td>
-					</tr>
-				</table>
+				<!-- ini diulang -->
+				<div class="post_aduan">					
+					<div class="foto_aduan">
+						<img src="images/header.jpg"/>
+					</div>
+					<div class="paket_aduan">
+						<div class="judul_aduan">
+							judul aduan (?)
+						</div>
+						<div class="ket_aduan">
+							keterangan aduan
+						</div>
+						<div class="isi_aduan">
+							isi aduan Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							llorem	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</div>
+					</div>
+				</div>
+				<!-- sampe sini -->
+				
 			</div>
 			<div class="forminput">
 				<form action="#">

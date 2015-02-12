@@ -69,11 +69,10 @@ html{
 .content{
 
 }
-.tabel{
-	width: 65%;
+.aduan{
+	width: 74%;
 	margin-top: 220px;
 	float: left;
-	/*background-color: green;*/
 	margin-left: 2%;
 }
 .forminput{
@@ -99,24 +98,90 @@ html{
 	font-size: 35px;
 	margin-bottom: 3%;
 }
+/*LIST ARTIKEL*/
 .listartikel{
 	margin-top: 230px;
 	float: left;
 	margin-left: 4%;
+	width: 80%;
 }
 .artikel{
 	margin-left: 10%;
+	padding-right: 4%;
+	margin-bottom: 3%;
+	overflow: hidden;
 }
 .preview_gambar{
 	float: left;
 	width: 20%;
-	background-color: pink;
 	margin-top: 2%;
+}
+.preview_gambar img{
+	width: 96%;
+	margin: 1%;
+	text-align: center;		
+	padding: 1%;
 }
 .preview_judul{
 	font-size: 30px;
+	margin-bottom: 1%;
 }
 .preview_artikel{
 	float: right;
 	width: 79%;
 }
+.ket_artikel{
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+/*END LIST ARTIKEL*/
+
+
+/*LIST ADUAN*/
+.post_aduan{
+	background-color:#B1D3A4;
+	overflow: hidden;
+	margin-bottom: 2%;
+	padding: 1%;
+	box-shadow: 8px 8px 10px #888888;
+}
+.foto_aduan{
+	/*background-color: white;*/
+	float: left;
+	width: 30%;	
+}
+.foto_aduan img{
+	width: 98%;
+	margin: 1%;
+	text-align: center;
+	margin-top: 2%;
+	margin-left: 2%;
+}
+.paket_aduan{
+	width: 68%;
+	float: right;
+	margin-left: 1%;
+}
+.judul_aduan{
+	font-size: 40px;
+}
+.ket_aduan{
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+/*END LIST ADUAN*/
+
+
+/*TABEL-TABEL*/
+.tabel{
+	/*background-color: pink;*/
+}
+table{
+	width: 100%;
+	border: 2px solid #000000;
+}
+td{
+	border: 1px solid #000000;
+	padding: 1%;
+}
+/*END TABEL-TABEL*/

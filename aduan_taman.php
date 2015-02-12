@@ -55,8 +55,9 @@
 						</div>
 					</div>
 				</div>
+				<hr>
 				<!-- sampe sini -->
-				
+
 			</div>
 			<div class="forminput">
 				<form action="#">

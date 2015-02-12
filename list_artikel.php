@@ -22,13 +22,6 @@
 				<li><a href="list_artikel.php">Artikel Laporan</a></li>
 			</ul>
 		</div>
-		<!-- <div class="navbar">
-			<ul>
-				<li>Home</li>
-				<li>Taman</li>
-				<li>Artikel</li>
-			</ul>
-		</div> -->
 		<div class="content">
 			<div class="listartikel">
 				<!-- ini diulang -->
@@ -39,6 +32,9 @@
 					<div class="preview_artikel">
 						<div class="preview_judul">
 							JUDUL ARTIKEL
+						</div>
+						<div class="ket_artikel">
+							penulis
 						</div>
 						<div class="preview_isi_artikel">
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

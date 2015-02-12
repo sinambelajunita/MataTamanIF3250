@@ -41,12 +41,28 @@
 						</div>
 						<div class="isi_aduan">
 							isi aduan Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							tempor incididuniatur. Excepteur sint occaecat cupidatat non
 							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-							llorem	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						</div>
+					</div>
+				</div>
+				<hr>
+				<!-- sampe sini -->
+				<!-- ini diulang -->
+				<div class="post_aduan">					
+					<div class="foto_aduan">
+						<img src="images/header.jpg"/>
+					</div>
+					<div class="paket_aduan">
+						<div class="judul_aduan">
+							judul aduan (?)
+						</div>
+						<div class="ket_aduan">
+							keterangan aduan
+						</div>
+						<div class="isi_aduan">
+							isi aduan Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							temor sit amet, consectetur adipisicing elit, sed do eiusmod
 							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -55,8 +71,34 @@
 						</div>
 					</div>
 				</div>
+				<hr>
 				<!-- sampe sini -->
-				
+				<!-- ini diulang -->
+				<div class="post_aduan">					
+					<div class="foto_aduan">
+						<img src="images/header.jpg"/>
+					</div>
+					<div class="paket_aduan">
+						<div class="judul_aduan">
+							judul aduan (?)
+						</div>
+						<div class="ket_aduan">
+							keterangan aduan
+						</div>
+						<div class="isi_aduan">
+							isi aduan Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequre magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</div>
+					</div>
+				</div>
+				<hr>
+				<!-- sampe sini -->
 			</div>
 			<div class="forminput">
 				<form action="#">

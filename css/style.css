@@ -21,7 +21,6 @@ html{
 	font-family: matataman;
 	position: fixed;
 }
-
 .header img{
 	text-align: left;
 	width: 125px;
@@ -45,7 +44,7 @@ html{
 /*navigation bar*/
 .navbar{
 	background-color: #317256;
-	font-size: 25px;
+	font-size: 20px;
 	position: fixed;
 	height: 33px;
 	margin-top: 167px;
@@ -53,7 +52,7 @@ html{
 }
 .navbar ul{
 	list-style: none;
-	margin-top: 2px;
+	margin-top: 7px;
 }
 .navbar ul li{
 	display: inline;
@@ -139,11 +138,11 @@ html{
 
 /*LIST ADUAN*/
 .post_aduan{
-	background-color:#B1D3A4;
+	/*background-color:#B1D3A4;*/
 	overflow: hidden;
 	margin-bottom: 2%;
 	padding: 1%;
-	box-shadow: 8px 8px 10px #888888;
+	/*box-shadow: 8px 8px 10px #888888;*/
 }
 .foto_aduan{
 	/*background-color: white;*/
@@ -185,3 +184,38 @@ td{
 	padding: 1%;
 }
 /*END TABEL-TABEL*/
+
+/*LOGIN*/
+.header-login{
+	background-image: url("../images/header.jpg");
+	color: white;
+	height: 40%;
+	width: 100%;
+	font-family: matataman;
+	position: fixed;
+	/*margin-top: 50%;*/
+}
+.header-login img{
+	text-align: left;
+	width: 125px;
+	margin-top:15%;
+	margin-left: 10%;
+}
+.content-login{
+	/*margin-top: 50%;*/
+	z-index: 99;
+}
+.form_login{
+	text-align: center;
+	width: 40%;
+	padding-left:8%;
+	padding-right:8%;
+	padding-top: 3%;
+	padding-bottom: 3%; 
+	margin-left: 35%;
+	font-size: 20px;
+	border-width:3px;
+	border-style:outset;
+	background-color: #DEDEDE
+}
+/*END LOGIN*/

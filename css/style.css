@@ -1,0 +1,122 @@
+@font-face{
+	font-family: matataman;
+	src:url('../fonts/ligurino.ttf');
+}
+a{
+	text-decoration: none;
+}
+html{
+	font-family: matataman;
+}
+.container{
+	width: 100%;
+	height: 100%;
+}
+.header {
+	/*background-color: #317256;*/
+	background-image: url("../images/header.jpg");
+	color: white;
+	height: 167px;
+	width: 100%;
+	font-family: matataman;
+	position: fixed;
+}
+
+.header img{
+	text-align: left;
+	width: 125px;
+	margin-top:15%;
+	margin-left: 10%;
+}
+.left-header{
+	width: 10%;
+	float: left;
+	margin-top: 1%;
+}
+.right-header{
+	width: 90%;
+	float : right;
+	right: 0;
+	text-align: center;
+	font-size: 80px;
+	margin-top: 3%;
+}
+
+/*navigation bar*/
+.navbar{
+	background-color: #317256;
+	font-size: 25px;
+	position: fixed;
+	height: 33px;
+	margin-top: 167px;
+	width: 100%;
+}
+.navbar ul{
+	list-style: none;
+	margin-top: 2px;
+}
+.navbar ul li{
+	display: inline;
+	color : white;
+	margin-right: 2%;
+}
+.navbar a{
+	color: white;
+}
+.navbar a:hover{
+	color: #52BF90;
+}
+.content{
+
+}
+.tabel{
+	width: 65%;
+	margin-top: 220px;
+	float: left;
+	/*background-color: green;*/
+	margin-left: 2%;
+}
+.forminput{
+	width: 20%;
+	float: right;
+	background-color: #52BF90;
+	height: 100%;
+	position: fixed;
+	right: 2%;
+	margin-top: 230px;
+}
+.forminput form{
+	margin-left: 4%;
+	/*right: 0;*/
+}
+.forminput .judulForm{
+	text-align: center;
+	font-size: 30px;
+	margin-top: 3%;
+	margin-bottom: 6%;
+}
+.judul_hal{
+	font-size: 35px;
+	margin-bottom: 3%;
+}
+.listartikel{
+	margin-top: 230px;
+	float: left;
+	margin-left: 4%;
+}
+.artikel{
+	margin-left: 10%;
+}
+.preview_gambar{
+	float: left;
+	width: 20%;
+	background-color: pink;
+	margin-top: 2%;
+}
+.preview_judul{
+	font-size: 30px;
+}
+.preview_artikel{
+	float: right;
+	width: 79%;
+}

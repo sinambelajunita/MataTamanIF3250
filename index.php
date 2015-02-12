@@ -2,30 +2,47 @@
 <head>
 	<title>MataTaman</title>
 	<!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" /> -->
-	<!-- <link rel="stylesheet" href="css/style.css" /> -->
+	<link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 	<div class="container">
 		<div class="header">
-			MataTaman
+			<div class="left-header">
+				<img src="images/logobandung.png" >.
+			</div>
+			<div class="right-header">
+				MataTaman
+			</div>
 		</div>
 		<div class="navbar">
 			<ul>
-				<li>Home</li>
-				<li>Taman</li>
-				<li>Artikel</li>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="aduan_taman.php">Taman</a></li>
+				<li><a href="list_artikel.php">Artikel Laporan</a></li>
 			</ul>
 		</div>
+
+		<!-- <nav class="navbar navbar-inverse">
+			<div class="container-fluid">	
+				<div class="navbar-header">
+					<ul>
+		        		<li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+		        		<li><a href="#">Taman</a></li>
+		        		<li><a href="#">Artikel Laporan</a></li>
+		        	</ul>
+		        </div>
+			</div>
+		</nav> -->
 		<div class="content">
 			<div class="tabel">
 				<table>
 					<tr>
-						<td>Taman</td>
-						<td>Kategori</td>
-						<td>Isi Aduan</td>
-						<td>Tanggal</td>
-						<td>Status</td>
+						<th>Taman</th>
+						<th>Kategori</th>
+						<th>Isi Aduan</th>
+						<th>Tanggal</th>
+						<th>Status</th>
 					</tr>
 					<tr>
 						<td>Taman Lansia</td>
@@ -72,7 +89,7 @@
 			</div>
 		</div>
 		<div class="footer">
-			ini footer
+			<!-- ini footer -->
 		</div>
 
 

@@ -2,42 +2,56 @@
 <head>
 	<title>MataTaman</title>
 	<!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" /> -->
-	<!-- <link rel="stylesheet" href="css/style.css" /> -->
+	<link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 	<div class="container">
 		<div class="header">
-			MataTaman
+			<div class="left-header">
+				<img src="images/logobandung.png" >.
+			</div>
+			<div class="right-header">
+				MataTaman
+			</div>
 		</div>
 		<div class="navbar">
+			<ul>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="aduan_taman.php">Taman</a></li>
+				<li><a href="list_artikel.php">Artikel Laporan</a></li>
+			</ul>
+		</div>
+		<!-- <div class="navbar">
 			<ul>
 				<li>Home</li>
 				<li>Taman</li>
 				<li>Artikel</li>
 			</ul>
-		</div>
+		</div> -->
 		<div class="content">
-			<!-- ini diulang -->
-			<div class="artikel">
-				<div class="preview_gambar">
-					ini gambar
-				</div>
-				<div class="preview_artikel">
-					<div class="judul_artikel">
-						JUDUL ARTIKEL
+			<div class="listartikel">
+				<!-- ini diulang -->
+				<div class="artikel">
+					<div class="preview_gambar">
+						ini gambar
 					</div>
-					<div class="preview_isi_artikel">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					<div class="preview_artikel">
+						<div class="preview_judul">
+							JUDUL ARTIKEL
+						</div>
+						<div class="preview_isi_artikel">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</div>
 					</div>
 				</div>
+				<!-- sampe sini -->
 			</div>
-			<!-- sampe sini -->
 		</div>
 		<div class="footer">
 			ini footer

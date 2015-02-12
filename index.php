@@ -6,6 +6,7 @@
 </head>
 
 <body>
+	<?php include "db-connector.php";?>
 	<div class="container">
 		<div class="header">
 			<div class="left-header">
@@ -68,6 +69,25 @@
 					<br>E-mail <br> 
 					<input type="text" name="warga_email">
 					<br>Taman <br>
+					<?php 
+						$query = "SELECT nama_taman FROM taman";
+						$result = mysqli_query($con,$query);
+						$combobox = "<select name=\'taman\'>";
+						 while($row = mysqli_fetch_assoc($result)){
+						     $combobox .='<option value="' .$row['nama_taman']. '">'.$row['nama_taman'].'</option>';
+						    }
+						$combobox .= "</select> ";
+						echo $combobox;
+						echo "<br>Kategori Aduan <br>";
+						$query = "SELECT * FROM kategori";
+						$result = mysqli_query($con,$query);
+						$combobox = "<select name=\'taman\'>";
+						 while($row = mysqli_fetch_assoc($result)){
+						     $combobox .='<option value="' .$row['nama']. '">'.$row['nama'].'</option>';
+						    }
+						$combobox .= "</select> ";
+						echo $combobox;
+					?>
 					<select>
 						<option>taman 1</option>
 						<option>taman 2</option>

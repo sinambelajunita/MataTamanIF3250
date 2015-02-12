@@ -56,23 +56,48 @@
 						</div>
 					</div>
 				</div>
+				<?php
+					$result = mysqli_query($con,"SELECT * FROM pengaduan");
+					while($row = mysqli_fetch_assoc($result)){
+						$post = "<div class='post_aduan'>";					
+						$post .=	"<div class='foto_aduan'>";
+						$post .= "<img src='images/header.jpg'/>";
+						$post .=	"</div>";
+						$post .= "<div class='paket_aduan'>";
+						$post .=	"<div class='judul_aduan'>";
+						$post .= $row['kategori']."-".$row['nama_taman'];
+						$post .= "</div>";
+						$post .= "<div class='tgl_aduan'>";
+						$post .= $row['tanggal'];
+						$post .= "</div>";
+						$post .= "<div class='nama_pengirim'>";
+						$post .= $row['nama_pengirim'];
+						$post .= "</div>";
+						$post .= "<div class='isi_aduan'>";
+						$post .= '"'.$row['isi'].'"';
+						$post .= "</div>";
+						$post .= "</div>";
+						$post .= "</div>";
+						echo $post;
+					}
+				?>
 				<!-- sampe sini -->
 				
 			</div>
 			<div class="forminput">
-				<form action="#">
+				<form action="aduan_tambah.php" method="post" name="form_tambah_aduan">
 					<div class="judulForm">
 						Tambah Aduan
 					</div>
-					Nama <br>
-					<input type="text" name="warga_name">
-					<br>E-mail <br> 
-					<input type="text" name="warga_email">
-					<br>Taman <br>
+					<label for= "Nama">Nama</label><br>
+					<input type="text" name="warga_name" id="warga_name"><br>
+					<label for= "E-mail">E-mail</label><br> 
+					<input type="text" name="warga_email" id="warga_email"><br>
+					<label for= "Taman">Taman</label> <br>
 					<?php 
 						$query = "SELECT nama_taman FROM taman";
 						$result = mysqli_query($con,$query);
-						$combobox = "<select name=\'taman\'>";
+						$combobox = "<select name='taman' id='taman'>";
 						 while($row = mysqli_fetch_assoc($result)){
 						     $combobox .='<option value="' .$row['nama_taman']. '">'.$row['nama_taman'].'</option>';
 						    }
@@ -81,36 +106,28 @@
 						echo "<br>Kategori Aduan <br>";
 						$query = "SELECT * FROM kategori";
 						$result = mysqli_query($con,$query);
-						$combobox = "<select name=\'taman\'>";
+						$combobox = "<select name='kategori' id='kategori'>";
 						 while($row = mysqli_fetch_assoc($result)){
 						     $combobox .='<option value="' .$row['nama']. '">'.$row['nama'].'</option>';
 						    }
 						$combobox .= "</select> ";
 						echo $combobox;
 					?>
-					<select>
-						<option>taman 1</option>
-						<option>taman 2</option>
-						<option>taman 3</option>
-					</select>
-					<br>Kategori Aduan <br>
-					<select>
-						<option>kategori 1</option>
-						<option>kategori 2</option>
-						<option>kategori 3</option>
-					</select>
-					<br>Keterangan Aduan <br>
-					<textarea></textarea>
+					<br>
+					<label for= "isi_aduan">Isi Aduan</label> <br>
+					<textarea name="isi_aduan" id="isi_aduan" rows="5" cols="30"></textarea>
 					<br>upload foto<br>
-					<button type="submit" value="tambahAduan">Kirim</button>
+					<button type="submit" name="submit" value="tambahAduan">Kirim</button>
 				</form>
 			</div>
 		</div>
-		<div class="footer">
-			<!-- ini footer -->
-		</div>
-
-
+		<!-- Close connection -->
+	<?php
+	  mysqli_close($con);
+	?>
+	<footer class="footer">
+		<!-- ini footer -->
+	</footer>
 
 	</div>
 </body>

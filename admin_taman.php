@@ -12,23 +12,32 @@
 		$taman_name = $taman_lokasi = $taman_telp = "";
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			session_start();
 		  if (empty($_POST["taman_name"])) {
 		    $taman_nameErr = "Taman is required";
 		  } else {
 		    $taman_name = test_input($_POST["taman_name"]);
+		  	$_SESSION["taman_name"] = $taman_name;
 		  }
 		  if (empty($_POST["taman_lokasi"])) {
 		    $taman_lokasiErr = "Lokasi is required";
 		  } else {
 		    $taman_lokasi = test_input($_POST["taman_lokasi"]);
+		    $_SESSION["taman_lokasi"] = $taman_lokasi;
 		  }
 		  if (empty($_POST["taman_telp"])) {
 		    $taman_telpErr = "Kontak is required";
 		  } else {
 		    $taman_telp = test_input($_POST["taman_telp"]);
+		    $_SESSION["taman_telp"] = $taman_telp;
 		  }
+		  include "create_taman.php";
 		}
-
+		include "read_taman.php";
+		$_SESSION["instansi_name"] = "";
+		$_SESSION["instansi_alamat"] = "";
+		$_SESSION["instansi_email"] = "";
+		$_SESSION["instansi_pimpinan"] = "";
 		function test_input($data) {
 		   $data = trim($data);
 		   $data = stripslashes($data);
@@ -55,6 +64,7 @@
 			</ul>
 		</div>	
 		<div class="content">
+<<<<<<< HEAD
 			<div class="aduan">
 				<div class="judul_hal">
 					DAFTAR TAMAN
@@ -97,6 +107,64 @@
 						<button type="submit" value="tambahTaman">Tambah</button>
 					</form>
 				</div>
+=======
+			<div class="judul_hal">
+				DAFTAR TAMAN
+			</div>
+			<div class="tabel">
+				<table>
+					<tr>
+						<td>Nama Taman</td>
+						<td>Lokasi</td>
+						<td>Kontak</td>
+						<td>Aksi</td>
+					</tr>
+					<?php 
+						if ($result->num_rows > 0) {
+						    // output data of each row
+						    while($row = $result->fetch_assoc()) {
+						    	?>
+						    	<tr>
+						    	<?php
+						        //echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+						        $nama_taman = $row["nama_taman"]; ?>
+						        <td><?php echo $nama_taman;?></td>
+						        <?php
+						        $lokasi = $row["alamat"]; ?>
+						        <td><?php echo $lokasi;?></td>
+						        <?php
+						        $kontak = $row["no_telepon"]; ?>
+						        <td><?php echo $kontak;?></td>
+						        <td><a href="delete_taman.php?name=<?php echo $nama_taman;?>">hapus<a></td>
+						        <?php
+						    } ?>
+						    </tr><?php
+						} 
+					?>
+					<tr>
+						<td>Nama Lansia</td>
+						<td>di sana</td>
+						<td>9876532</td>
+						<td>hapus</td>
+					</tr>
+				</table>
+			</div>
+			<div class="forminput">
+				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+					<div class="judulForm">
+						Tambah Taman
+					</div>
+					Nama Taman<br> <input type="text" name="taman_name">
+					<span class="error">* <?php echo $taman_nameErr;?></span>
+					<br>Lokasi <br><textarea name="taman_lokasi"></textarea>
+					<span class="error">* <?php echo $taman_lokasiErr;?></span>
+					<br>Telepon <br> 
+					<input type="text" name="taman_telp">
+					<span class="error">* <?php echo $taman_telpErr;?></span>
+					<p><span class="error">* required field.</span></p>
+					<button type="submit" value="tambahTaman">Tambah</button>
+				</form>
+>>>>>>> 249d1414b79e2103ecb047be76364c8dcc8e5d93
 			</div>
 		</div>
 		<div class="footer">

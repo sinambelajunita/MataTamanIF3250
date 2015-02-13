@@ -1,13 +1,8 @@
 <?php
-	header ('');
-	$con=mysqli_connect("localhost","root","","nama_database");
-	// Check connection
-	if (mysqli_connect_errno()) {
-	  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-	}
-
+	header('Location: admin_taman.php');
+	include "db-connector.php";
 	// escape variables for security
-	$nama_taman = $_POST['nama_taman'];
+	$nama_taman = $_GET['name'];
 
 	$sql="DELETE FROM taman WHERE nama_taman = '$nama_taman'";
 

@@ -37,7 +37,7 @@
 						</div>
 						<div class="ket_artikel">
 							keterangan artikel <br>
-							hapus
+							<a href="">hapus</a>
 						</div>
 						<div class="preview_isi_artikel">
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -62,7 +62,7 @@
 						</div>
 						<div class="ket_artikel">
 							keterangan artikel <br>
-							hapus
+							<a href="">hapus</a>
 						</div>
 						<div class="preview_isi_artikel">
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

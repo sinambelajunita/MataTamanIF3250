@@ -71,10 +71,10 @@
 				<div class="tabel">
 					<table>
 						<tr>
-							<td>Nama Taman</td>
-							<td>Lokasi</td>
-							<td>Kontak</td>
-							<td>Aksi</td>
+							<th>Nama Taman</th>
+							<th>Lokasi</th>
+							<th>Kontak</th>
+							<th>Aksi</th>
 						</tr>
 						<?php 
 							if ($result->num_rows > 0) {

@@ -18,7 +18,7 @@
 		<div class="navbar">
 			<ul>
 				<li><a href="index.php">Home</a></li>
-				<li><a href="aduan_taman.php">Taman</a></li>
+				<li><a href="taman.php">Taman</a></li>
 				<li><a href="list_artikel.php">Artikel Laporan</a></li>
 			</ul>
 		</div>

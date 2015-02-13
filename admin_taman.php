@@ -33,9 +33,11 @@
 		  }
 		  include "create_taman.php";
 		}
-
-		include "read_taman.php"
-		
+		include "read_taman.php";
+		$_SESSION["instansi_name"] = "";
+		$_SESSION["instansi_alamat"] = "";
+		$_SESSION["instansi_email"] = "";
+		$_SESSION["instansi_pimpinan"] = "";
 		function test_input($data) {
 		   $data = trim($data);
 		   $data = stripslashes($data);
@@ -77,14 +79,14 @@
 						    	<?php
 						        //echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
 						        $nama_taman = $row["nama_taman"]; ?>
-						        <td><?php echo $nama_instansi;?></td>
+						        <td><?php echo $nama_taman;?></td>
 						        <?php
-						        $lokasi = $row["lokasi"]; ?>
+						        $lokasi = $row["alamat"]; ?>
 						        <td><?php echo $lokasi;?></td>
 						        <?php
-						        $kontak = $row["kontak"]; ?>
+						        $kontak = $row["no_telepon"]; ?>
 						        <td><?php echo $kontak;?></td>
-						        <td>hapus</td>
+						        <td><a href="delete_taman.php?name=<?php echo $nama_taman;?>">hapus<a></td>
 						        <?php
 						    } ?>
 						    </tr><?php

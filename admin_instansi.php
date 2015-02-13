@@ -40,6 +40,10 @@
 		  include "create_instansi.php";
 		}
 		include "read_instansi.php";
+		$_SESSION["instansi_name"] = "";
+		$_SESSION["instansi_alamat"] = "";
+		$_SESSION["instansi_email"] = "";
+		$_SESSION["instansi_pimpinan"] = "";
 		function test_input($data) {
 		   $data = trim($data);
 		   $data = stripslashes($data);
@@ -66,6 +70,13 @@
 			</div>
 			<div class="tabel">
 				<table>
+					<tr>
+						<td>Instansi</td>
+						<td>Alamat</td>
+						<td>E-mail</td>
+						<td>Pimpinan</td>
+						<td>Aksi</td>
+					</tr>
 					<?php 
 						if ($result->num_rows > 0) {
 						    // output data of each row
@@ -78,26 +89,19 @@
 						        <td><?php echo $nama_instansi;?></td>
 						        <?php
 						        $alamat = $row["alamat"]; ?>
-						        <td><?php echo $lokasi;?></td>
+						        <td><?php echo $alamat;?></td>
 						        <?php
 						        $email = $row["email"]; ?>
 						        <td><?php echo $email;?></td>
 						        <?php
-						        $pimpinan = $row["pimpinan"]; ?>
+						        $pimpinan = $row["nama_pimpinan"]; ?>
 						        <td><?php echo $pimpinan;?></td>
-						        <td>hapus</td>
+						        <td><a href="delete_instansi.php?name=<?php echo $nama_instansi;?>">hapus<a></td>
 						        <?php
 						    } ?>
 						    </tr><?php
 						} 
 					?>
-					<tr>
-						<td>Instansi</td>
-						<td>Alamat</td>
-						<td>E-mail</td>
-						<td>Pimpinan</td>
-						<td>Aksi</td>
-					</tr>
 					<tr>
 						<td>Kepolisian</td>
 						<td>Jalan mana aja</td>

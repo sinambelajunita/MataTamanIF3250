@@ -3,7 +3,7 @@
 	session_start();
 	// escape variables for security
 	$nama_taman = $_SESSION['taman_name'];
-	$lokasi = $_SESSION['lokasi'];
+	$lokasi = $_SESSION['taman_lokasi'];
 	$kontak = $_SESSION['taman_telp'];
 
 	$sql="INSERT INTO taman (nama_taman, alamat, no_telepon)

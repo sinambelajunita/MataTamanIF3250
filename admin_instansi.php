@@ -13,31 +13,36 @@
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			session_start();
+			$err = 0;
 		  if (empty($_POST["instansi_name"])) {
+		  	$err = 1;
 		    $instansi_nameErr = "Instansi is required";
 		  } else {
 		    $instansi_name = test_input($_POST["instansi_name"]);
 		    $_SESSION["instansi_name"] = $instansi_name;
 		  }
 		  if (empty($_POST["instansi_alamat"])) {
+		  	$err = 1;
 		    $instansi_alamatErr = "Alamat is required";
 		  } else {
 		    $instansi_alamat = test_input($_POST["instansi_alamat"]);
 		    $_SESSION["instansi_alamat"] = $instansi_alamat;
 		  }
 		  if (empty($_POST["instansi_email"])) {
+		  	$err = 1;
 		    $instansi_emailErr = "Email is required";
 		  } else {
 		    $instansi_email = test_input($_POST["instansi_email"]);
 		    $_SESSION["instansi_email"] = $instansi_email;
 		  }
 		  if (empty($_POST["instansi_pimpinan"])) {
+		  	$err = 1;
 		    $instansi_pimpinanErr = "Pimpinan is required";
 		  } else {
 		    $instansi_pimpinan = test_input($_POST["instansi_pimpinan"]);
 		    $_SESSION["instansi_pimpinan"] = $instansi_pimpinan;
 		  }
-		  include "create_instansi.php";
+		  if($err == 0) include "create_instansi.php";
 		}
 		include "read_instansi.php";
 		$_SESSION["instansi_name"] = "";

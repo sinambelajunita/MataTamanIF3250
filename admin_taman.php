@@ -13,25 +13,29 @@
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			session_start();
+			$err = 0;
 		  if (empty($_POST["taman_name"])) {
+		  	$err = 1;
 		    $taman_nameErr = "Taman is required";
 		  } else {
 		    $taman_name = test_input($_POST["taman_name"]);
 		  	$_SESSION["taman_name"] = $taman_name;
 		  }
 		  if (empty($_POST["taman_lokasi"])) {
+		    $err = 1;
 		    $taman_lokasiErr = "Lokasi is required";
 		  } else {
 		    $taman_lokasi = test_input($_POST["taman_lokasi"]);
 		    $_SESSION["taman_lokasi"] = $taman_lokasi;
 		  }
 		  if (empty($_POST["taman_telp"])) {
+		    $err = 1;
 		    $taman_telpErr = "Kontak is required";
 		  } else {
 		    $taman_telp = test_input($_POST["taman_telp"]);
 		    $_SESSION["taman_telp"] = $taman_telp;
 		  }
-		  include "create_taman.php";
+		  if($err == 0) include "create_taman.php";
 		}
 		include "read_taman.php";
 		$_SESSION["instansi_name"] = "";

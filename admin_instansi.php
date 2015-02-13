@@ -7,34 +7,39 @@
 
 <body>
 	<?php
-		include "read_instansi.php";
 		// define variables and set to empty values
 		$instansi_nameErr = $instansi_alamatErr = $instansi_emailErr = $instansi_pimpinanErr = "";
 		$instansi_name = $instansi_alamat = $instansi_email = $instansi_pimpinan = "";
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			session_start();
 		  if (empty($_POST["instansi_name"])) {
 		    $instansi_nameErr = "Instansi is required";
 		  } else {
 		    $instansi_name = test_input($_POST["instansi_name"]);
+		    $_SESSION["instansi_name"] = $instansi_name;
 		  }
 		  if (empty($_POST["instansi_alamat"])) {
 		    $instansi_alamatErr = "Alamat is required";
 		  } else {
 		    $instansi_alamat = test_input($_POST["instansi_alamat"]);
+		    $_SESSION["instansi_alamat"] = $instansi_alamat;
 		  }
 		  if (empty($_POST["instansi_email"])) {
 		    $instansi_emailErr = "Email is required";
 		  } else {
 		    $instansi_email = test_input($_POST["instansi_email"]);
+		    $_SESSION["instansi_email"] = $instansi_email;
 		  }
 		  if (empty($_POST["instansi_pimpinan"])) {
 		    $instansi_pimpinanErr = "Pimpinan is required";
 		  } else {
 		    $instansi_pimpinan = test_input($_POST["instansi_pimpinan"]);
+		    $_SESSION["instansi_pimpinan"] = $instansi_pimpinan;
 		  }
+		  include "create_instansi.php";
 		}
-
+		include "read_instansi.php";
 		function test_input($data) {
 		   $data = trim($data);
 		   $data = stripslashes($data);
@@ -61,6 +66,31 @@
 			</div>
 			<div class="tabel">
 				<table>
+					<?php 
+						if ($result->num_rows > 0) {
+						    // output data of each row
+						    while($row = $result->fetch_assoc()) {
+						    	?>
+						    	<tr>
+						    	<?php
+						        //echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+						        $nama_instansi = $row["nama_instansi"]; ?>
+						        <td><?php echo $nama_instansi;?></td>
+						        <?php
+						        $alamat = $row["alamat"]; ?>
+						        <td><?php echo $lokasi;?></td>
+						        <?php
+						        $email = $row["email"]; ?>
+						        <td><?php echo $email;?></td>
+						        <?php
+						        $pimpinan = $row["pimpinan"]; ?>
+						        <td><?php echo $pimpinan;?></td>
+						        <td>hapus</td>
+						        <?php
+						    } ?>
+						    </tr><?php
+						} 
+					?>
 					<tr>
 						<td>Instansi</td>
 						<td>Alamat</td>

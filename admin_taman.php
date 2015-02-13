@@ -12,23 +12,30 @@
 		$taman_name = $taman_lokasi = $taman_telp = "";
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			session_start();
 		  if (empty($_POST["taman_name"])) {
 		    $taman_nameErr = "Taman is required";
 		  } else {
 		    $taman_name = test_input($_POST["taman_name"]);
+		  	$_SESSION["taman_name"] = $taman_name;
 		  }
 		  if (empty($_POST["taman_lokasi"])) {
 		    $taman_lokasiErr = "Lokasi is required";
 		  } else {
 		    $taman_lokasi = test_input($_POST["taman_lokasi"]);
+		    $_SESSION["taman_lokasi"] = $taman_lokasi;
 		  }
 		  if (empty($_POST["taman_telp"])) {
 		    $taman_telpErr = "Kontak is required";
 		  } else {
 		    $taman_telp = test_input($_POST["taman_telp"]);
+		    $_SESSION["taman_telp"] = $taman_telp;
 		  }
+		  include "create_taman.php";
 		}
 
+		include "read_taman.php"
+		
 		function test_input($data) {
 		   $data = trim($data);
 		   $data = stripslashes($data);
@@ -61,12 +68,28 @@
 						<td>Kontak</td>
 						<td>Aksi</td>
 					</tr>
-					<tr>
-						<td>Taman Jomblo</td>
-						<td>di situ</td>
-						<td>12345678</td>
-						<td>hapus</td>
-					</tr>
+					<?php 
+						if ($result->num_rows > 0) {
+						    // output data of each row
+						    while($row = $result->fetch_assoc()) {
+						    	?>
+						    	<tr>
+						    	<?php
+						        //echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+						        $nama_taman = $row["nama_taman"]; ?>
+						        <td><?php echo $nama_instansi;?></td>
+						        <?php
+						        $lokasi = $row["lokasi"]; ?>
+						        <td><?php echo $lokasi;?></td>
+						        <?php
+						        $kontak = $row["kontak"]; ?>
+						        <td><?php echo $kontak;?></td>
+						        <td>hapus</td>
+						        <?php
+						    } ?>
+						    </tr><?php
+						} 
+					?>
 					<tr>
 						<td>Nama Lansia</td>
 						<td>di sana</td>

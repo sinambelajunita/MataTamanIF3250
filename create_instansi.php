@@ -1,16 +1,11 @@
 <?php
-	header ('');
-	$con=mysqli_connect("localhost","root","","nama_database");
-	// Check connection
-	if (mysqli_connect_errno()) {
-	  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-	}
-
+	include "db-connector.php";
+	session_start();
 	// escape variables for security
-	$nama_instansi = $_POST['nama_instansi'];
-	$alamat = $_POST['alamat'];
-	$email = $_POST['email'];
-	$pimpinan = $_POST['pimpinan'];
+	$nama_instansi = $_SESSION['instansi_name'];
+	$alamat = $_SESSION['instansi_alamat'];
+	$email = $_SESSION['instansi_email'];
+	$pimpinan = $_SESSION['instansi_pimpinan'];
 
 	$sql="INSERT INTO instansi (nama_instansi, alamat, nama_pimpinan, email)
 	VALUES ('$nama_instansi','$alamat', '$email', '$pimpinan')";

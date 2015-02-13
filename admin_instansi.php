@@ -2,7 +2,7 @@
 <head>
 	<title>MataTaman</title>
 	<!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" /> -->
-	<!-- <link rel="stylesheet" href="css/style.css" /> -->
+	<link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
@@ -70,18 +70,18 @@
 			</ul>
 		</div>	
 		<div class="content">
-
+		<div class="aduan">
 			<div class="judul_hal">
 				DAFTAR INSTANSI
 			</div>
 			<div class="tabel">
 				<table>
 					<tr>
-						<td>Instansi</td>
-						<td>Alamat</td>
-						<td>E-mail</td>
-						<td>Pimpinan</td>
-						<td>Aksi</td>
+						<th>Instansi</th>
+						<th>Alamat</th>
+						<th>E-mail</th>
+						<th>Pimpinan</th>
+						<th>Aksi</th>
 					</tr>
 					<?php 
 						if ($result->num_rows > 0) {
@@ -108,22 +108,9 @@
 						    </tr><?php
 						} 
 					?>
-					<tr>
-						<td>Kepolisian</td>
-						<td>Jalan mana aja</td>
-						<td>polisi@lalala</td>
-						<td>pak polisi</td>
-						<td>hapus</td>
-					</tr>
-					<tr>
-						<td>Dinas Kebersihan</td>
-						<td>jalan bersih</td>
-						<td>bersih@lalala</td>
-						<td>asep</td>
-						<td>hapus</td>
-					</tr>
 				</table>
 			</div>
+		</div>
 			<div class="forminput">
 				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 					<div class="judulForm">

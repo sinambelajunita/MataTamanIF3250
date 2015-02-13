@@ -27,7 +27,7 @@
 		<div class="content">
 			<div class="aduan">
 				<div class="judul_hal">
-					ADUAN TAMAN  <!-- ganti sama nama taman yang dicari -->
+					ADUAN MASUK
 				</div>
 				<!-- ini diulang -->
 				<div class="post_aduan">					
@@ -36,10 +36,14 @@
 					</div>
 					<div class="paket_aduan">
 						<div class="judul_aduan">
-							judul aduan (?)
+							GANTI JADI - "KATEGORI-NAMA TAMAN"
 						</div>
 						<div class="ket_aduan">
-							keterangan aduan
+							"ganti sama tanggal" <br>
+							pengirim : "nama pengirim - email pengirim"<br>
+							status : "ganti sama status" &nbsp&nbsp&nbsp
+							<a href="#">ubah status</a><br>
+							<a href="#">hapus</a>
 						</div>
 						<div class="isi_aduan">
 							isi aduan Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -57,10 +61,9 @@
 						</div>
 					</div>
 				</div>
-				<!-- sampe sini -->
-				
-			</div>
-			
+				<hr>
+				<!-- sampe sini -->				
+			</div>			
 		</div>
 		<div class="footer">
 			ini footer

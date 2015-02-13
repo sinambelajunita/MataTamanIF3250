@@ -28,99 +28,34 @@
 				<div class="judul_hal">
 					ADUAN TAMAN  <!-- ganti sama nama taman yang dicari -->
 				</div>
-				<!-- ini diulang -->
-				<div class="post_aduan">					
-					<div class="foto_aduan">
-						<img src="images/header.jpg"/>
-					</div>
-					<div class="paket_aduan">
-						<div class="judul_aduan">
-							judul aduan (?)
-						</div>
-						<div class="ket_aduan">
-							keterangan aduan
-						</div>
-						<div class="isi_aduan">
-							isi aduan Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididuniatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</div>
-					</div>
-				</div>
-				<hr>
-				<!-- sampe sini -->
-				<!-- ini diulang -->
-				<div class="post_aduan">					
-					<div class="foto_aduan">
-						<img src="images/header.jpg"/>
-					</div>
-					<div class="paket_aduan">
-						<div class="judul_aduan">
-							judul aduan (?)
-						</div>
-						<div class="ket_aduan">
-							keterangan aduan
-						</div>
-						<div class="isi_aduan">
-							isi aduan Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							temor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</div>
-					</div>
-				</div>
-				<hr>
-				<!-- sampe sini -->
-				<!-- ini diulang -->
-				<div class="post_aduan">					
-					<div class="foto_aduan">
-						<img src="images/header.jpg"/>
-					</div>
-					<div class="paket_aduan">
-						<div class="judul_aduan">
-							judul aduan (?)
-						</div>
-						<div class="ket_aduan">
-							keterangan aduan
-						</div>
-						<div class="isi_aduan">
-							isi aduan Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequre magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</div>
-					</div>
-				</div>
-				<hr>
+				<!--   -->
+
 				<?php
 					$result = mysqli_query($con,"SELECT * FROM pengaduan");
 					while($row = mysqli_fetch_assoc($result)){
 						$post = "<div class='post_aduan'>";					
 						$post .=	"<div class='foto_aduan'>";
-						$post .= "<img src='images/header.jpg'/>";
+						$post .= "<img src='images/default.jpg'/>";
 						$post .=	"</div>";
 						$post .= "<div class='paket_aduan'>";
 						$post .=	"<div class='judul_aduan'>";
-						$post .= $row['kategori']."-".$row['nama_taman'];
+						$post .= $row['kategori']." - ".$row['nama_taman'];
 						$post .= "</div>";
-						$post .= "<div class='tgl_aduan'>";
+						$post .= "<div class='ket_aduan'>";
 						$post .= $row['tanggal'];
-						$post .= "</div>";
-						$post .= "<div class='nama_pengirim'>";
+						$post .= "<br>";
+						$post .= "Pengirim : ";
 						$post .= $row['nama_pengirim'];
+						$post .= "<br>";
+						$post .= "Status : ";
+						$post .= $row['status'];
 						$post .= "</div>";
 						$post .= "<div class='isi_aduan'>";
 						$post .= '"'.$row['isi'].'"';
 						$post .= "</div>";
 						$post .= "</div>";
 						$post .= "</div>";
+						$post .= "<hr>";
 						echo $post;
 					}
 				?>

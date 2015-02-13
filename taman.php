@@ -24,13 +24,41 @@
 		</div>
 		<div class="content">
 			<div class="aduan">
-				<!-- diulang di sini -->
-				<div class="kotak_taman">
-					TAMAN LANSIA
+				<div class="judul_hal">
+					Pilih
 				</div>
-				<!-- sampe sini -->
+
+				<div class="list_taman">
+					<!-- diulang di sini -->
+					<a href="#">	
+						<div class="kotak_taman">
+							<p>TAMAN LANSIA</p>
+						</div>	
+					</a>	
+					<!-- sampe sini -->
+					<!-- diulang di sini -->
+					<a href="#">	
+						<div class="kotak_taman">
+							<p>TAMAN JOMBLO BANGET</p>
+						</div>	
+					</a>	
+					<!-- sampe sini -->
+					<!-- diulang di sini -->
+					<a href="#">	
+						<div class="kotak_taman">
+							<p>TAMAN JOMBLO BANGET</p>
+						</div>	
+					</a>	
+					<!-- sampe sini -->
+					<!-- diulang di sini -->
+					<a href="#">	
+						<div class="kotak_taman">
+							<p>TAMAN JOMBLO BANGET</p>
+						</div>	
+					</a>	
+					<!-- sampe sini -->
+				</div>
 			</div>
-			
 		</div>
 		<div class="footer">
 			ini footer

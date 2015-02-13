@@ -5,6 +5,12 @@
 a{
 	text-decoration: none;
 }
+a:visited {
+    color: #146928;
+}
+a:active{
+	color:#1DCF46;
+}
 html{
 	font-family: matataman;
 }
@@ -69,13 +75,13 @@ html{
 
 }
 .aduan{
-	width: 74%;
+	width: 70%;
 	margin-top: 220px;
 	float: left;
 	margin-left: 2%;
 }
 .forminput{
-	width: 20%;
+	width: 25%;
 	float: right;
 	background-color: #52BF90;
 	height: 100%;
@@ -150,11 +156,11 @@ html{
 	width: 30%;	
 }
 .foto_aduan img{
-	width: 98%;
+	width: 90%;
 	margin: 1%;
 	text-align: center;
 	margin-top: 2%;
-	margin-left: 2%;
+	margin-left: 4%;
 }
 .paket_aduan{
 	width: 68%;
@@ -162,12 +168,16 @@ html{
 	margin-left: 1%;
 }
 .judul_aduan{
-	font-size: 40px;
+	font-size: 25px;
 }
 .ket_aduan{
 	padding-top: 2%;
 	padding-bottom: 2%;
 }
+.isi_aduan{
+	font-size: 15px;
+}
+
 /*END LIST ADUAN*/
 
 
@@ -219,3 +229,24 @@ td{
 	background-color: #DEDEDE
 }
 /*END LOGIN*/
+
+/*taman kotak-kotak*/
+.list_taman{
+	width: 100%;
+	margin-left:15%;
+
+}
+.kotak_taman{
+	width:100px;
+	height: 100px;
+	text-align: center;
+	border-width:4px;	
+    border-style:double;
+    display: inline-table;
+    margin:2%;
+}
+.kotak_taman p{
+	margin-top: 25%;
+	padding: 2%;
+}
+/*end taman kotak2*/

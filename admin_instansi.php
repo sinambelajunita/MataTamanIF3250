@@ -44,66 +44,73 @@
 	?>
 	<div class="container">
 		<div class="header">
-			MataTaman
+			<div class="left-header">
+				<img src="images/logobandung.png" >.
+			</div>
+			<div class="right-header">
+				MataTaman
+			</div>
 		</div>
 		<div class="navbar">
 			<ul>
-				<li>Home</li>
-				<li>Artikel</li>
-				<li>Buat Artikel</li>
-				<li>Taman</li>
-				<li>Instansi</li>
+				<li><a href="admin_index.php">Home</a></li>
+				<li><a href="admin_list_artikel.php">Artikel</a></li>
+				<li><a href="buat_artikel.php">Buat Artikel</a></li>
+				<li><a href="admin_taman.php">Taman</a></li>
+				<li><a href="admin_instansi.php">Instansi</a></li>
 			</ul>
-		</div>
+		</div>	
 		<div class="content">
-			<div class="judul_hal">
-				DAFTAR INSTANSI
-			</div>
-			<div class="tabel">
-				<table>
-					<tr>
-						<td>Instansi</td>
-						<td>Alamat</td>
-						<td>E-mail</td>
-						<td>Pimpinan</td>
-						<td>Aksi</td>
-					</tr>
-					<tr>
-						<td>Kepolisian</td>
-						<td>Jalan mana aja</td>
-						<td>polisi@lalala</td>
-						<td>pak polisi</td>
-						<td>hapus</td>
-					</tr>
-					<tr>
-						<td>Dinas Kebersihan</td>
-						<td>jalan bersih</td>
-						<td>bersih@lalala</td>
-						<td>asep</td>
-						<td>hapus</td>
-					</tr>
-				</table>
-			</div>
-			<div class="forminput">
-				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-					<div class="judulForm">
-						Tambah Instansi
-					</div>
-					Nama Instansi<br>
-					<input type="text" name="instansi_name">
-					<span class="error">* <?php echo $instansi_nameErr;?></span>
-					<br>Alamat <br>
-					<textarea name="instansi_alamat"></textarea>
-					<span class="error">* <?php echo $instansi_alamatErr;?></span>
-					<br>E-mail <br> 
-					<input type="text" name="instansi_email">
-					<span class="error">* <?php echo $instansi_emailErr;?></span>
-					<br>Pimpinan <br>
-					<input type="text" name="instansi_pimpinan"><br>
-					<span class="error">* <?php echo $instansi_pimpinanErr;?></span>
-					<p><span class="error">* required field.</span></p>
-					<button type="submit" value="tambahInstansi">Tambah</button>
-				</form>
+			<div class="aduan">
+				<div class="judul_hal">
+					DAFTAR INSTANSI
+				</div>
+				<div class="tabel">
+					<table>
+						<tr>
+							<td>Instansi</td>
+							<td>Alamat</td>
+							<td>E-mail</td>
+							<td>Pimpinan</td>
+							<td>Aksi</td>
+						</tr>
+						<tr>
+							<td>Kepolisian</td>
+							<td>Jalan mana aja</td>
+							<td>polisi@lalala</td>
+							<td>pak polisi</td>
+							<td>hapus</td>
+						</tr>
+						<tr>
+							<td>Dinas Kebersihan</td>
+							<td>jalan bersih</td>
+							<td>bersih@lalala</td>
+							<td>asep</td>
+							<td>hapus</td>
+						</tr>
+					</table>
+				</div>
+				<div class="forminput">
+					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+						<div class="judulForm">
+							Tambah Instansi
+						</div>
+						Nama Instansi<br>
+						<input type="text" name="instansi_name">
+						<span class="error">* <?php echo $instansi_nameErr;?></span>
+						<br>Alamat <br>
+						<textarea name="instansi_alamat"></textarea>
+						<span class="error">* <?php echo $instansi_alamatErr;?></span>
+						<br>E-mail <br> 
+						<input type="text" name="instansi_email">
+						<span class="error">* <?php echo $instansi_emailErr;?></span>
+						<br>Pimpinan <br>
+						<input type="text" name="instansi_pimpinan"><br>
+						<span class="error">* <?php echo $instansi_pimpinanErr;?></span>
+						<p><span class="error">* required field.</span></p>
+						<button type="submit" value="tambahInstansi">Tambah</button>
+					</form>
+				</div>
 			</div>
 		</div>
 		<div class="footer">

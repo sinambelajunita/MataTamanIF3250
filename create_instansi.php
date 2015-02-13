@@ -1,6 +1,6 @@
 <?php
 	include "db-connector.php";
-	session_start();
+	//session_start();
 	// escape variables for security
 	$nama_instansi = $_SESSION['instansi_name'];
 	$alamat = $_SESSION['instansi_alamat'];

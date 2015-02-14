@@ -92,7 +92,7 @@
 				<!--   -->
 
 				<?php
-					$result = mysqli_query($con,"SELECT * FROM pengaduan");
+					$result = mysqli_query($con,"SELECT * FROM pengaduan ORDER BY tanggal DESC");
 					while($row = mysqli_fetch_assoc($result)){
 						$post = "<div class='post_aduan'>";					
 						$post .=	"<div class='foto_aduan'>";

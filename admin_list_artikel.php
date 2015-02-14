@@ -41,7 +41,7 @@
 									$id_artikel = $row['id_artikel'];?>
 									<h2><a href="isi_artikel.php?id=<?php echo $id_artikel; ?>"><?php echo $judul;?></a></h2>
 								</div>
-								<a href="artikel_hapus.php?id=<?php echo $id_artikel; ?>">[Hapus]</a>
+								<a href="artikel_hapus.php?id=<?php echo $id_artikel; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus post ini?')">[Hapus]</a>
 								
 								<div class="ket_artikel">
 									<?php $tanggal = $row['tanggal'];

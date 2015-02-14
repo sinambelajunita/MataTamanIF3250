@@ -6,7 +6,68 @@
 </head>
 
 <body>
-	<?php include "db-connector.php";?>
+	<?php 
+		include "db-connector.php";
+				// define variables and set to empty values
+		$namaErr = $emailErr = $isiAduanErr = "";
+		$nama = $email = $isiAduan = $kategori = $taman = "";
+
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			session_start();
+			$err = 0;
+		   if (empty($_POST["warga_name"])) {
+		     $namaErr = "Required";
+		     $err = 1;
+		   } 
+		   else {
+     		 $nama = test_input($_POST["warga_name"]);
+     		 // check if name only contains letters and whitespace
+		     if (!preg_match("/^[a-zA-Z ]*$/",$nama)) {
+		       $namaErr = "Only letters and white space allowed";
+		       $err = 1; 
+		     }
+		     else{
+		     	$_SESSION["warga_name"] = $nama;
+		     }
+   			}
+		   
+		   if (empty($_POST["warga_email"])) {
+		     $emailErr = "Required";
+		     $err = 1;
+		   } else {
+		     $email = test_input($_POST["warga_email"]);
+		     // check if e-mail address is well-formed
+		     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		       $emailErr = "Invalid email format";
+		       $err = 1;
+		     }
+		     else{
+		     	$_SESSION["warga_email"] = $email;
+		     }
+		   }
+		     
+		   if (empty($_POST["isi_aduan"])) {
+		     $isiAduanErr = "Required";
+		     $err = 1;
+		   } else {
+		     $isiAduan = test_input($_POST["isi_aduan"]);
+		     $_SESSION["isi_aduan"] = $isiAduan;
+		   }
+		   //panggil SQL tambah aduan
+		   $_SESSION["taman"] = test_input($_POST["taman"]);
+		   $_SESSION["kategori"] = test_input($_POST["kategori"]);
+		   if($err==0){
+		   		include "aduan_tambah.php";
+		   }
+		}
+
+		function test_input($data) {
+		   $data = trim($data);
+		   $data = stripslashes($data);
+		   $data = htmlspecialchars($data);
+		   return $data;
+		}
+	?>
 	<div class="container">
 		<div class="header">
 			<div class="left-header">
@@ -62,14 +123,17 @@
 				<!-- sampe sini -->
 			</div>
 			<div class="forminput">
-				<form action="aduan_tambah.php" method="post" name="form_tambah_aduan">
+				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" name="form_tambah_aduan">
 					<div class="judulForm">
 						Tambah Aduan
 					</div>
-					<label for= "Nama">Nama</label><br>
-					<input type="text" name="warga_name" id="warga_name"><br>
-					<label for= "E-mail">E-mail</label><br> 
-					<input type="text" name="warga_email" id="warga_email"><br>
+					<span class="error">(*) required</span><br>
+					<label for= "Nama">Nama</label>
+					<span class="error">* <?php echo $namaErr;?></span><br>
+					<input type="text" name="warga_name" id="warga_name" ><br>
+					<label for= "E-mail">E-mail</label> 
+					<span class="error">* <?php echo $emailErr;?></span><br>
+					<input type="text" name="warga_email" id="warga_email" ><br>
 					<label for= "Taman">Taman</label> <br>
 					<?php 
 						$query = "SELECT nama_taman FROM taman";
@@ -91,7 +155,8 @@
 						echo $combobox;
 					?>
 					<br>
-					<label for= "isi_aduan">Isi Aduan</label> <br>
+					<label for= "isi_aduan">Isi Aduan</label>
+					<span class="error">* <?php echo $isiAduanErr;?></span><br>
 					<textarea name="isi_aduan" id="isi_aduan" rows="5" cols="30"></textarea>
 					<br>upload foto<br>
 					<button type="submit" name="submit" value="tambahAduan">Kirim</button>

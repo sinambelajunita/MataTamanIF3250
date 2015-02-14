@@ -97,7 +97,7 @@
 					while($row = mysqli_fetch_assoc($result)){
 						$post = "<div class='post_aduan'>";					
 						$post .=	"<div class='foto_aduan'>";
-						$post .= "<img src='images/default.jpg'/>";
+						$post .= "<img src='".$row['link_gambar']."'/>";
 						$post .=	"</div>";
 						$post .= "<div class='paket_aduan'>";
 						$post .=	"<div class='judul_aduan'>";
@@ -150,7 +150,7 @@
 					<br>
 					<label for= "isi_aduan">Isi Aduan</label>
 					<span class="error">* <?php echo $isiAduanErr;?></span><br>
-					<textarea name="isi_aduan" id="isi_aduan" rows="5" cols="30"></textarea>
+					<textarea name="isi_aduan" id="isi_aduan" rows="5" cols="30"></textarea><br>
 					<label for= "UploadFileName">Upload Foto</label><br>
 					<input type ="file" name = "UploadFileName"><br>
 					<button type="submit" name="submit" value="tambahAduan">Kirim</button>

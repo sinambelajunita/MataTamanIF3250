@@ -52,7 +52,9 @@
 								</div>
 							</div>
 						</div>
-						
+						<?php
+					}
+				?>
 				<!-- sampe sini -->
 			</div>
 		</div>

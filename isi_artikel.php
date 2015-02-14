@@ -6,6 +6,7 @@
 </head>
 
 <body>
+	<?php include "db-connector.php";?>
 	<div class="container">
 		<div class="header">
 			MataTaman
@@ -18,22 +19,27 @@
 			</ul>
 		</div>
 		<div class="content">
+			<?php
+				$id = $_GET['id'];
+				$result = mysqli_query($con,"SELECT * FROM artikel where id_artikel=$id");
+				while($row = mysqli_fetch_assoc($result)) {?>
 			<div class="judul_artikel">
-				JUDUL ARTIKEL
+				<?php $judul = $row['judul'];?>
+				<?php echo $judul;?>
 			</div>
 			<div class="artikel">
 				<div class="isi_artikel">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					<?php $isi = $row['isi'];
+					echo $isi;?>
 				</div>
 				<div class="gambar_artikel">
 					ini gambar
 				</div>
 			</div>
+			<?php
+		}
+		?>
+			
 
 		</div>
 		<div class="footer">

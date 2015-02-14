@@ -6,6 +6,7 @@
 </head>
 
 <body>
+	<?php include "db-connector.php";?>
 	<div class="container">
 		<div class="header">
 			<div class="left-header">
@@ -27,67 +28,42 @@
 		<div class="content">
 			<div class="listartikel">
 				<!-- ini diulang -->
-				<div class="artikel">
-					<div class="preview_gambar">
-						<img src="images/header.jpg"/>
-					</div>
-					<div class="preview_artikel">
-						<div class="preview_judul">
-							JUDUL ARTIKEL
+				<?php
+					$result = mysqli_query($con,"SELECT * FROM artikel");
+					while($row = mysqli_fetch_assoc($result)){?>
+						<div class="artikel">
+							<div class="preview_gambar">
+								<img src="images/header.jpg"/>
+							</div>
+							<div class="preview_artikel">
+								<div class="preview_judul">
+									<?php $judul = $row['judul'];
+									$id_artikel = $row['id_artikel'];?>
+									<h2><a href="isi_artikel.php?id=<?php echo $id_artikel; ?>"><?php echo $judul;?></a></h2>
+								</div>
+								<div class="ket_artikel">
+									keterangan artikel<br>
+									<a href="artikel_hapus.php?id=<?php echo $id_artikel; ?>">hapus</a>
+								</div>
+								<div class="preview_isi_artikel"><?php
+									$isi = $row['isi'];
+									echo substr($isi,0,200);
+									?>
+								</div>
+							</div>
 						</div>
-						<div class="ket_artikel">
-							keterangan artikel <br>
-							hapus
-						</div>
-						<div class="preview_isi_artikel">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</div>
-					</div>
-				</div>
-				<!-- sampe sini -->
-
-				<!-- ini diulang -->
-				<div class="artikel">
-					<div class="preview_gambar">
-						<img src="images/header.jpg"/>
-					</div>
-					<div class="preview_artikel">
-						<div class="preview_judul">
-							JUDUL ARTIKEL
-						</div>
-						<div class="ket_artikel">
-							keterangan artikel <br>
-							hapus
-						</div>
-						<div class="preview_isi_artikel">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</div>
-					</div>
-				</div>
+						
 				<!-- sampe sini -->
 			</div>
 		</div>
+
+		<?php
+		  mysqli_close($con);
+		?>
+
 		<div class="footer">
 			ini footer
 		</div>
-
-
-
 	</div>
 </body>
-
-
-
-
-
 </html>

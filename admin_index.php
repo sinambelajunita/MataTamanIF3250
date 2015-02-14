@@ -72,7 +72,7 @@
 					while($row = mysqli_fetch_assoc($result)){
 						$post = "<div class='post_aduan'>";					
 						$post .=	"<div class='foto_aduan'>";
-						$post .= 		"<img src='images/header.jpg'/>";
+						$post .= 		"<img src='".$row['link_gambar']."'/>";
 						$post .=	"</div>";
 						$post .= "<div class='paket_aduan'>";
 						$post .=	"<div class='judul_aduan'>";

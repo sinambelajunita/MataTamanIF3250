@@ -6,7 +6,70 @@
 </head>
 
 <body>
-	<?php include "read_aduan_by_taman.php";?>
+	<?php
+		session_start();
+		if(!empty($_GET['taman'])) $taman = $_GET['taman'];
+		if(empty($taman)) $taman = $_SESSION['taman'];
+		$_SESSION['taman'] = $taman;
+				// define variables and set to empty values
+		$namaErr = $emailErr = $isiAduanErr = "";
+		$nama = $email = $isiAduan = $kategori = "";
+
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			$err = 0;
+		   if (empty($_POST["warga_name"])) {
+		     $namaErr = "Required";
+		     $err = 1;
+		   } 
+		   else {
+     		 $nama = test_input($_POST["warga_name"]);
+     		 // check if name only contains letters and whitespace
+		     if (!preg_match("/^[a-zA-Z ]*$/",$nama)) {
+		       $namaErr = "Only letters and white space allowed";
+		       $err = 1; 
+		     }
+		     else{
+		     	$_SESSION["warga_name"] = $nama;
+		     }
+   			}
+		   
+		   if (empty($_POST["warga_email"])) {
+		     $emailErr = "Required";
+		     $err = 1;
+		   } else {
+		     $email = test_input($_POST["warga_email"]);
+		     // check if e-mail address is well-formed
+		     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		       $emailErr = "Invalid email format";
+		       $err = 1;
+		     }
+		     else{
+		     	$_SESSION["warga_email"] = $email;
+		     }
+		   }
+		     
+		   if (empty($_POST["isi_aduan"])) {
+		     $isiAduanErr = "Required";
+		     $err = 1;
+		   } else {
+		     $isiAduan = test_input($_POST["isi_aduan"]);
+		     $_SESSION["isi_aduan"] = $isiAduan;
+		   }
+		   //panggil SQL tambah aduan
+		   $_SESSION["kategori"] = test_input($_POST["kategori"]);
+		   if($err==0){
+		   		include "aduan_tambah_by_taman.php";
+		   }
+		}
+		include "read_aduan_by_taman.php";
+
+		function test_input($data) {
+		   $data = trim($data);
+		   $data = stripslashes($data);
+		   $data = htmlspecialchars($data);
+		   return $data;
+		}
+	?>
 	<div class="container">
 		<div class="header">
 			<div class="left-header">
@@ -26,7 +89,7 @@
 		<div class="content">
 			<div class="aduan">
 				<div class="judul_hal">
-					ADUAN TAMAN <?php echo $_GET['taman'];?> <!-- ganti sama nama taman yang dicari -->
+					ADUAN TAMAN <?php echo $taman;?> <!-- ganti sama nama taman yang dicari -->
 				</div>
 				<!--   -->
 
@@ -57,20 +120,23 @@
 						$post .= "<hr>";
 						echo $post;
 					}
-					include "db-connector.php";
 				?>
 				<!-- sampe sini -->
 			</div>
 			<div class="forminput">
-				<form action="aduan_tambah.php?taman=<?php echo $_GET['taman'];?>" method="post" name="form_tambah_aduan" enctype="multipart/form-data">
+				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" name="form_tambah_aduan" enctype="multipart/form-data">
 					<div class="judulForm">
-						Tambah Aduan <?php echo $_GET['taman'];?>
+						Tambah Aduan <?php echo $taman;?>
 					</div>
-					<label for= "Nama">Nama</label><br>
-					<input type="text" name="warga_name" id="warga_name"><br>
-					<label for= "E-mail">E-mail</label><br> 
-					<input type="text" name="warga_email" id="warga_email">
+					<span class="error">(*) required</span><br>
+					<label for= "Nama">Nama</label>
+					<span class="error">* <?php echo $namaErr;?></span><br>
+					<input type="text" name="warga_name" id="warga_name" ><br>
+					<label for= "E-mail">E-mail</label> 
+					<span class="error">* <?php echo $emailErr;?></span><br>
+					<input type="text" name="warga_email" id="warga_email" >
 					<?php 
+						include "db-connector.php";
 						echo "<br>Kategori Aduan <br>";
 						$query = "SELECT * FROM kategori";
 						$result = mysqli_query($con,$query);
@@ -82,10 +148,11 @@
 						echo $combobox;
 					?>
 					<br>
-					<label for= "isi_aduan">Isi Aduan</label> <br>
+					<label for= "isi_aduan">Isi Aduan</label>
+					<span class="error">* <?php echo $isiAduanErr;?></span><br>
 					<textarea name="isi_aduan" id="isi_aduan" rows="5" cols="30"></textarea>
-					<br>upload file
-					<input type="file" name="fileToUpload" id="fileToUpload">
+					<label for= "UploadFileName">Upload Foto</label><br>
+					<input type ="file" name = "UploadFileName"><br>
 					<button type="submit" name="submit" value="tambahAduan">Kirim</button>
 				</form>
 			</div>

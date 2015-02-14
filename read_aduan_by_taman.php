@@ -1,5 +1,4 @@
 <?php
-	$taman = $_GET['taman'];
 	include "db-connector.php";
 	$sql = "SELECT * FROM pengaduan WHERE `nama_taman` = '$taman' ORDER BY tanggal DESC";
 	if (!mysqli_query($con,$sql)) {

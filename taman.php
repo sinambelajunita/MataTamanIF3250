@@ -33,12 +33,16 @@
 
 				<div class="list_taman">
 					<!-- diulang di sini -->
-					<?php while($row = mysqli_fetch_assoc($result)){?>
-					<a href="index_by_taman.php?taman=<?php echo $row['nama_taman'];?>">	
-						<div class="kotak_taman">
-							<p><?php echo $row['nama_taman'];?></p>
-						</div>	
-					</a>	<?php }?>
+					<?php 
+							session_start();
+							while($row = mysqli_fetch_assoc($result)){?>
+								<a href="index_by_taman.php?taman=<?php echo $row['nama_taman'];?>">	
+									<div class="kotak_taman">
+										<p><?php echo $row['nama_taman'];
+										?></p>
+									</div>	
+								</a>	
+							<?php }?>
 					<!-- sampe sini -->
 				</div>
 			</div>
@@ -47,7 +51,8 @@
 			ini footer
 		</div>
 <?php 
-	mysqli_close($con); ?>
+	mysqli_close($con); 
+	?>
 
 	</div>
 </body>

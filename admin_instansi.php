@@ -107,7 +107,7 @@
 						        <?php
 						        $pimpinan = $row["nama_pimpinan"]; ?>
 						        <td><?php echo $pimpinan;?></td>
-						        <td><a href="delete_instansi.php?name=<?php echo $nama_instansi;?>">hapus<a></td>
+						        <td><a href="javascript:confirmDelete('<?php echo $nama_instansi;?>')">Hapus</a></td>
 						        <?php
 						    } ?>
 						    </tr><?php
@@ -142,9 +142,16 @@
 			ini footer
 		</div>
 
-
-
 	</div>
+	<script type="text/javascript">
+		function confirmDelete(name) {
+		    if (confirm("Apakah Anda yakin ingin menghapus "+ name +"?") == true) {
+		        location.href = "delete_instansi.php?name="+name;
+		    } else {
+		        
+		    }
+		}
+	</script>
 </body>
 
 

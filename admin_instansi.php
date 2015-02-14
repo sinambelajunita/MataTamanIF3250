@@ -138,7 +138,7 @@
 					<span class="error">* <?php echo $instansi_emailErr;?></span>
 					<br>Pimpinan <br>
 					<input type="text" name="instansi_pimpinan">
-					<span class="error">* <?php echo $instansi_pimpinanErr;?></span>
+					<span class="error">* <?php echo $instansi_pimpinanErr;?></span><br>
 					<button type="submit" value="tambahInstansi">Tambah</button>
 				</form>
 			</div>

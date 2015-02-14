@@ -84,7 +84,7 @@
 						$post .=	"Status : ".$row['status']."&nbsp&nbsp&nbsp";
 						$post .= "<a href='ubah_status.php?aduan_id=".$row['id_pengaduan']."' target='popup' onclick='window.open('ubah_status.php?aduan_id=".$row['id_pengaduan']."','name','width=600,height=400')'>ubah status</a><br>";
 						$post .= "<a href='buat_email.php'>kirim email</a><br>";
-						$post .= "<a href='aduan_hapus.php?aduan_id=".$row['id_pengaduan']."' onclick='return confirm('Apakah anda yakin ingin menghapus post ini?')'>hapus</a>";
+						$post .= "<a href='aduan_hapus.php?aduan_id=".$row['id_pengaduan']."' onclick='".'return confirm("Apakah anda yakin ingin menghapus post ini?")'."'>hapus</a>";
 						$post .= "</div>";
 						$post .= "<div class='isi_aduan'>";
 						$post .= 	'"'.$row['isi'].'"';

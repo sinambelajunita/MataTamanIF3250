@@ -96,7 +96,7 @@
 							        <?php
 							        $kontak = $row["no_telepon"]; ?>
 							        <td><?php echo $kontak;?></td>
-							        <td><a href="delete_taman.php?name=<?php echo $nama_taman;?>">hapus<a></td>
+							        <td><a href="javascript:confirmDelete('<?php echo $nama_taman;?>')">Hapus</a></td>
 							        <?php
 							    } ?>
 							    </tr><?php
@@ -126,6 +126,16 @@
 			ini footer
 		</div>
 	</div>
+	<script type="text/javascript">
+		function confirmDelete(name) {
+		    var x;
+		    if (confirm("Apakah Anda yakin ingin menghapus "+ name +"?") == true) {
+		        location.href = "delete_taman.php?name="+name;
+		    } else {
+		        
+		    }
+		}
+	</script>
 </body>
 
 </html>

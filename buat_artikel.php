@@ -57,6 +57,7 @@
 				MataTaman
 			</div>
 		</div>
+
 		<div class="navbar">
 			<ul>
 				<li><a href="admin_index.php">Home</a></li>
@@ -119,7 +120,7 @@
 						</div> -->
 						<input type="text" name="artikel_no_aduan"><br>
 					<span class="error"> <?php echo $artikel_no_aduanErr;?></span><br>
-						Isi Artikel * <textarea name="artikel_content"></textarea>
+						Isi Artikel * <textarea rows="10" cols="50" name="artikel_content"></textarea>
 					<span class="error"> <?php echo $artikel_contentErr;?></span> <br>
 						Tambah gambar <br>
 						<button type="submit" value="tambahArtikel">Publikasikan</button>
@@ -127,6 +128,7 @@
 				</div>
 			</div>
 		</div>
+		
 		<footer class="footer">
 		<!-- ini footer -->
 	</footer>

@@ -82,7 +82,7 @@
 						$post .= 	$row['tanggal']."<br>";
 						$post .= 	"Pengirim : ".$row['nama_pengirim']."<br>";
 						$post .=	"Status : ".$row['status']."&nbsp&nbsp&nbsp";
-						$post .= "<a href='#'>ubah status</a><br>";
+						$post .= "<a href='ubah_status.php?aduan_id=".$row['id_pengaduan']."'>ubah status</a><br>";
 						$post .= "<a href='#'>kirim email</a><br>";
 						$post .= "<a href='aduan_hapus.php?aduan_id=".$row['id_pengaduan']."' onclick='return confirm('Apakah anda yakin ingin menghapus post ini?')'>hapus</a>";
 						$post .= "</div>";
@@ -102,13 +102,6 @@
 			<!-- ini footer -->
 		</div>
 
-
-
 	</div>
 </body>
-
-
-
-
-
 </html>

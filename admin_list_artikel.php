@@ -29,7 +29,7 @@
 			<div class="listartikel">
 				<!-- ini diulang -->
 				<?php
-					$result = mysqli_query($con,"SELECT * FROM artikel");
+					$result = mysqli_query($con,"SELECT * FROM artikel ORDER BY tanggal DESC");
 					while($row = mysqli_fetch_assoc($result)){?>
 						<div class="artikel">
 							<div class="preview_gambar">
@@ -41,14 +41,19 @@
 									$id_artikel = $row['id_artikel'];?>
 									<h2><a href="isi_artikel.php?id=<?php echo $id_artikel; ?>"><?php echo $judul;?></a></h2>
 								</div>
+								<a href="artikel_hapus.php?id=<?php echo $id_artikel; ?>">[Hapus]</a>
+								
 								<div class="ket_artikel">
-									keterangan artikel<br>
-									<a href="artikel_hapus.php?id=<?php echo $id_artikel; ?>">hapus</a>
-								</div>
+									<?php $tanggal = $row['tanggal'];
+									echo $tanggal; ?>
+									<br>
+									</div>
 								<div class="preview_isi_artikel"><?php
 									$isi = $row['isi'];
 									echo substr($isi,0,200);
 									?>
+									...
+									<a href="isi_artikel.php?id=<?php echo $id_artikel; ?>">Selengkapnya</a>
 								</div>
 							</div>
 						</div>

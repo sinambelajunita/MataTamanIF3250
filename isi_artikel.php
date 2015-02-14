@@ -2,7 +2,7 @@
 <head>
 	<title>MataTaman</title>
 	<!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" /> -->
-	<!-- <link rel="stylesheet" href="css/style.css" /> -->
+	<link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
@@ -13,9 +13,9 @@
 		</div>
 		<div class="navbar">
 			<ul>
-				<li>Home</li>
-				<li>Taman</li>
-				<li>Artikel</li>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="taman.php">Taman</a></li>
+				<li><a href="list_artikel.php">Artikel Laporan</a></li>
 			</ul>
 		</div>
 		<div class="content">
@@ -23,18 +23,19 @@
 				$id = $_GET['id'];
 				$result = mysqli_query($con,"SELECT * FROM artikel where id_artikel=$id");
 				while($row = mysqli_fetch_assoc($result)) {?>
-			<div class="judul_artikel">
+				<br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<div class="preview_judul">
 				<?php $judul = $row['judul'];?>
 				<?php echo $judul;?>
 			</div>
 			<div class="artikel">
-				<div class="isi_artikel">
+				<div class="preview_artikel">
 					<?php $isi = $row['isi'];
 					echo $isi;?>
 				</div>
-				<div class="gambar_artikel">
+				<!-- <div class="gambar_artikel">
 					ini gambar
-				</div>
+				</div> -->
 			</div>
 			<?php
 		}
@@ -50,9 +51,4 @@
 
 	</div>
 </body>
-
-
-
-
-
 </html>

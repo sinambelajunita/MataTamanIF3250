@@ -28,6 +28,10 @@
 			</ul>
 		</div>
 		<div class="content">
+			<?php
+				$aduan_id = $_GET['aduan_id'];
+				$nama_taman = $_GET['nama_taman'];
+			?>
 			<div class="aduan">
 				<div class="judul_hal">
 					BUAT E-MAIL
@@ -49,9 +53,18 @@
 						?>
 						<br><br>
 						Subyek <br> 
-						<input type="text" name="email_subject" size="35" value="<?php $_POST['id'] ?>"><br><br>
+						
+						<input type="text" name="email_subject" size="35" value="aduan no:<?php echo $aduan_id ?> "><br><br>
 						Isi <br> 
-						<textarea name="email_content" rows="10" cols="90" ></textarea> <br><br>
+						<?php 
+							$content_email = "";
+							$content_email .= "Aduan no : ".$aduan_id."<br>";
+							$content_email .= "Taman : ".$nama_taman;
+
+							// echo $content_email;
+						?>
+
+						<textarea name="email_content" rows="10" cols="90" ><?php echo $content_email ?></textarea> <br><br>
 						<input type="submit" name="kirimemail" value="kirimEmail"></button>
 					</form>
 				</div>

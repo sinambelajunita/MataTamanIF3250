@@ -96,7 +96,8 @@
 						$date = strtotime($row['tanggal']);
 						$mysqldate = date('d M Y / H:i',$date);
 						$post .= 	$mysqldate." WIB <br>";
-						$post .= 	"Pengirim : ".$row['nama_pengirim']."<br>";
+						$post .=    "No. Aduan : ".$row['id_pengaduan']."<br>";
+						$post .= 	"Pengirim : ".$row['nama_pengirim']." - ".$row['email_pengirim']."<br>";
 						$post .=	"<div class='status_aduan'>Status : ".$row['status']."&nbsp&nbsp&nbsp";
 						$post .= "<button class='ubahstatus_btn'>Ubah Status</button></div>";
 						$post .= "<form class ='form_ubahstatus' action='aduan_update.php?id=".$row['id_pengaduan']."' method='post'>";
@@ -107,8 +108,8 @@
 						$post .= "</select>";
 						$post .= "<input type='submit' name='ubah' value='Ubah'/>";
 						$post .= "</form>";
-						$post .= "<blue><a href='buat_email.php'>kirim email</a><br></blue>";
-						$post .= "<red><a href='aduan_hapus.php?aduan_id=".$row['id_pengaduan']."' onclick='".'return confirm("Apakah anda yakin ingin menghapus post ini?")'."'>hapus</a></red>";
+						$post .= "<a href='buat_email.php'>kirim email</a><br>";
+						$post .= "<a href='aduan_hapus.php?aduan_id=".$row['id_pengaduan']."' onclick='".'return confirm("Apakah anda yakin ingin menghapus post ini?")'."'>hapus</a>";
 						$post .= "</div>";
 						$post .= "<div class='isi_aduan'>";
 						$post .= 	'"'.$row['isi'].'"';

@@ -9,7 +9,7 @@
 	<?php 
 		include "db-connector.php";
 				// define variables and set to empty values
-		$namaErr = $emailErr = $isiAduanErr = "";
+		$namaErr = $emailErr = $isiAduanErr = $kategoriErr = $tamanErr = "";
 		$nama = $email = $isiAduan = $kategori = $taman = "";
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -54,7 +54,13 @@
 		     $_SESSION["isi_aduan"] = $isiAduan;
 		   }
 		   //panggil SQL tambah aduan
-		   $_SESSION["taman"] = test_input($_POST["taman"]);
+		   if (empty($_POST["taman"])) {
+		     $isiAduanErr = "Tidak boleh kosong";
+		     $err = 1;
+		   } else {
+		     $isiAduan = test_input($_POST["taman"]);
+		     $_SESSION["taman"] = $isiAduan;
+		   }
 		   $_SESSION["kategori"] = test_input($_POST["kategori"]);
 		   if($err==0){
 		   		include "aduan_tambah.php";
@@ -130,18 +136,17 @@
 					</div>
 					<span class="error">(*) Tidak boleh kosong</span><br>
 					<label for= "Nama">Nama</label>
-					<span class="error">* <red><?php echo $namaErr;?></red></span><br>
-					<input type="text" name="warga_name" id="warga_name" style=width:90%><br>
+					<span class="error">* <?php echo $namaErr;?></span><br>
+					<input type="text" name="warga_name" id="warga_name" ><br>
 					<label for= "E-mail">E-mail</label> 
 					<span class="error">* <?php echo $emailErr;?></span><br>
-					<input type="text" name="warga_email" id="warga_email" style=width:90% ><br>
-					<label for= "Taman">Taman</label> <br>
-					<select name='taman' id='taman' style="width:90%;">
-					<option disabled selected> -- pilih taman -- </option>
+					<input type="text" name="warga_email" id="warga_email" ><br>
+					<label for= "Taman">Taman</label>
+					<span class="error">* <?php echo $tamanErr;?></span> <br>
 					<?php 
 						$query = "SELECT nama_taman FROM taman";
 						$result = mysqli_query($con,$query);
-						
+						$combobox = "<select name='taman' id='taman'>";
 						 while($row = mysqli_fetch_assoc($result)){
 						     $combobox .='<option value="' .$row['nama_taman']. '">'.$row['nama_taman'].'</option>';
 						    }
@@ -150,8 +155,7 @@
 						echo "<br>Kategori Aduan <br>";
 						$query = "SELECT * FROM kategori";
 						$result = mysqli_query($con,$query);
-						$combobox = "<select name='kategori' id='kategori' style=width:90%>";
-						$combobox .= "<option disabled selected> -- pilih kategori -- </option>";
+						$combobox = "<select name='kategori' id='kategori'>";
 						 while($row = mysqli_fetch_assoc($result)){
 						     $combobox .='<option value="' .$row['nama']. '">'.$row['nama'].'</option>';
 						    }
@@ -161,7 +165,7 @@
 					<br>
 					<label for= "isi_aduan">Isi Aduan</label>
 					<span class="error">* <?php echo $isiAduanErr;?></span><br>
-					<textarea name="isi_aduan" id="isi_aduan" rows="3" cols="35"></textarea><br>
+					<textarea name="isi_aduan" id="isi_aduan" rows="5" cols="30"></textarea><br>
 					<label for= "UploadFileName">Upload Foto</label><br>
 					<input type ="file" name = "UploadFileName"><br>
 					<button type="submit" name="submit" value="tambahAduan">Kirim</button>

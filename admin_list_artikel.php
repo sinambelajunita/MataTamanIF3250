@@ -46,8 +46,8 @@
 								<red><a href="artikel_hapus.php?id=<?php echo $id_artikel; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus post ini?')"><red>Hapus</red></a></red>
 								
 								<div class="ket_artikel">
-									<?php $tanggal = $row['tanggal'];
-									echo $tanggal; ?>
+									<?php $date = strtotime($row['tanggal']);
+									echo date('d M Y / H:i',$date); ?>
 									<br>
 									</div>
 								<div class="preview_isi_artikel"><?php

@@ -1,8 +1,10 @@
 <html>
 <head>
-	<title>MataTaman - Ubah Status</title>
+	<title>MataTaman</title>
+	<!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" /> -->
 	<link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 	<?php include "db-connector.php";?>
 	<div class="container">
@@ -24,31 +26,35 @@
 			</ul>
 		</div>
 		<div class="content">
-			<div class="aduan">
-				<?php $id = $_GET['aduan_id']; ?>
-				<div class="judul_hal">
-					Pilih status baru untuk aduan
+			<?php
+				$id = $_GET['id'];
+				$result = mysqli_query($con,"SELECT * FROM artikel where id_artikel=$id");
+				while($row = mysqli_fetch_assoc($result)) {?>
+				<br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<div class="judul_artikel">
+				<?php $judul = $row['judul'];?>
+				<?php echo $judul;?>
+			</div>
+			<div class="artikel">
+				<div class="isi_artikel">
+					<?php $isi = $row['isi'];
+					echo $isi;?>
 				</div>
-				<div class="ubahstatus">
-					<form action="aduan_update.php?id=<?php echo $id; ?>" method="post">
-						<select name="ubahstat">
-						  <option value="terkirim">Terkirim</option>
-						  <option value="proses">Proses</option>
-						  <option value="selesai">Selesai</option>
-						</select>
-						<input type="submit" name="ubah" value="Ubah"/>
-					</form>
+				<div class="gambar_artikel">
+					<img src="images/default.jpg">
 				</div>
 			</div>
-		</div>
-
-		<?php
-		  mysqli_close($con);
+			<?php
+		}
 		?>
+			
 
-		<div class="footer">
-			ini footer
 		</div>
+		<div class="footer">
+		</div>
+
+
+
 	</div>
 </body>
 </html>

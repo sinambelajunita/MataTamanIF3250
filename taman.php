@@ -28,7 +28,7 @@
 		<div class="content">
 			<div class="aduan">
 				<div class="judul_hal">
-					Pilih
+					Lihat aduan berdasarkan taman
 				</div>
 
 				<div class="list_taman">

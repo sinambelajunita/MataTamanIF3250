@@ -33,7 +33,7 @@
 					while($row = mysqli_fetch_assoc($result)){?>
 						<div class="artikel">
 							<div class="preview_gambar">
-								<img src="images/header.jpg"/>
+								<img src="images/default.jpg"/>
 							</div>
 							<div class="preview_artikel">
 								<div class="preview_judul">

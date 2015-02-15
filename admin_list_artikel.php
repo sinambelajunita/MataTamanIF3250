@@ -33,13 +33,13 @@
 					while($row = mysqli_fetch_assoc($result)){?>
 						<div class="artikel">
 							<div class="preview_gambar">
-								<img src="images/header.jpg"/>
+								<img src="images/default.jpg"/>
 							</div>
 							<div class="preview_artikel">
 								<div class="preview_judul">
 									<?php $judul = $row['judul'];
 									$id_artikel = $row['id_artikel'];?>
-									<h2><a href="isi_artikel.php?id=<?php echo $id_artikel; ?>"><?php echo $judul;?></a></h2>
+									<h2><a href="admin_isi_artikel.php?id=<?php echo $id_artikel; ?>"><?php echo $judul;?></a></h2>
 								</div>
 								<a href="artikel_hapus.php?id=<?php echo $id_artikel; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus post ini?')">[Hapus]</a>
 								

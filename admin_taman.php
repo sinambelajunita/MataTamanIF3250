@@ -33,6 +33,10 @@
 		    $taman_telpErr = "Required";
 		  } else {
 		    $taman_telp = test_input($_POST["taman_telp"]);
+		    if(!is_numeric($taman_telp)){
+		    	$err = 1;
+			    $taman_telpErr = "Invalid format";
+		    }
 		    $_SESSION["taman_telp"] = $taman_telp;
 		  }
 		  if($err == 0){

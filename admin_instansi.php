@@ -122,16 +122,16 @@
 						Tambah Instansi
 					</div>
 					Nama Instansi<br>
-					<input type="text" name="instansi_name">
+					<input type="text" name="instansi_name" style="width:90%;">
 					<span class="error">* <?php echo $instansi_nameErr;?></span>
 					<br>Alamat <br>
-					<textarea name="instansi_alamat"></textarea>
+					<textarea name="instansi_alamat" cols="38"></textarea>
 					<span class="error">* <?php echo $instansi_alamatErr;?></span>
 					<br>E-mail <br> 
-					<input type="text" name="instansi_email">
+					<input type="text" name="instansi_email" style="width:90%;">
 					<span class="error">* <?php echo $instansi_emailErr;?></span>
 					<br>Pimpinan <br>
-					<input type="text" name="instansi_pimpinan"><br>
+					<input type="text" name="instansi_pimpinan" style="width:90%;"><br>
 					<span class="error">* <?php echo $instansi_pimpinanErr;?></span>
 					<p><span class="error">* required field.</span></p>
 					<button type="submit" value="tambahInstansi">Tambah</button>

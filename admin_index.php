@@ -43,7 +43,7 @@
 							pengirim : "nama pengirim - email pengirim"<br>
 							status : "ganti sama status" &nbsp&nbsp&nbsp
 							<a href="#">ubah status</a><br>
-							<a href="#">kirim email</a><br>
+							<a href="buat_email.php">kirim email</a><br>
 							<a href="#">hapus</a>
 						</div>
 						<div class="isi_aduan">

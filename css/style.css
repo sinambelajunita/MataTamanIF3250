@@ -14,6 +14,11 @@ a:active{
 html{
 	font-family: matataman;
 }
+form input , select, textarea{
+	text-shadow: 1px 1px 1px #fff;
+	border: 1px solid #e4e4e4;
+	padding: 5px;
+}
 .container{
 	width: 100%;
 	height: 100%;
@@ -22,10 +27,11 @@ html{
 	/*background-color: #317256;*/
 	background-image: url("../images/header.jpg");
 	color: white;
-	height: 167px;
+	height: 175px;
 	width: 100%;
 	font-family: matataman;
 	position: fixed;
+	margin-top: -8px;
 }
 .header img{
 	text-align: left;

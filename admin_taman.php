@@ -110,12 +110,12 @@
 					<div class="judulForm">
 						Tambah Taman
 					</div>
-					Nama Taman<br> <input type="text" name="taman_name">
+					Nama Taman<br> <input type="text" name="taman_name" style="width:90%;">
 					<span class="error">* <?php echo $taman_nameErr;?></span>
-					<br>Lokasi <br><textarea name="taman_lokasi"></textarea>
+					<br>Lokasi <br><textarea name="taman_lokasi" cols="38"></textarea>
 					<span class="error">* <?php echo $taman_lokasiErr;?></span>
 					<br>Telepon <br> 
-					<input type="text" name="taman_telp">
+					<input type="text" name="taman_telp" style="width:90%;">
 					<span class="error">* <?php echo $taman_telpErr;?></span>
 					<p><span class="error">* required field.</span></p>
 					<button type="submit" value="tambahTaman">Tambah</button>

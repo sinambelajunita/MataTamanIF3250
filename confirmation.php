@@ -6,6 +6,8 @@
 </head>
 
 <body>
+	<?php include "db-connector.php";
+	?>
 	<div class="container">
 		<div class="header">
 			<div class="left-header">
@@ -26,23 +28,13 @@
 		</div>
 		<div class="content">
 			<div class="aduan">
-				<div class="judul_hal">
-					BUAT ARTIKEL
-				</div>
-				<div class="form_email">
-					<form action="#">
-						Judul artikel <br>
-						<input type="text" name="artikel_judul"><br><br>
-						No aduan <br>
-						<input type="text" name="artikel_no_aduan"><br><br>
-						Isi Artikel <br>
-						<textarea name="artikel_content" cols="70" rows="10"></textarea> <br><br>
-						Tambah gambar <br>
-						<button type="submit" value="tambahArtikel">Publikasikan</button>
-					</form>
-				</div>
-			</div>
+				Pesan terkirim <br><br>
+				klik <a href="admin_index.php">di sini</a> untuk kembali ke <a href="admin_index.php">index</a>
+			</div>		
 		</div>
+		<?php
+		  mysqli_close($con);
+		?>
 		<div class="footer">
 			ini footer
 		</div>

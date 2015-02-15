@@ -64,17 +64,19 @@
 			<div class="forminput">
 				<form action="aduan_tambah.php" method="post" name="form_tambah_aduan">
 					<div class="judulForm">
-						Tambah Aduan
+						Tambah Aduan 
 					</div>
 					<label for= "Nama">Nama</label><br>
-					<input type="text" name="warga_name" id="warga_name"><br>
+					<input type="text" name="warga_name" id="warga_name" style="width:90%;"><br>
 					<label for= "E-mail">E-mail</label><br> 
-					<input type="text" name="warga_email" id="warga_email"><br>
+					<input type="text" name="warga_email" id="warga_email" style="width:90%;"><br>
 					<label for= "Taman">Taman</label> <br>
+					<select name='taman' id='taman' style="width:90%;">
+						<option disabled selected> -- pilih taman -- </option>
 					<?php 
 						$query = "SELECT nama_taman FROM taman";
 						$result = mysqli_query($con,$query);
-						$combobox = "<select name='taman' id='taman'>";
+						// $combobox = "<select name='taman' id='taman'>";
 						 while($row = mysqli_fetch_assoc($result)){
 						     $combobox .='<option value="' .$row['nama_taman']. '">'.$row['nama_taman'].'</option>';
 						    }
@@ -83,7 +85,8 @@
 						echo "<br>Kategori Aduan <br>";
 						$query = "SELECT * FROM kategori";
 						$result = mysqli_query($con,$query);
-						$combobox = "<select name='kategori' id='kategori'>";
+						$combobox = "<select name='kategori' id='kategori' style=\"width:90%;\">";
+						$combobox .= "<option disabled selected> -- pilih kategori -- </option>";
 						 while($row = mysqli_fetch_assoc($result)){
 						     $combobox .='<option value="' .$row['nama']. '">'.$row['nama'].'</option>';
 						    }

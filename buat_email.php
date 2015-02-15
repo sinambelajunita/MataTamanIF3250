@@ -7,6 +7,11 @@
 
 <body>
 	<?php include "db-connector.php";
+	session_start();
+
+	$_SESSION['kategori'] = $_POST['kategori'];
+	$_SESSION['nama_taman'] = $_POST['nama_taman'];
+
 	?>
 	<div class="container">
 		<div class="header">
@@ -48,7 +53,7 @@
 						?>
 						<br><br>
 						Subyek <br> 
-						<input type="text" name="email_subject" size="35"><br><br>
+						<input type="text" name="email_subject" size="35" value="<?php $_POST['id'] ?>"><br><br>
 						Isi <br> 
 						<textarea name="email_content" rows="10" cols="90" ></textarea> <br><br>
 						<input type="submit" name="kirimemail" value="kirimEmail"></button>

@@ -47,6 +47,7 @@ black a{
 	font-family: matataman;
 	position: fixed;
 	margin-top: -8px;
+	margin-left: -8px;
 }
 .header img{
 	text-align: left;
@@ -76,6 +77,7 @@ black a{
 	height: 33px;
 	margin-top: 167px;
 	width: 100%;
+	margin-left: -8px;
 }
 .navbar ul{
 	list-style: none;
@@ -200,7 +202,7 @@ black a{
 	padding-bottom: 2%;
 }
 .isi_aduan{
-	font-size: 15px;
+	font-size: 18px;
 }
 
 /*END LIST ADUAN*/

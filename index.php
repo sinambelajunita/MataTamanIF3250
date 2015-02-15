@@ -55,13 +55,19 @@
 		   }
 		   //panggil SQL tambah aduan
 		   if (empty($_POST["taman"])) {
-		     $isiAduanErr = "Tidak boleh kosong";
+		     $tamanErr = "Tidak boleh kosong";
 		     $err = 1;
 		   } else {
-		     $isiAduan = test_input($_POST["taman"]);
-		     $_SESSION["taman"] = $isiAduan;
+		     $taman = test_input($_POST["taman"]);
+		     $_SESSION["taman"] = $taman;
 		   }
-		   $_SESSION["kategori"] = test_input($_POST["kategori"]);
+		   if (empty($_POST["kategori"])) {
+		     $kategoriErr = "Tidak boleh kosong";
+		     $err = 1;
+		   } else {
+		     $kategori = test_input($_POST["taman"]);
+		     $_SESSION["taman"] = $kategori;
+		   }
 		   if($err==0){
 		   		include "aduan_tambah.php";
 		   }
@@ -136,26 +142,32 @@
 					</div>
 					<span class="error">(*) Tidak boleh kosong</span><br>
 					<label for= "Nama">Nama</label>
-					<span class="error">* <?php echo $namaErr;?></span><br>
-					<input type="text" name="warga_name" id="warga_name" ><br>
+					<span class="error">* <red><?php echo $namaErr;?></red></span><br>
+					<input type="text" name="warga_name" id="warga_name" style=width:90%><br>
 					<label for= "E-mail">E-mail</label> 
 					<span class="error">* <?php echo $emailErr;?></span><br>
-					<input type="text" name="warga_email" id="warga_email" ><br>
+					<input type="text" name="warga_email" id="warga_email" style=width:90% ><br>
 					<label for= "Taman">Taman</label>
 					<span class="error">* <?php echo $tamanErr;?></span> <br>
+					
 					<?php 
 						$query = "SELECT nama_taman FROM taman";
 						$result = mysqli_query($con,$query);
-						$combobox = "<select name='taman' id='taman'>";
+						$combobox  = "<select name='taman' id='taman' style='width:90%;''>";
+						$combobox .= "<option disabled selected> -- pilih taman -- </option>";
 						 while($row = mysqli_fetch_assoc($result)){
 						     $combobox .='<option value="' .$row['nama_taman']. '">'.$row['nama_taman'].'</option>';
 						    }
 						$combobox .= "</select> ";
 						echo $combobox;
-						echo "<br>Kategori Aduan <br>";
+					?>
+					<label for= "Kategori">Kategori Aduan</label>
+					<span class="error">* <?php echo $kategoriErr;?></span> <br>
+					<?php
 						$query = "SELECT * FROM kategori";
 						$result = mysqli_query($con,$query);
-						$combobox = "<select name='kategori' id='kategori'>";
+						$combobox = "<select name='kategori' id='kategori' style=width:90%>";
+						$combobox .= "<option disabled selected> -- pilih kategori -- </option>";
 						 while($row = mysqli_fetch_assoc($result)){
 						     $combobox .='<option value="' .$row['nama']. '">'.$row['nama'].'</option>';
 						    }

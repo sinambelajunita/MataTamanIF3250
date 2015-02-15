@@ -3,6 +3,20 @@
 	<title>MataTaman</title>
 	<!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" /> -->
 	<link rel="stylesheet" href="css/style.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".form_ubahstatus").hide();
+		    $(".ubahstatus_btn").each(function(index){
+		    	var targetItem1 = $(".status_aduan").eq(index);
+		    	var targetItem2 = $(".form_ubahstatus").eq(index);
+				$(this).click(function() {
+				    targetItem1.hide();
+				    targetItem2.show();
+				});
+		    });
+		});
+	</script>
 </head>
 
 <body>
@@ -46,7 +60,7 @@
 							pengirim : "nama pengirim - email pengirim"<br>
 							status : "ganti sama status" &nbsp&nbsp&nbsp
 							<a href="#">ubah status</a><br>
-							<a href="buat_email.php">kirim email</a><br>
+							<a href="#">kirim email</a><br>
 							<a href="#">hapus</a>
 						</div>
 						<div class="isi_aduan">
@@ -79,12 +93,22 @@
 						$post .= 		$row['kategori']." - ".$row['nama_taman'];
 						$post .= 	"</div>";
 						$post .= "<div class='ket_aduan'>";
-						$post .= 	$row['tanggal']."<br>";
+						$date = strtotime($row['tanggal']);
+						$mysqldate = date('d M Y / H:i',$date);
+						$post .= 	$mysqldate." WIB <br>";
 						$post .= 	"Pengirim : ".$row['nama_pengirim']."<br>";
-						$post .=	"Status : ".$row['status']."&nbsp&nbsp&nbsp";
-						$post .= "<blue><a href='ubah_status.php?aduan_id=".$row['id_pengaduan']."' target='popup' onclick='window.open('ubah_status.php?aduan_id=".$row['id_pengaduan']."','name','width=600,height=400')'>ubah status</a><br></blue>";
-						$post .= "<green><a href='buat_email.php'>kirim email</a><br></green>";
-						$post .= "<red><a href='aduan_hapus.php?aduan_id=".$row['id_pengaduan']."' onclick='".'return confirm("Apakah anda yakin ingin menghapus post ini?")'."'>hapus</a></red>";
+						$post .=	"<div class='status_aduan'>Status : ".$row['status']."&nbsp&nbsp&nbsp";
+						$post .= "<button class='ubahstatus_btn'>Ubah Status</button></div>";
+						$post .= "<form class ='form_ubahstatus' action='aduan_update.php?id=".$row['id_pengaduan']."' method='post'>";
+						$post .= "<select name='ubahstat'>";
+						$post .= "<option value='Terkirim'>Terkirim</option>";
+						$post .= "<option value='Proses'>Proses</option>";
+						$post .= "<option value='Selesai'>Selesai</option>";
+						$post .= "</select>";
+						$post .= "<input type='submit' name='ubah' value='Ubah'/>";
+						$post .= "</form>";
+						$post .= "<a href='buat_email.php'>kirim email</a><br>";
+						$post .= "<a href='aduan_hapus.php?aduan_id=".$row['id_pengaduan']."' onclick='".'return confirm("Apakah anda yakin ingin menghapus post ini?")'."'>hapus</a>";
 						$post .= "</div>";
 						$post .= "<div class='isi_aduan'>";
 						$post .= 	'"'.$row['isi'].'"';

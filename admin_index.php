@@ -6,6 +6,9 @@
 </head>
 
 <body>
+	<?php 
+		include "db-connector.php";
+	?>
 	<div class="container">
 		<div class="header">
 			<div class="left-header">
@@ -29,7 +32,7 @@
 				<div class="judul_hal">
 					ADUAN MASUK
 				</div>
-				<!-- ini diulang -->
+				<!-- ini diulang
 				<div class="post_aduan">					
 					<div class="foto_aduan">
 						<img src="images/header.jpg"/>
@@ -63,20 +66,42 @@
 					</div>
 				</div>
 				<hr>
-				<!-- sampe sini -->				
+				sampe sini -->
+				<?php
+					$result = mysqli_query($con,"SELECT * FROM pengaduan ORDER BY tanggal DESC");
+					while($row = mysqli_fetch_assoc($result)){
+						$post = "<div class='post_aduan'>";					
+						$post .=	"<div class='foto_aduan'>";
+						$post .= 		"<img src='".$row['link_gambar']."'/>";
+						$post .=	"</div>";
+						$post .= "<div class='paket_aduan'>";
+						$post .=	"<div class='judul_aduan'>";
+						$post .= 		$row['kategori']." - ".$row['nama_taman'];
+						$post .= 	"</div>";
+						$post .= "<div class='ket_aduan'>";
+						$post .= 	$row['tanggal']."<br>";
+						$post .= 	"Pengirim : ".$row['nama_pengirim']."<br>";
+						$post .=	"Status : ".$row['status']."&nbsp&nbsp&nbsp";
+						$post .= "<a href='ubah_status.php?aduan_id=".$row['id_pengaduan']."' target='popup' onclick='window.open('ubah_status.php?aduan_id=".$row['id_pengaduan']."','name','width=600,height=400')'>ubah status</a><br>";
+						$post .= "<a href='buat_email.php'>kirim email</a><br>";
+						$post .= "<a href='aduan_hapus.php?aduan_id=".$row['id_pengaduan']."' onclick='".'return confirm("Apakah anda yakin ingin menghapus post ini?")'."'>hapus</a>";
+						$post .= "</div>";
+						$post .= "<div class='isi_aduan'>";
+						$post .= 	'"'.$row['isi'].'"';
+						$post .= "</div>";
+						$post .= "</div>";
+						$post .= "</div>";
+						$post .= "<hr>";
+						echo $post;
+					}
+				?>
+								
 			</div>			
 		</div>
 		<div class="footer">
-			ini footer
+			<!-- ini footer -->
 		</div>
-
-
 
 	</div>
 </body>
-
-
-
-
-
 </html>

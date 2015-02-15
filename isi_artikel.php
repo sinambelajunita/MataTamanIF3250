@@ -2,38 +2,45 @@
 <head>
 	<title>MataTaman</title>
 	<!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" /> -->
-	<!-- <link rel="stylesheet" href="css/style.css" /> -->
+	<link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
+	<?php include "db-connector.php";?>
 	<div class="container">
 		<div class="header">
 			MataTaman
 		</div>
 		<div class="navbar">
 			<ul>
-				<li>Home</li>
-				<li>Taman</li>
-				<li>Artikel</li>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="taman.php">Taman</a></li>
+				<li><a href="list_artikel.php">Artikel Laporan</a></li>
 			</ul>
 		</div>
 		<div class="content">
-			<div class="judul_artikel">
-				JUDUL ARTIKEL
+			<?php
+				$id = $_GET['id'];
+				$result = mysqli_query($con,"SELECT * FROM artikel where id_artikel=$id");
+				while($row = mysqli_fetch_assoc($result)) {?>
+				<br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<div class="preview_judul">
+				<?php $judul = $row['judul'];?>
+				<?php echo $judul;?>
 			</div>
 			<div class="artikel">
-				<div class="isi_artikel">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				<div class="preview_artikel">
+					<?php $isi = $row['isi'];
+					echo $isi;?>
 				</div>
-				<div class="gambar_artikel">
+				<!-- <div class="gambar_artikel">
 					ini gambar
-				</div>
+				</div> -->
 			</div>
+			<?php
+		}
+		?>
+			
 
 		</div>
 		<div class="footer">
@@ -44,9 +51,4 @@
 
 	</div>
 </body>
-
-
-
-
-
 </html>

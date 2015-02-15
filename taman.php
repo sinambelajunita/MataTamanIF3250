@@ -6,6 +6,9 @@
 </head>
 
 <body>
+	<?php include "db-connector.php";
+	$result = mysqli_query($con,"SELECT * FROM taman");
+	?>
 	<div class="container">
 		<div class="header">
 			<div class="left-header">
@@ -30,32 +33,16 @@
 
 				<div class="list_taman">
 					<!-- diulang di sini -->
-					<a href="#">	
-						<div class="kotak_taman">
-							<p>TAMAN LANSIA</p>
-						</div>	
-					</a>	
-					<!-- sampe sini -->
-					<!-- diulang di sini -->
-					<a href="#">	
-						<div class="kotak_taman">
-							<p>TAMAN JOMBLO BANGET</p>
-						</div>	
-					</a>	
-					<!-- sampe sini -->
-					<!-- diulang di sini -->
-					<a href="#">	
-						<div class="kotak_taman">
-							<p>TAMAN JOMBLO BANGET</p>
-						</div>	
-					</a>	
-					<!-- sampe sini -->
-					<!-- diulang di sini -->
-					<a href="#">	
-						<div class="kotak_taman">
-							<p>TAMAN JOMBLO BANGET</p>
-						</div>	
-					</a>	
+					<?php 
+							session_start();
+							while($row = mysqli_fetch_assoc($result)){?>
+								<a href="index_by_taman.php?taman=<?php echo $row['nama_taman'];?>">	
+									<div class="kotak_taman">
+										<p><?php echo $row['nama_taman'];
+										?></p>
+									</div>	
+								</a>	
+							<?php }?>
 					<!-- sampe sini -->
 				</div>
 			</div>
@@ -63,8 +50,9 @@
 		<div class="footer">
 			ini footer
 		</div>
-
-
+<?php 
+	mysqli_close($con); 
+	?>
 
 	</div>
 </body>

@@ -6,7 +6,8 @@
 	$isi_aduan = $_SESSION['isi_aduan'];
 	$nama_taman = $_SESSION['taman'];
  	$kategori = $_SESSION['kategori'];
- 	//$target='uploads/'.basename($_FILES['upload_foto']['name']);
+	//$link_gambar
+	//$target='uploads/'.basename($_FILES['upload_foto']['name']);
  	if ($_FILES["UploadFileName"]["error"] > 0){
     	//echo "Return Code: " . $_FILES["UploadFileName"]["error"] . "<br />";
     }
@@ -25,12 +26,12 @@
 		$link_gambar= "images/default.jpg";
 	}
 	echo $link_gambar;
-	$query= "INSERT INTO pengaduan (`tanggal`, `kategori`, `isi`, `link_gambar`,`nama_taman`, `nama_pengirim`, `email_pengirim`) 
-	  VALUES (NOW(), '$kategori', '$isi_aduan', '$link_gambar','$nama_taman', '$nama_pengirim', '$email_pengirim')";
-	 if (!mysqli_query($con,$query)) {
-	   	die('Error: ' . mysqli_error($con));
-	 }
+	$query= "INSERT INTO pengaduan (`tanggal`, `kategori`, `isi`, `nama_taman`, `nama_pengirim`, `email_pengirim`, `link_gambar`) 
+	VALUES (NOW(), '$kategori', '$isi_aduan', '$nama_taman', '$nama_pengirim', '$email_pengirim', '$link_gambar')";
+	if (!mysqli_query($con,$query)) {
+	  	die('Error: ' . mysqli_error($con));
+	}
 	
 	mysqli_close($con);
-	header('Location: index.php');
+	header('Location: index_by_taman.php');
 ?>

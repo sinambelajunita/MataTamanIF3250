@@ -16,28 +16,33 @@
 			$err = 0;
 		  if (empty($_POST["instansi_name"])) {
 		  	$err = 1;
-		    $instansi_nameErr = "Instansi is required";
+		    $instansi_nameErr = "Required";
 		  } else {
 		    $instansi_name = test_input($_POST["instansi_name"]);
 		    $_SESSION["instansi_name"] = $instansi_name;
 		  }
 		  if (empty($_POST["instansi_alamat"])) {
 		  	$err = 1;
-		    $instansi_alamatErr = "Alamat is required";
+		    $instansi_alamatErr = "Required";
 		  } else {
 		    $instansi_alamat = test_input($_POST["instansi_alamat"]);
 		    $_SESSION["instansi_alamat"] = $instansi_alamat;
 		  }
 		  if (empty($_POST["instansi_email"])) {
-		  	$err = 1;
-		    $instansi_emailErr = "Email is required";
-		  } else {
-		    $instansi_email = test_input($_POST["instansi_email"]);
-		    $_SESSION["instansi_email"] = $instansi_email;
-		  }
+		     $instansi_emailErr = "Required";
+		     $err = 1;
+		   } else {
+		     $instansi_email = test_input($_POST["instansi_email"]);
+		     // check if e-mail address is well-formed
+		     if (!filter_var($instansi_email, FILTER_VALIDATE_EMAIL)) {
+		       $instansi_emailErr = "Invalid email format";
+		       $err = 1;
+		     }
+		     else $_SESSION["instansi_email"] = $instansi_email;
+		 }
 		  if (empty($_POST["instansi_pimpinan"])) {
 		  	$err = 1;
-		    $instansi_pimpinanErr = "Pimpinan is required";
+		    $instansi_pimpinanErr = "Required";
 		  } else {
 		    $instansi_pimpinan = test_input($_POST["instansi_pimpinan"]);
 		    $_SESSION["instansi_pimpinan"] = $instansi_pimpinan;
@@ -107,7 +112,7 @@
 						        <?php
 						        $pimpinan = $row["nama_pimpinan"]; ?>
 						        <td><?php echo $pimpinan;?></td>
-						        <td><a href="delete_instansi.php?name=<?php echo $nama_instansi;?>">hapus<a></td>
+						        <td><a href="javascript:confirmDelete('<?php echo $nama_instansi;?>')">Hapus</a></td>
 						        <?php
 						    } ?>
 						    </tr><?php
@@ -121,6 +126,7 @@
 					<div class="judulForm">
 						Tambah Instansi
 					</div>
+					<span class="error">(*) required</span><br>
 					Nama Instansi<br>
 					<input type="text" name="instansi_name" style="width:90%;">
 					<span class="error">* <?php echo $instansi_nameErr;?></span>
@@ -131,9 +137,9 @@
 					<input type="text" name="instansi_email" style="width:90%;">
 					<span class="error">* <?php echo $instansi_emailErr;?></span>
 					<br>Pimpinan <br>
-					<input type="text" name="instansi_pimpinan" style="width:90%;"><br>
-					<span class="error">* <?php echo $instansi_pimpinanErr;?></span>
-					<p><span class="error">* required field.</span></p>
+
+					<input type="text" name="instansi_pimpinan" style="width:90%;">
+					<span class="error">* <?php echo $instansi_pimpinanErr;?></span><br><br>
 					<button type="submit" value="tambahInstansi">Tambah</button>
 				</form>
 			</div>
@@ -142,9 +148,16 @@
 			ini footer
 		</div>
 
-
-
 	</div>
+	<script type="text/javascript">
+		function confirmDelete(name) {
+		    if (confirm("Apakah Anda yakin ingin menghapus "+ name +"?") == true) {
+		        location.href = "delete_instansi.php?name="+name;
+		    } else {
+		        
+		    }
+		}
+	</script>
 </body>
 
 

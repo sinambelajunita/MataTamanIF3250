@@ -16,21 +16,21 @@
 			$err = 0;
 		  if (empty($_POST["taman_name"])) {
 		  	$err = 1;
-		    $taman_nameErr = "Taman is required";
+		    $taman_nameErr = "Required";
 		  } else {
 		    $taman_name = test_input($_POST["taman_name"]);
 		  	$_SESSION["taman_name"] = $taman_name;
 		  }
 		  if (empty($_POST["taman_lokasi"])) {
 		    $err = 1;
-		    $taman_lokasiErr = "Lokasi is required";
+		    $taman_lokasiErr = "Required";
 		  } else {
 		    $taman_lokasi = test_input($_POST["taman_lokasi"]);
 		    $_SESSION["taman_lokasi"] = $taman_lokasi;
 		  }
 		  if (empty($_POST["taman_telp"])) {
 		    $err = 1;
-		    $taman_telpErr = "Kontak is required";
+		    $taman_telpErr = "Required";
 		  } else {
 		    $taman_telp = test_input($_POST["taman_telp"]);
 		    $_SESSION["taman_telp"] = $taman_telp;
@@ -96,7 +96,7 @@
 							        <?php
 							        $kontak = $row["no_telepon"]; ?>
 							        <td><?php echo $kontak;?></td>
-							        <td><a href="delete_taman.php?name=<?php echo $nama_taman;?>">hapus<a></td>
+							        <td><a href="javascript:confirmDelete('<?php echo $nama_taman;?>')">Hapus</a></td>
 							        <?php
 							    } ?>
 							    </tr><?php
@@ -110,6 +110,8 @@
 					<div class="judulForm">
 						Tambah Taman
 					</div>
+
+					<span class="error">(*) required</span><br>
 					Nama Taman<br> <input type="text" name="taman_name" style="width:90%;">
 					<span class="error">* <?php echo $taman_nameErr;?></span>
 					<br>Lokasi <br><textarea name="taman_lokasi" cols="38"></textarea>
@@ -118,6 +120,8 @@
 					<input type="text" name="taman_telp" style="width:90%;">
 					<span class="error">* <?php echo $taman_telpErr;?></span>
 					<p><span class="error">* required field.</span></p>
+					<!-- <input type="text" name="taman_telp"> -->
+					<!-- <span class="error">* <?php echo $taman_telpErr;?></span><br> -->
 					<button type="submit" value="tambahTaman">Tambah</button>
 				</form>
 			</div>
@@ -126,6 +130,16 @@
 			ini footer
 		</div>
 	</div>
+	<script type="text/javascript">
+		function confirmDelete(name) {
+		    var x;
+		    if (confirm("Apakah Anda yakin ingin menghapus "+ name +"?") == true) {
+		        location.href = "delete_taman.php?name="+name;
+		    } else {
+		        
+		    }
+		}
+	</script>
 </body>
 
 </html>

@@ -16,14 +16,14 @@
 			session_start();
 			$err = 0;
 		   if (empty($_POST["warga_name"])) {
-		     $namaErr = "Required";
+		     $namaErr = "Tidak boleh kosong";
 		     $err = 1;
 		   } 
 		   else {
      		 $nama = test_input($_POST["warga_name"]);
      		 // check if name only contains letters and whitespace
 		     if (!preg_match("/^[a-zA-Z ]*$/",$nama)) {
-		       $namaErr = "Only letters and white space allowed";
+		       $namaErr = "Hanya huruf dan spasi yang diperbolehkan";
 		       $err = 1; 
 		     }
 		     else{
@@ -32,13 +32,13 @@
    			}
 		   
 		   if (empty($_POST["warga_email"])) {
-		     $emailErr = "Required";
+		     $emailErr = "Tidak boleh kosong";
 		     $err = 1;
 		   } else {
 		     $email = test_input($_POST["warga_email"]);
 		     // check if e-mail address is well-formed
 		     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-		       $emailErr = "Invalid email format";
+		       $emailErr = "Email tidak valid";
 		       $err = 1;
 		     }
 		     else{
@@ -47,7 +47,7 @@
 		   }
 		     
 		   if (empty($_POST["isi_aduan"])) {
-		     $isiAduanErr = "Required";
+		     $isiAduanErr = "Tidak boleh kosong";
 		     $err = 1;
 		   } else {
 		     $isiAduan = test_input($_POST["isi_aduan"]);
@@ -128,7 +128,7 @@
 					<div class="judulForm">
 						Tambah Aduan
 					</div>
-					<span class="error">(*) required</span><br>
+					<span class="error">(*) Tidak boleh kosong</span><br>
 					<label for= "Nama">Nama</label>
 					<span class="error">* <red><?php echo $namaErr;?></red></span><br>
 					<input type="text" name="warga_name" id="warga_name" style=width:90%><br>

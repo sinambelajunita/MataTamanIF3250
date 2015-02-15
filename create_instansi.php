@@ -8,7 +8,7 @@
 	$pimpinan = $_SESSION['instansi_pimpinan'];
 
 	$sql="INSERT INTO instansi (nama_instansi, alamat, nama_pimpinan, email)
-	VALUES ('$nama_instansi','$alamat', '$email', '$pimpinan')";
+	VALUES ('$nama_instansi','$alamat', '$pimpinan','$email')";
 	//session_start();
 	if (!mysqli_query($con,$sql)) {
 	  //die('Error: ' . mysqli_error($con

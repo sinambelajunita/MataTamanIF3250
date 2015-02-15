@@ -38,6 +38,11 @@
 					<img src="<?php $link_gambar = $row['link_gambar']; echo $link_gambar;?>"/>
 				</div>
 				<div class="isi_artikel">
+					<?php $date = strtotime($row['tanggal']);
+					echo date('d M Y',$date); ?>
+				</div>
+				<br>
+				<div class="isi_artikel">
 					<?php $isi = $row['isi'];
 					echo $isi;?>
 				</div>

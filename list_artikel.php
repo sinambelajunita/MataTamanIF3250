@@ -43,7 +43,7 @@
 								</div>
 								<div class="ket_artikel">
 									<?php $date = strtotime($row['tanggal']);
-									echo date('d M Y / H:i',$date); ?>
+									echo date('d M Y',$date); ?>
 								</div>
 								<div class="preview_isi_artikel"><?php
 									$isi = $row['isi'];

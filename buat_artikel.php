@@ -70,7 +70,7 @@
 		<div class="content">
 			<div class="aduan">
 				<div class="judul_art">
-					BUAT ARTIKEL<br>
+					BUAT ARTIKEL
 				</div>
 				<div class="formartikel">
 

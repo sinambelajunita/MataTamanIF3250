@@ -69,23 +69,25 @@
 		</div>
 		<div class="content">
 			<div class="aduan">
-				<div class="judul_hal">
-					BUAT ARTIKEL
+				<div class="judul_art">
+					BUAT ARTIKEL<br>
 				</div>
-				<div class="form_email">
+				<div class="formartikel">
 
 					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data">
-					Judul artikel * <br>
-						<input type="text" name="artikel_judul"><br>
-					<span class="error"> <?php echo $artikel_judulErr;?></span><br>
-						Aduan terkait * <br>
-						<input type="text" name="artikel_no_aduan"><br>
-					<span class="error"> <?php echo $artikel_no_aduanErr;?></span><br>
-						Isi Artikel * <br><textarea rows="10" cols="50" name="artikel_content"></textarea>
-					<span class="error"> <?php echo $artikel_contentErr;?></span> <br>
-						<label for= "UploadFileName">Upload Foto</label><br>
-						<input type ="file" name = "UploadFileName"><br>
-						<button type="submit" value="tambahArtikel">Publikasikan</button>
+					<span class="error">(*) Tidak boleh kosong</span><br>
+					<label for= "judul_artikel">Judul Artikel</label>
+					<span class="error">* <red><?php echo $artikel_judulErr;?></red></span><br>
+					<input type="text" name="artikel_judul"><br>
+					<label for= "aduan_terkait">Aduan Terkait</label>
+					<span class="error">* <red><?php echo $artikel_no_aduanErr;?></red></span><br>
+					<input type="text" name="artikel_no_aduan"><br>
+					<label for= "isi_artikel">Isi Artikel</label>
+					<span class="error">* <?php echo $artikel_contentErr;?></span><br>
+					<textarea name="artikel_content" rows="10" cols="50"></textarea><br>
+					<label for= "UploadFileName">Upload Foto</label><br>
+					<input type ="file" name = "UploadFileName"><br><br>
+					<button type="submit" value="tambahArtikel">Publikasikan</button>
 					</form>
 				</div>
 			</div>

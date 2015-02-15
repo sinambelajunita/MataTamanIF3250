@@ -166,6 +166,23 @@ black a{
 	/*padding-top: 2%;*/
 	padding-bottom: 2%;
 }
+
+/* LIST BUAT ARTIKEL */
+
+.judul_art{
+	font-size: 35px;
+	margin-left: 25%;
+}
+
+.formartikel{
+	width: 70%;
+	margin-top: 0px;
+	float: left;
+	margin-left: 25%;
+}
+
+/* END OF LIST BUAT ARTIKEL */
+
 /*END LIST ARTIKEL*/
 
 
@@ -296,6 +313,7 @@ td{
 	margin-left: 10%;
 	margin-bottom: 10px;
 }
+
 /*end isi artikel*/
 
 .ubahstatus{

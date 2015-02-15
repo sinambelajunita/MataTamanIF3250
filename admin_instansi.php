@@ -9,7 +9,7 @@
 	<?php
 		// define variables and set to empty values
 		$instansi_nameErr = $instansi_alamatErr = $instansi_emailErr = $instansi_pimpinanErr = "";
-		$instansi_name = $instansi_alamat = $instansi_email = $instansi_pimpinan = "";
+		$instansi_name = $instansi_alamat = $instansi_email = $instansi_pimpinan = $conn_err ="";
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			session_start();
@@ -47,7 +47,12 @@
 		    $instansi_pimpinan = test_input($_POST["instansi_pimpinan"]);
 		    $_SESSION["instansi_pimpinan"] = $instansi_pimpinan;
 		  }
-		  if($err == 0) include "create_instansi.php";
+		  if($err == 0) {
+		  	include "create_instansi.php";
+		  	if($_SESSION['success'] == 0){
+		  		$conn_err = "Nama Instansi sudah ada!";
+		  	}
+		  }
 		}
 		include "read_instansi.php";
 		$_SESSION["instansi_name"] = "";
@@ -126,6 +131,7 @@
 					<div class="judulForm">
 						Tambah Instansi
 					</div>
+					<div style="color:red"><?php echo $conn_err;?></div>
 					<span class="error">(*) required</span><br>
 					Nama Instansi<br>
 					<input type="text" name="instansi_name" style="width:90%;">
@@ -156,6 +162,9 @@
 		    } else {
 		        
 		    }
+		}
+		function notifDB(){
+			alert('test');
 		}
 	</script>
 </body>

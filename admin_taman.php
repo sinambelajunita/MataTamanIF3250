@@ -9,7 +9,7 @@
 	<?php
 		// define variables and set to empty values
 		$taman_nameErr = $taman_lokasiErr = $taman_telpErr = "";
-		$taman_name = $taman_lokasi = $taman_telp = "";
+		$taman_name = $taman_lokasi = $taman_telp = $conn_err = "";
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			session_start();
@@ -35,7 +35,12 @@
 		    $taman_telp = test_input($_POST["taman_telp"]);
 		    $_SESSION["taman_telp"] = $taman_telp;
 		  }
-		  if($err == 0) include "create_taman.php";
+		  if($err == 0){
+		   include "create_taman.php";
+		   if($_SESSION['success'] == 0){
+		  		$conn_err = "Nama Instansi sudah ada!";
+		  	}
+		}
 		}
 		include "read_taman.php";
 		$_SESSION["instansi_name"] = "";
@@ -110,7 +115,7 @@
 					<div class="judulForm">
 						Tambah Taman
 					</div>
-
+					<div style="color:red"><?php echo $conn_err;?></div>
 					<span class="error">(*) required</span><br>
 					Nama Taman<br> <input type="text" name="taman_name" style="width:90%;">
 					<span class="error">* <?php echo $taman_nameErr;?></span>

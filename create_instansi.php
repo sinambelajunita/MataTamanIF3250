@@ -9,9 +9,11 @@
 
 	$sql="INSERT INTO instansi (nama_instansi, alamat, nama_pimpinan, email)
 	VALUES ('$nama_instansi','$alamat', '$email', '$pimpinan')";
-
+	//session_start();
 	if (!mysqli_query($con,$sql)) {
-	  die('Error: ' . mysqli_error($con));
+	  //die('Error: ' . mysqli_error($con
+		$_SESSION['success'] = 0;
 	}
+	else $_SESSION['success'] = 1;
 	mysqli_close($con);
 ?>

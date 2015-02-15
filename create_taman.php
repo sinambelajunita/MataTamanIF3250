@@ -8,11 +8,9 @@
 
 	$sql="INSERT INTO taman (nama_taman, alamat, no_telepon)
 	VALUES ('$nama_taman','$lokasi', '$kontak')";
-
 	if (!mysqli_query($con,$sql)) {
-	  die('Error: ' . mysqli_error($con));
-	  header ('admin_taman.php?id=0');
+	  $_SESSION['success'] = 0;
 	}
-	else header ('admin_taman.php?id=1');
+	else $_SESSION['success'] = 1;
 	mysqli_close($con);
 ?>

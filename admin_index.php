@@ -21,6 +21,7 @@
 
 <body>
 	<?php 
+		session_start();
 		include "db-connector.php";
 	?>
 	<div class="container">
@@ -84,7 +85,7 @@
 				<?php
 					$result = mysqli_query($con,"SELECT * FROM pengaduan ORDER BY tanggal DESC");
 					while($row = mysqli_fetch_assoc($result)){
-						$post = "<div class='post_aduan'>";					
+						$post = "<div class='post_aduan'>";
 						$post .=	"<div class='foto_aduan'>";
 						$post .= 		"<img src='".$row['link_gambar']."'/>";
 						$post .=	"</div>";

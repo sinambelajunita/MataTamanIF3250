@@ -7,10 +7,6 @@
 
 <body>
 	<?php include "db-connector.php";
-	session_start();
-
-	$_SESSION['kategori'] = $_POST['kategori'];
-	$_SESSION['nama_taman'] = $_POST['nama_taman'];
 
 	?>
 	<div class="container">

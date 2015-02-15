@@ -42,8 +42,8 @@
 									<h2><a href="isi_artikel.php?id=<?php echo $id_artikel; ?>"><?php echo $judul;?></a></h2>
 								</div>
 								<div class="ket_artikel">
-									<?php $tanggal = $row['tanggal'];
-									echo $tanggal; ?><br>
+									<?php $date = strtotime($row['tanggal']);
+									echo date('d M Y',$date); ?>
 								</div>
 								<div class="preview_isi_artikel"><?php
 									$isi = $row['isi'];

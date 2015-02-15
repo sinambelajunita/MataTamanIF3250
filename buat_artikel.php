@@ -74,56 +74,17 @@
 				</div>
 				<div class="form_email">
 
-					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+					<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data">
 					Judul artikel * <br>
 						<input type="text" name="artikel_judul"><br>
 					<span class="error"> <?php echo $artikel_judulErr;?></span><br>
 						Aduan terkait * <br>
-						<!-- <div class="tabel">
-							<table>
-								<tr>
-									<th>No Aduan</th>
-									<th>Tanggal</th>
-									<th>Kategori</th>
-									<th>Nama Taman</th>
-									<th>Isi Aduan</th>
-									<th>Pilih</th>
-								</tr>
-								<?php
-									$result = mysqli_query($con,"SELECT * FROM pengaduan");
-									while($row = mysqli_fetch_assoc($result)){ 
-									    while($row = $result->fetch_assoc()) {?>
-									    	<tr>
-									    	<?php
-									        $no_aduan = $row["id_pengaduan"]; ?>
-									        <td><?php echo $no_aduan;?></td>
-									        <?php
-									        $tanggal = $row["tanggal"]; ?>
-									        <td><?php echo $tanggal;?></td>
-									        <?php
-									        $kategori = $row["kategori"]; ?>
-									        <td><?php echo $kategori;?></td>
-									        <?php
-									        $nama_taman = $row["nama_taman"]; ?>
-									        <td><?php echo $nama_taman;?></td>
-									        <?php
-									        $isi = $row["isi"]; ?>
-									        <td><?php echo $isi;?></td>
-									        <?php
-									        $no_aduan = $row["id_pengaduan"]; ?>
-									        <td><input type="checkbox" name="aduan[]" value="<?php echo $id_pengaduan?>"></td>
-									        <?php
-									    } ?>
-									    </tr><?php
-									} 
-								?>
-							</table>
-						</div> -->
 						<input type="text" name="artikel_no_aduan"><br>
 					<span class="error"> <?php echo $artikel_no_aduanErr;?></span><br>
 						Isi Artikel * <br><textarea rows="10" cols="50" name="artikel_content"></textarea>
 					<span class="error"> <?php echo $artikel_contentErr;?></span> <br>
-						Tambah gambar <br>
+						<label for= "UploadFileName">Upload Foto</label><br>
+						<input type ="file" name = "UploadFileName"><br>
 						<button type="submit" value="tambahArtikel">Publikasikan</button>
 					</form>
 				</div>

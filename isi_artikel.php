@@ -38,8 +38,8 @@
 					<?php $isi = $row['isi'];
 					echo $isi;?>
 				</div>
-				<div class="gambar_artikel">
-					<img src="images/default.jpg">
+				<div class="preview_gambar">
+								<img src="<?php $link_gambar = $row['link_gambar']; echo $link_gambar;?>"/>
 				</div>
 			</div>
 			<?php

@@ -28,6 +28,9 @@ blue a{
 green a{
 	color : green;
 }
+black a{
+
+}
 .container{
 	width: 100%;
 	height: 100%;
@@ -101,7 +104,7 @@ green a{
 	background-color: #52BF90;
 	height: 100%;
 	position: fixed;
-	right: 2%;
+	right: 0;
 	margin-top: 200px;
 }
 .forminput form{
@@ -145,6 +148,10 @@ green a{
 .preview_judul{
 	font-size: 20px;
 	margin-bottom: 2px;
+	color: black;
+}
+.preview_judul a{
+	color: black;
 }
 .preview_artikel{
 	float: right;
@@ -273,16 +280,16 @@ td{
 	margin-bottom: 3%;
 }
 .isi_artikel{
-	width: 66%;
-	float: left;
-	padding-right: 1%;
+	width: 70%;
+	margin-left: 10%;
 }
 .gambar_artikel{
-	width: 30%;
-	float: right;
+	
 }
 .gambar_artikel img{
-	width: 100%;
+	width: 60%;
+	margin-left: 10%;
+	margin-bottom: 10px;
 }
 /*end isi artikel*/
 

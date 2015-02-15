@@ -107,8 +107,8 @@
 						$post .= "</select>";
 						$post .= "<input type='submit' name='ubah' value='Ubah'/>";
 						$post .= "</form>";
-						$post .= "<a href='buat_email.php'>kirim email</a><br>";
-						$post .= "<a href='aduan_hapus.php?aduan_id=".$row['id_pengaduan']."' onclick='".'return confirm("Apakah anda yakin ingin menghapus post ini?")'."'>hapus</a>";
+						$post .= "<blue><a href='buat_email.php'>kirim email</a><br></blue>";
+						$post .= "<red><a href='aduan_hapus.php?aduan_id=".$row['id_pengaduan']."' onclick='".'return confirm("Apakah anda yakin ingin menghapus post ini?")'."'>hapus</a></red>";
 						$post .= "</div>";
 						$post .= "<div class='isi_aduan'>";
 						$post .= 	'"'.$row['isi'].'"';

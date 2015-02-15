@@ -36,12 +36,14 @@
 								<img src="<?php $link_gambar = $row['link_gambar']; echo $link_gambar;?>"/>
 							</div>
 							<div class="preview_artikel">
+								<black>
 								<div class="preview_judul">
 									<?php $judul = $row['judul'];
 									$id_artikel = $row['id_artikel'];?>
 									<h2><a href="admin_isi_artikel.php?id=<?php echo $id_artikel; ?>"><?php echo $judul;?></a></h2>
 								</div>
-								<a href="artikel_hapus.php?id=<?php echo $id_artikel; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus post ini?')">[Hapus]</a>
+								</black>
+								<red><a href="artikel_hapus.php?id=<?php echo $id_artikel; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus post ini?')"><red>Hapus</red></a></red>
 								
 								<div class="ket_artikel">
 									<?php $tanggal = $row['tanggal'];

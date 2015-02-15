@@ -34,12 +34,12 @@
 				<?php echo $judul;?>
 			</div>
 			<div class="artikel">
+				<div class="gambar_artikel">
+					<img src="<?php $link_gambar = $row['link_gambar']; echo $link_gambar;?>"/>
+				</div>
 				<div class="isi_artikel">
 					<?php $isi = $row['isi'];
 					echo $isi;?>
-				</div>
-				<div class="preview_gambar">
-								<img src="<?php $link_gambar = $row['link_gambar']; echo $link_gambar;?>"/>
 				</div>
 			</div>
 			<?php

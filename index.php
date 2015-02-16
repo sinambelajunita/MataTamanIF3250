@@ -65,8 +65,8 @@
 		     $kategoriErr = "Tidak boleh kosong";
 		     $err = 1;
 		   } else {
-		     $kategori = test_input($_POST["taman"]);
-		     $_SESSION["taman"] = $kategori;
+		     $kategori = test_input($_POST["kategori"]);
+		     $_SESSION["kategori"] = $kategori;
 		   }
 		   if($err==0){
 		   		include "aduan_tambah.php";

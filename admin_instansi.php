@@ -146,6 +146,7 @@
 					<label for="instansi_pimpinan">Pimpinan</label> 
 					<span class="error">* <?php echo $instansi_pimpinanErr;?></span><br>
 					<input type="text" name="instansi_pimpinan" style="width:90%;">
+					<br/><br/>
 					<button type="submit" value="tambahInstansi">Tambah</button>
 				</form>
 			</div>

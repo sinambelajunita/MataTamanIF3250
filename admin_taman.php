@@ -130,7 +130,7 @@
 					<textarea name="taman_lokasi" cols="38"></textarea><br>
 					<label for="taman_telp">Telepon</label>
 					<span class="error">* <?php echo $taman_telpErr;?></span><br>
-					<input type="text" name="taman_telp" style="width:90%;">
+					<input type="text" name="taman_telp" style="width:90%;"><br><br/>
 					<!-- <span class="error">* <?php echo $taman_telpErr;?></span><br> -->
 					<!-- <p><span class="error">* required field.</span></p> -->
 					<!-- <input type="text" name="taman_telp"> -->

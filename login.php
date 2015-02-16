@@ -18,23 +18,31 @@
 		<div class="content">
 			<div class="aduan">
 				<div class="form_login">
-					<b>Masukkan password untuk admin</b> <br><br>
-					Password : <input type="password" name="password"><br><br>
-					<button type="submit" value="login">Login</button>
+					<form onsubmit="return checkPassword();" action="admin_index.php">
+						<b>Masukkan password untuk admin</b> <br><br>
+						Password : <input type="password" name="password" id="password"><br><br>
+						<button type="submit" value="login">Login</button>
+					</form>
 				</div>
 			</div>
 		</div>
 		<div class="footer">
 			ini footer
 		</div>
-
-
-
 	</div>
+	<script type="text/javascript">
+		function checkPassword(){
+			var pass="admin";
+			var pass_input=document.getElementById("password").value;
+			var enter=false;
+			if (pass_input==pass){
+				enter=true;
+			}
+			else{
+				alert ("Password yang anda masukkan salah");
+			}
+			return enter;
+		}
+	</script>
 </body>
-
-
-
-
-
 </html>

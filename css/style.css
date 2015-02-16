@@ -39,8 +39,8 @@ black a{
 	height: 100%;
 }
 .header {
-	/*background-color: #317256;*/
-	background-image: url("../images/header.jpg");
+	background-color: #5f5c50;
+	/*background-image: url("../images/header.jpg");*/
 	color: white;
 	height: 175px;
 	width: 100%;
@@ -51,7 +51,7 @@ black a{
 }
 .header img{
 	text-align: left;
-	width: 125px;
+	height: 130px;
 	margin-top:15%;
 	margin-left: 10%;
 }
@@ -71,7 +71,9 @@ black a{
 
 /*navigation bar*/
 .navbar{
-	background-color: #317256;
+	/*background-color: #317256;*/
+	background-color: #56aab7;
+
 	font-size: 20px;
 	position: fixed;
 	height: 33px;
@@ -106,7 +108,8 @@ black a{
 .forminput{
 	width: 25%;
 	float: right;
-	background-color: #52BF90;
+	/*background-color: #52BF90;*/
+	background-color: #9ed6e3;
 	height: 100%;
 	position: fixed;
 	right: 0;

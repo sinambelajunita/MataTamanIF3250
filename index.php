@@ -11,10 +11,9 @@
 				// define variables and set to empty values
 		$namaErr = $emailErr = $isiAduanErr = $kategoriErr = $tamanErr = "";
 		$nama = $email = $isiAduan = $kategori = $taman = "";
-
+		session_start();
+		$err = 0;
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			session_start();
-			$err = 0;
 		   if (empty($_POST["warga_name"])) {
 		     $namaErr = "Tidak boleh kosong";
 		     $err = 1;
@@ -72,7 +71,13 @@
 		   		include "aduan_tambah.php";
 		   }
 		}
-
+		if($err==0){
+			$_SESSION["warga_name"] = "";
+			$_SESSION["warga_email"] = "";
+			$_SESSION["isi_aduan"] = "";
+			$_SESSION["taman"] = "";
+			$_SESSION["kategori"] = "";
+		}
 		function test_input($data) {
 		   $data = trim($data);
 		   $data = stripslashes($data);
@@ -143,10 +148,12 @@
 					<span class="error">(*) Tidak boleh kosong</span><br>
 					<label for= "Nama">Nama</label>
 					<span class="error">* <red><?php echo $namaErr;?></red></span><br>
-					<input type="text" name="warga_name" id="warga_name" style=width:90%><br>
+					<input type="text" name="warga_name" id="warga_name" style=width:90% 
+						value="<?php echo $_SESSION["warga_name"]?>"><br>
 					<label for= "E-mail">E-mail</label> 
 					<span class="error">* <?php echo $emailErr;?></span><br>
-					<input type="text" name="warga_email" id="warga_email" style=width:90% ><br>
+					<input type="text" name="warga_email" id="warga_email" style=width:90% 
+						value="<?php echo $_SESSION["warga_email"]?>"><br>
 					<label for= "Taman">Taman</label>
 					<span class="error">* <?php echo $tamanErr;?></span> <br>
 					
@@ -177,7 +184,8 @@
 					<br>
 					<label for= "isi_aduan">Isi Aduan</label>
 					<span class="error">* <?php echo $isiAduanErr;?></span><br>
-					<textarea name="isi_aduan" id="isi_aduan" rows="3" cols="30"></textarea><br>
+					<textarea name="isi_aduan" id="isi_aduan" rows="3" cols="30"
+						><?php echo $_SESSION["isi_aduan"]?></textarea><br>
 					<label for= "UploadFileName">Upload Foto</label><br>
 					<input type ="file" name = "UploadFileName"><br>
 					<button type="submit" name="submit" value="tambahAduan">Kirim</button>

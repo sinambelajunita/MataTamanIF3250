@@ -131,16 +131,16 @@
 					<span class="error">(*) required</span><br>
 					<label for= "Nama">Nama</label>
 					<span class="error">* <?php echo $namaErr;?></span><br>
-					<input type="text" name="warga_name" id="warga_name" ><br>
+					<input type="text" name="warga_name" id="warga_name" style="width:90%"><br>
 					<label for= "E-mail">E-mail</label> 
 					<span class="error">* <?php echo $emailErr;?></span><br>
-					<input type="text" name="warga_email" id="warga_email" >
+					<input type="text" name="warga_email" id="warga_email" style="width:90%">
 					<?php 
 						include "db-connector.php";
 						echo "<br>Kategori Aduan <br>";
 						$query = "SELECT * FROM kategori";
 						$result = mysqli_query($con,$query);
-						$combobox = "<select name='kategori' id='kategori'>";
+						$combobox = "<select name='kategori' id='kategori' style=width:90%>";
 						 while($row = mysqli_fetch_assoc($result)){
 						     $combobox .='<option value="' .$row['nama']. '">'.$row['nama'].'</option>';
 						    }
@@ -150,7 +150,7 @@
 					<br>
 					<label for= "isi_aduan">Isi Aduan</label>
 					<span class="error">* <?php echo $isiAduanErr;?></span><br>
-					<textarea name="isi_aduan" id="isi_aduan" rows="5" cols="30"></textarea><br>
+					<textarea name="isi_aduan" id="isi_aduan" rows="3" cols="32"></textarea><br>
 					<label for= "UploadFileName">Upload Foto</label><br>
 					<input type ="file" name = "UploadFileName"><br>
 					<button type="submit" name="submit" value="tambahAduan">Kirim</button>

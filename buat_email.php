@@ -46,6 +46,7 @@
 				<li><a href="buat_artikel.php">Buat Artikel</a></li>
 				<li><a href="admin_taman.php">Taman</a></li>
 				<li><a href="admin_instansi.php">Instansi</a></li>
+				<li><a href="admin_kategori.php">Kategori</a></li>
 			</ul>
 		</div>
 		<div class="content">

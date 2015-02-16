@@ -177,7 +177,7 @@
 					<br>
 					<label for= "isi_aduan">Isi Aduan</label>
 					<span class="error">* <?php echo $isiAduanErr;?></span><br>
-					<textarea name="isi_aduan" id="isi_aduan" rows="5" cols="30"></textarea><br>
+					<textarea name="isi_aduan" id="isi_aduan" rows="3" cols="30"></textarea><br>
 					<label for= "UploadFileName">Upload Foto</label><br>
 					<input type ="file" name = "UploadFileName"><br>
 					<button type="submit" name="submit" value="tambahAduan">Kirim</button>

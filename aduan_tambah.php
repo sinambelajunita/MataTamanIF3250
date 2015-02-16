@@ -22,7 +22,7 @@
     }
 	$link_gambar = "uploads/" . basename($_FILES["UploadFileName"]["name"]);
 	if($link_gambar== "uploads/"){
-		$link_gambar= "images/default.jpg";
+		$link_gambar= "uploads/default.jpg";
 	}
 	echo $link_gambar;
 	$query= "INSERT INTO pengaduan (`tanggal`, `kategori`, `isi`, `link_gambar`,`nama_taman`, `nama_pengirim`, `email_pengirim`) 

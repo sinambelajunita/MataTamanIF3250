@@ -60,7 +60,6 @@
 			<div class="tabel">
 				<table>
 					<tr>
-						<th>No</th>
 						<th>Kategori</th>
 						<th>Aksi</th>
 					</tr>
@@ -70,7 +69,6 @@
 						    // output data of each row
 						    while($row = $result->fetch_assoc()) {?>
 					<tr>
-						<td>1</td>
 						<td><?php echo $row['nama'];?></td>
 						<td><a href="javascript:confirmDelete('<?php echo $row['nama'];?>')">hapus</a></td>
 						<?php 

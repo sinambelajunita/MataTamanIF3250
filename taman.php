@@ -12,16 +12,16 @@
 	<div class="container">
 		<div class="header">
 			<div class="left-header">
-				<img src="images/logobandung.png" >.
+				<img src="images/logobandung.png" >
 			</div>
 			<div class="right-header">
-				MataTaman
+				<img src="images/logo_header.png" >
 			</div>
 		</div>
 		<div class="navbar">
 			<ul>
 				<li><a href="index.php">Home</a></li>
-				<li><a href="aduan_taman.php">Taman</a></li>
+				<li><a href="taman.php">Taman</a></li>
 				<li><a href="list_artikel.php">Artikel Laporan</a></li>
 			</ul>
 		</div>

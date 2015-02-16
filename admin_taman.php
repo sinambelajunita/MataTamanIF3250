@@ -64,7 +64,7 @@
 				<img src="images/logobandung.png" >.
 			</div>
 			<div class="right-header">
-				MataTaman
+				<img src="images/logo_header.png" >
 			</div>
 		</div>
 		<div class="navbar">

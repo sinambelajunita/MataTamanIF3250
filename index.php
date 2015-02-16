@@ -38,7 +38,7 @@
 		     $email = test_input($_POST["warga_email"]);
 		     // check if e-mail address is well-formed
 		     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-		       $emailErr = "Email tidak valid";
+		       $emailErr = "Format e-mail salah";
 		       $err = 1;
 		     }
 		     else{

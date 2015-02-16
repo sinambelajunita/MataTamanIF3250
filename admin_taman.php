@@ -16,33 +16,33 @@
 			$err = 0;
 		  if (empty($_POST["taman_name"])) {
 		  	$err = 1;
-		    $taman_nameErr = "Required";
+		    $taman_nameErr = "Tidak boleh kosong";
 		  } else {
 		    $taman_name = test_input($_POST["taman_name"]);
 		  	$_SESSION["taman_name"] = $taman_name;
 		  }
 		  if (empty($_POST["taman_lokasi"])) {
 		    $err = 1;
-		    $taman_lokasiErr = "Required";
+		    $taman_lokasiErr = "Tidak boleh kosong";
 		  } else {
 		    $taman_lokasi = test_input($_POST["taman_lokasi"]);
 		    $_SESSION["taman_lokasi"] = $taman_lokasi;
 		  }
 		  if (empty($_POST["taman_telp"])) {
 		    $err = 1;
-		    $taman_telpErr = "Required";
+		    $taman_telpErr = "Tidak boleh kosong";
 		  } else {
 		    $taman_telp = test_input($_POST["taman_telp"]);
 		    if(!is_numeric($taman_telp)){
 		    	$err = 1;
-			    $taman_telpErr = "Invalid format";
+			    $taman_telpErr = "Format telepon salah";
 		    }
 		    $_SESSION["taman_telp"] = $taman_telp;
 		  }
 		  if($err == 0){
 		   include "create_taman.php";
 		   if($_SESSION['success'] == 0){
-		  		$conn_err = "Nama Instansi sudah ada!";
+		  		$taman_nameErr = "Nama Instansi sudah ada!";
 		  	}
 		}
 		}
@@ -120,18 +120,20 @@
 					<div class="judulForm">
 						Tambah Taman
 					</div>
-					<div style="color:red"><?php echo $conn_err;?></div>
-					<span class="error">(*) required</span><br>
-					Nama Taman<br> <input type="text" name="taman_name" style="width:90%;">
-					<span class="error">* <?php echo $taman_nameErr;?></span>
-					<br>Lokasi <br><textarea name="taman_lokasi" cols="38"></textarea>
-					<span class="error">* <?php echo $taman_lokasiErr;?></span>
-					<br>Telepon <br> 
+					<!-- <div style="color:red"><?php echo $conn_err;?></div> -->
+					<span class="error">(*) Tidak boleh kosong</span><br>
+					<label for="taman_name">Nama Taman</label> 
+					<span class="error">* <?php echo $taman_nameErr;?></span><br>
+					<input type="text" name="taman_name" style="width:90%;"><br>
+					<label for="taman_lokasi">Lokasi</label>
+					<span class="error">* <?php echo $taman_lokasiErr;?></span><br>
+					<textarea name="taman_lokasi" cols="38"></textarea><br>
+					<label for="taman_telp">Telepon</label>
+					<span class="error">* <?php echo $taman_telpErr;?></span><br>
 					<input type="text" name="taman_telp" style="width:90%;">
-					<span class="error">* <?php echo $taman_telpErr;?></span>
-					<p><span class="error">* required field.</span></p>
-					<!-- <input type="text" name="taman_telp"> -->
 					<!-- <span class="error">* <?php echo $taman_telpErr;?></span><br> -->
+					<!-- <p><span class="error">* required field.</span></p> -->
+					<!-- <input type="text" name="taman_telp"> -->
 					<button type="submit" value="tambahTaman">Tambah</button>
 				</form>
 			</div>

@@ -18,7 +18,7 @@
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$err = 0;
 		   if (empty($_POST["warga_name"])) {
-		     $namaErr = "Required";
+		     $namaErr = "Tidak boleh kosong";
 		     $err = 1;
 		   } 
 		   else {
@@ -34,13 +34,13 @@
    			}
 		   
 		   if (empty($_POST["warga_email"])) {
-		     $emailErr = "Required";
+		     $emailErr = "Tidak boleh kosong";
 		     $err = 1;
 		   } else {
 		     $email = test_input($_POST["warga_email"]);
 		     // check if e-mail address is well-formed
 		     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-		       $emailErr = "Invalid email format";
+		       $emailErr = "Format e-mail salah";
 		       $err = 1;
 		     }
 		     else{
@@ -49,7 +49,7 @@
 		   }
 		     
 		   if (empty($_POST["isi_aduan"])) {
-		     $isiAduanErr = "Required";
+		     $isiAduanErr = "Tidak boleh kosong";
 		     $err = 1;
 		   } else {
 		     $isiAduan = test_input($_POST["isi_aduan"]);
@@ -128,7 +128,7 @@
 					<div class="judulForm">
 						Tambah Aduan <?php echo $taman;?>
 					</div>
-					<span class="error">(*) required</span><br>
+					<span class="error">(*) Tidak boleh kosong</span><br>
 					<label for= "Nama">Nama</label>
 					<span class="error">* <?php echo $namaErr;?></span><br>
 					<input type="text" name="warga_name" id="warga_name" style="width:90%"><br>

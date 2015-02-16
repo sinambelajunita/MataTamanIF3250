@@ -35,12 +35,19 @@
 		    $artikel_content = test_input($_POST["artikel_content"]);
 		    $_SESSION["artikel_content"] = $artikel_content;
 		  }
+		  if (empty($_POST["artikel_status"])) {
+		    $err = 1;
+		  } else {
+		    $artikel_status = test_input($_POST["artikel_status"]);
+		    $_SESSION["artikel_status"] = $artikel_status;
+		  }
 		  if($err == 0) include "artikel_tambah.php";
 		}
 		include "db-connector.php";
 		$_SESSION["artikel_judul"] = "";
 		$_SESSION["artikel_no_aduan"] = "";
 		$_SESSION["artikel_content"] = "";
+		$_SESSION["artikel_status"] = "";
 		function test_input($data) {
 		   $data = trim($data);
 		   $data = stripslashes($data);
@@ -86,6 +93,12 @@
 					<label for= "isi_artikel">Isi Artikel</label>
 					<span class="error">* <?php echo $artikel_contentErr;?></span><br>
 					<textarea name="artikel_content" rows="10" cols="50"></textarea><br>
+					<label for= "status">Status</label>
+					<span class="error">*</span><br>
+					<select name="artikel_status">
+						<option value="Proses">Proses</option>
+						<option value="Selesai">Selesai</option>
+					</select><br>
 					<label for= "UploadFileName">Upload Foto</label><br>
 					<input type ="file" name = "UploadFileName"><br><br>
 					<button type="submit" value="tambahArtikel">Publikasikan</button>

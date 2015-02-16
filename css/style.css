@@ -72,7 +72,7 @@ black a{
 /*navigation bar*/
 .navbar{
 	/*background-color: #317256;*/
-	background-color: #56aab7;
+	background-color: #ACB726;
 
 	font-size: 20px;
 	position: fixed;
@@ -94,7 +94,8 @@ black a{
 	color: white;
 }
 .navbar a:hover{
-	color: #52BF90;
+	/*color: #52BF90;*/
+	color:#5F5C50;
 }
 .content{
 
@@ -109,7 +110,7 @@ black a{
 	width: 25%;
 	float: right;
 	/*background-color: #52BF90;*/
-	background-color: #9ed6e3;
+	background-color: #DFE86D;
 	height: 100%;
 	position: fixed;
 	right: 0;

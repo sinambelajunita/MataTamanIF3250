@@ -7,12 +7,13 @@
 
 <body>
 	<?php
+		session_start();
 		// define variables and set to empty values
 		$taman_nameErr = $taman_lokasiErr = $taman_telpErr = "";
 		$taman_name = $taman_lokasi = $taman_telp = $conn_err = "";
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			session_start();
+			
 			$err = 0;
 		  if (empty($_POST["taman_name"])) {
 		  	$err = 1;
@@ -43,14 +44,15 @@
 		   include "create_taman.php";
 		   if($_SESSION['success'] == 0){
 		  		$taman_nameErr = "Nama Instansi sudah ada!";
-		  	}
-		}
+			}
+		   else{
+		   		$_SESSION["taman_name"] = "";
+				$_SESSION["taman_lokasi"] = "";
+				$_SESSION["taman_telp"] = "";
+		   	}
+	       }
 		}
 		include "read_taman.php";
-		$_SESSION["instansi_name"] = "";
-		$_SESSION["instansi_alamat"] = "";
-		$_SESSION["instansi_email"] = "";
-		$_SESSION["instansi_pimpinan"] = "";
 		function test_input($data) {
 		   $data = trim($data);
 		   $data = stripslashes($data);
@@ -124,13 +126,17 @@
 					<span class="error">(*) Tidak boleh kosong</span><br>
 					<label for="taman_name">Nama Taman</label> 
 					<span class="error">* <?php echo $taman_nameErr;?></span><br>
-					<input type="text" name="taman_name" style="width:90%;"><br>
+					<input type="text" name="taman_name" style="width:90%;"
+						value="<?php echo $_SESSION["taman_name"];?>"><br>
 					<label for="taman_lokasi">Lokasi</label>
 					<span class="error">* <?php echo $taman_lokasiErr;?></span><br>
-					<textarea name="taman_lokasi" cols="38"></textarea><br>
+					<textarea name="taman_lokasi" cols="38">
+						<?php echo $_SESSION["taman_lokasi"];?>
+					</textarea><br>
 					<label for="taman_telp">Telepon</label>
 					<span class="error">* <?php echo $taman_telpErr;?></span><br>
-					<input type="text" name="taman_telp" style="width:90%;"><br><br/>
+					<input type="text" name="taman_telp" style="width:90%;"
+						value="<?php echo $_SESSION["taman_telp"];?>"><br><br/>
 					<!-- <span class="error">* <?php echo $taman_telpErr;?></span><br> -->
 					<!-- <p><span class="error">* required field.</span></p> -->
 					<!-- <input type="text" name="taman_telp"> -->

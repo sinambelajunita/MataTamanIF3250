@@ -32,14 +32,16 @@
 			<div class="judul_artikel">
 				<?php $judul = $row['judul'];?>
 				<?php echo $judul;?>
-			</div>
-			<div class="artikel">
-				<div class="gambar_artikel">
-					<img src="<?php $link_gambar = $row['link_gambar']; echo $link_gambar;?>"/>
-				</div>
-				<div class="isi_artikel">
+				<div class="tgl_artikel">
 					<?php $date = strtotime($row['tanggal']);
 					echo date('d M Y',$date); ?>
+				</div>
+			</div>
+
+			<div class="artikel">
+				
+				<div class="gambar_artikel">
+					<img src="<?php $link_gambar = $row['link_gambar']; echo $link_gambar;?>"/>
 				</div>
 				<br>
 				<div class="isi_artikel">

@@ -301,6 +301,9 @@ td{
 	font-size: 50px;
 	margin-bottom: 3%;
 }
+.tgl_artikel{
+	font-size: 20px;
+}
 .isi_artikel{
 	width: 70%;
 	margin-left: 10%;
@@ -310,8 +313,9 @@ td{
 }
 .gambar_artikel img{
 	width: 60%;
-	margin-left: 10%;
+	margin-left: 15%;
 	margin-bottom: 10px;
+	text-align: center;
 }
 
 /*end isi artikel*/

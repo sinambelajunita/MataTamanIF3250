@@ -92,6 +92,8 @@
 						$post .= "<div class='paket_aduan'>";
 						$post .=	"<div class='judul_aduan'>";
 						$post .= 		$row['kategori']." - ".$row['nama_taman'];
+						$kategori = $row['kategori'];
+						$nama_taman = $row['nama_taman'];
 						$post .= 	"</div>";
 						$post .= "<div class='ket_aduan'>";
 						$date = strtotime($row['tanggal']);
@@ -99,7 +101,6 @@
 						$post .= 	$mysqldate." WIB <br>";
 						$post .=    "No. Aduan : ".$row['id_pengaduan']."<br>";
 						$id_aduan = $row['id_pengaduan'];
-
 						$post .= 	"Pengirim : ".$row['nama_pengirim']." - ".$row['email_pengirim']."<br>";
 						$post .=	"<div class='status_aduan'>Status : ".$row['status']."&nbsp&nbsp&nbsp";
 						$post .= "<button class='ubahstatus_btn'>Ubah Status</button></div>";
@@ -111,8 +112,8 @@
 						$post .= "</select>";
 						$post .= "<input type='submit' name='ubah' value='Ubah'/>";
 						$post .= "</form>";
-						$post .= "<a href='buat_email.php?aduan_id=".$id_aduan."'>kirim email</a><br>";
-						$post .= "<a href='aduan_hapus.php?aduan_id=".$row['id_pengaduan']."' onclick='".'return confirm("Apakah anda yakin ingin menghapus post ini?")'."'>hapus</a>";
+						$post .= "<blue><a href='buat_email.php?aduan_id=".$id_aduan."&nama_taman=".$nama_taman."&kategori=".$kategori."'>kirim email</a><br></blue>";
+						$post .= "<red><a href='aduan_hapus.php?aduan_id=".$row['id_pengaduan']."' onclick='".'return confirm("Apakah anda yakin ingin menghapus post ini?")'."'>hapus</a></red>";
 						$post .= "</div>";
 						$post .= "<div class='isi_aduan'>";
 						$post .= 	'"'.$row['isi'].'"';

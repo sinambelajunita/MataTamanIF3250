@@ -16,21 +16,21 @@
 			$err = 0;
 		  if (empty($_POST["artikel_judul"])) {
 		  	$err = 1;
-		    $artikel_judulErr = "Judul is required";
+		    $artikel_judulErr = "Judul tidak boleh kosong";
 		  } else {
 		    $artikel_judul = test_input($_POST["artikel_judul"]);
 		  	$_SESSION["artikel_judul"] = $artikel_judul;
 		  }
 		  if (empty($_POST["artikel_no_aduan"])) {
 		    $err = 1;
-		    $artikel_no_aduanErr = "Nomor aduan is required";
+		    $artikel_no_aduanErr = "Nomor aduan tidak boleh kosong";
 		  } else {
 		    $artikel_no_aduan = test_input($_POST["artikel_no_aduan"]);
 		    $_SESSION["artikel_no_aduan"] = $artikel_no_aduan;
 		  }
 		  if (empty($_POST["artikel_content"])) {
 		    $err = 1;
-		    $artikel_contentErr = "Konten is required";
+		    $artikel_contentErr = "Konten tidak boleh kosong";
 		  } else {
 		    $artikel_content = test_input($_POST["artikel_content"]);
 		    $_SESSION["artikel_content"] = $artikel_content;

@@ -6,6 +6,33 @@
 </head>
 
 <body>
+	<?php
+		// define variables and set to empty values
+		$kategori_namaErr = "";
+		$kategori_nama = $conn_err ="";
+
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			session_start();
+			$err = 0;
+		  if (empty($_POST["kategori_nama"])) {
+		  	$err = 1;
+		    $kategori_namaErr = "Required";
+		  } else {
+		    $kategori_nama = test_input($_POST["kategori_nama"]);
+		    $_SESSION["kategori_nama"] = $kategori_nama;
+		  }
+		  if($err == 0)		  include "create_kategori.php";
+		  if($_SESSION['success'] == 0) $conn_err = "Kategori sudah ada";
+		}
+		include "read_kategori.php";
+		$_SESSION["kategori_nama"] = "";
+		function test_input($data) {
+		   $data = trim($data);
+		   $data = stripslashes($data);
+		   $data = htmlspecialchars($data);
+		   return $data;
+		}
+	?>
 	<div class="container">
 		<div class="header">
 			<div class="left-header">
@@ -38,23 +65,31 @@
 						<th>Aksi</th>
 					</tr>
 					<!-- diulang dari sini -->
+					<?php
+					if ($result->num_rows > 0) {
+						    // output data of each row
+						    while($row = $result->fetch_assoc()) {?>
 					<tr>
 						<td>1</td>
-						<td>nama kategori nya</td>
-						<td><a href="">hapus</a></td>
+						<td><?php echo $row['nama'];?></td>
+						<td><a href="javascript:confirmDelete('<?php echo $row['nama'];?>')">hapus</a></td>
+						<?php 
+						}
+					}?>
 					</tr>
 					<!-- sampe sini -->
 				</table>
 			</div>
 		</div>
 			<div class="forminput">
-				<form method="post" action="#">
+				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 					<div class="judulForm">
 						Tambah Kategori
 					</div>
+					<div style="color:red"><?php echo $conn_err;?></div>
 					<span class="error">(*) required</span><br>
 					Nama Kategori<br>
-					<input type="text" name="instansi_name" style="width:90%;">
+					<input type="text" name="kategori_nama" style="width:90%;">
 					<br><br>
 					<button type="submit" value="tambahInstansi">Tambah</button>
 				</form>
@@ -68,13 +103,10 @@
 	<script type="text/javascript">
 		function confirmDelete(name) {
 		    if (confirm("Apakah Anda yakin ingin menghapus "+ name +"?") == true) {
-		        location.href = "delete_instansi.php?name="+name;
+		        location.href = "delete_kategori.php?name="+name;
 		    } else {
 		        
 		    }
-		}
-		function notifDB(){
-			alert('test');
 		}
 	</script>
 </body>

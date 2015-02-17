@@ -27,7 +27,11 @@
 		    $artikel_no_aduanErr = "Nomor aduan tidak boleh kosong";
 		  } else {
 		    $artikel_no_aduan = test_input($_POST["artikel_no_aduan"]);
-		    $_SESSION["artikel_no_aduan"] = $artikel_no_aduan;
+		  	if(!check_aduan($artikel_no_aduan)){
+		  	 	$err = 1;
+			    $artikel_no_aduanErr = "Nomor aduan tidak ada";
+		  	}
+			$_SESSION["artikel_no_aduan"] = $artikel_no_aduan;
 		  }
 		  if (empty($_POST["artikel_content"])) {
 		    $err = 1;
@@ -38,7 +42,7 @@
 		  }
 		  if (empty($_POST["artikel_status"])) {
 		    $err = 1;
-		  } else {
+		  } else { 
 		    $artikel_status = test_input($_POST["artikel_status"]);
 		    $_SESSION["artikel_status"] = $artikel_status;
 		  }
@@ -54,6 +58,28 @@
 		   $data = stripslashes($data);
 		   $data = htmlspecialchars($data);
 		   return $data;
+		}
+		function check_aduan($artikel_no_aduan) {
+			$no_aduan = $artikel_no_aduan;
+			$ada=true;
+			$no_aduan = explode(",", $no_aduan);
+			include "db-connector.php";
+			$i=0;
+			while($i<count($no_aduan) && !($ada)){
+				$query = "SELECT id_pengaduan FROM pengaduan WHERE id_pengaduan='$no_aduan[$i]'";
+				$result = mysqli_query($con,$query);
+				if(mysqli_num_rows($result)==0){
+					$ada=false;
+				}
+				//$ada=false;
+//				while($row = mysqli_fetch_assoc($result) && $ada){
+//					$temp = $row['id_pengaduan'];
+//					if($temp==$no_aduan[$i]){ 
+//						$ada = true;
+				$i++;
+			}
+			mysqli_close($con);
+			return $ada;
 		}
 	?>
 	<div class="container" id="top">
@@ -98,7 +124,7 @@
 					<label for= "judul_artikel">Judul Artikel</label>
 					<span class="error">* <red><?php echo $artikel_judulErr;?></red></span><br>
 					<input type="text" name="artikel_judul" style="border-color:black;"><br>
-					<label for= "aduan_terkait">Aduan Terkait</label>
+					<label for= "aduan_terkait">Aduan Terkait (pisahkan dengan tanda ',')</label>
 					<span class="error">* <red><?php echo $artikel_no_aduanErr;?></red></span><br>
 					<input type="text" name="artikel_no_aduan" style="border-color:black;"><br>
 					<label for= "isi_artikel">Isi Artikel</label>
@@ -107,8 +133,8 @@
 					<label for= "status">Status</label>
 					<span class="error">*</span><br>
 					<select name="artikel_status" style="border-color:black;">
-						<option value="Proses">Proses</option>
-						<option value="Selesai">Selesai</option>
+						<option value="proses">Proses</option>
+						<option value="selesai">Selesai</option>
 					</select><br>
 					<label for= "UploadFileName">Upload Foto</label><br>
 					<input type ="file" name = "UploadFileName" style="border-color:black;"><br><br>

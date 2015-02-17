@@ -143,12 +143,10 @@
 					<span class="error">(*) Tidak boleh kosong</span><br>
 					<label for= "Nama">Nama</label>
 					<span class="error">* <?php echo $namaErr;?></span><br>
-					<input type="text" name="warga_name" id="warga_name" style="width:90%"
-						value="<?php echo $_SESSION["warga_name"]?>"><br>
+					<input type="text" name="warga_name" id="warga_name" style="width:90%"><br>
 					<label for= "E-mail">E-mail</label> 
 					<span class="error">* <?php echo $emailErr;?></span><br>
-					<input type="text" name="warga_email" id="warga_email" style="width:90%"
-						value="<?php echo $_SESSION["warga_email"]?>"><br>
+					<input type="text" name="warga_email" id="warga_email" style="width:90%"><br>
 					<label for= "kategori">Kategori Aduan</label>
 					<span class="error">* <?php echo $kategoriErr;?></span> <br>
 					<?php 
@@ -166,8 +164,7 @@
 					<br>
 					<label for= "isi_aduan">Isi Aduan</label>
 					<span class="error">* <?php echo $isiAduanErr;?></span><br>
-					<textarea name="isi_aduan" id="isi_aduan" rows="3" cols="37">
-						<?php echo $_SESSION["isi_aduan"]?></textarea><br>
+					<textarea name="isi_aduan" id="isi_aduan" rows="3" cols="37"></textarea><br>
 					<label for= "UploadFileName">Upload Foto</label><br>
 					<input type ="file" name = "UploadFileName"><br>
 					<button type="submit" name="submit" value="tambahAduan">Kirim</button>

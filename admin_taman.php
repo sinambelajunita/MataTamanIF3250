@@ -126,17 +126,13 @@
 					<span class="error">(*) Tidak boleh kosong</span><br>
 					<label for="taman_name">Nama Taman</label> 
 					<span class="error">* <?php echo $taman_nameErr;?></span><br>
-					<input type="text" name="taman_name" style="width:90%;"
-						value="<?php echo $_SESSION["taman_name"];?>"><br>
+					<input type="text" name="taman_name" style="width:90%;"><br>
 					<label for="taman_lokasi">Lokasi</label>
 					<span class="error">* <?php echo $taman_lokasiErr;?></span><br>
-					<textarea name="taman_lokasi" cols="38">
-						<?php echo $_SESSION["taman_lokasi"];?>
-					</textarea><br>
+					<textarea name="taman_lokasi" cols="38"></textarea><br>
 					<label for="taman_telp">Telepon</label>
 					<span class="error">* <?php echo $taman_telpErr;?></span><br>
-					<input type="text" name="taman_telp" style="width:90%;"
-						value="<?php echo $_SESSION["taman_telp"];?>"><br><br/>
+					<input type="text" name="taman_telp" style="width:90%;"><br><br/>
 					<!-- <span class="error">* <?php echo $taman_telpErr;?></span><br> -->
 					<!-- <p><span class="error">* required field.</span></p> -->
 					<!-- <input type="text" name="taman_telp"> -->

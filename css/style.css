@@ -133,7 +133,8 @@ black a{
 }
 .mini_navbar a:hover, {
 	/*color: #52BF90;*/
-	color:#5F5C50;
+	/*color:#5F5C50;*/
+	color:black;
 }
 /*end mini navbar*/
 
@@ -153,7 +154,7 @@ black a{
 	float: right;
 	/*background-color: #52BF90;*/
 	background-color: #DFE86D;
-	height: 100%;
+	height: 70%;
 	/*position: fixed;*/
 	right: 0;
 	/*margin-top: 200px;*/

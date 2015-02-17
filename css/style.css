@@ -40,14 +40,14 @@ black a{
 }
 .header {
 	background-color: #5f5c50;
-	background-image: url("../images/background2.png");*/
+	background-image: url("../images/background.png");*/
 	color: white;
-	height: 175px;
+	height: 180px;
 	width: 100%;
 	font-family: matataman;
-	position: fixed;
+	/*position: fixed;*/
 	margin-top: -8px;
-	margin-left: -8px;
+	/*margin-left: -8px;*/
 }
 .left-header img{
 	text-align: left;
@@ -83,17 +83,16 @@ black a{
 .navbar{
 	/*background-color: #317256;*/
 	background-color: #ACB726;
-
 	font-size: 20px;
-	position: fixed;
+	/*position: fixed;*/
 	height: 33px;
-	margin-top: 167px;
+	margin-top: -20px;
 	width: 100%;
-	margin-left: -8px;
+	/*margin-left: -8px;*/
 }
 .navbar ul{
 	list-style: none;
-	margin-top: 7px;
+	/*margin-top: 7px;*/
 }
 .navbar ul li{
 	display: inline;
@@ -103,16 +102,49 @@ black a{
 .navbar a{
 	color: white;
 }
-.navbar a:hover{
+.navbar a:hover, {
 	/*color: #52BF90;*/
 	color:#5F5C50;
 }
+
+/*mini navbar*/
+.mini_navbar{
+	/*background-color: #317256;*/
+	background-color: #ACB726;
+	font-size: 20px;
+	position: fixed;
+	height: 33px;\margin-top: -230px;
+	width: 100%;
+	height: 50px;
+	display: none;
+	position: fixed;
+}
+.mini_navbar ul{
+	list-style: none;
+	/*margin-top: 7px;*/
+}
+.mini_navbar ul li{
+	display: inline;
+	color : white;
+	margin-right: 2%;
+}
+.mini_navbar a{
+	color: white;
+}
+.mini_navbar a:hover, {
+	/*color: #52BF90;*/
+	color:#5F5C50;
+}
+/*end mini navbar*/
+
+
+
 .content{
 
 }
 .aduan{
 	width: 70%;
-	margin-top: 220px;
+	/*margin-top: 220px;*/
 	float: left;
 	margin-left: 2%;
 }
@@ -122,9 +154,9 @@ black a{
 	/*background-color: #52BF90;*/
 	background-color: #DFE86D;
 	height: 100%;
-	position: fixed;
+	/*position: fixed;*/
 	right: 0;
-	margin-top: 200px;
+	/*margin-top: 200px;*/
 }
 .forminput form{
 	margin-left: 4%;
@@ -133,8 +165,8 @@ black a{
 .forminput .judulForm{
 	text-align: center;
 	font-size: 30px;
-	margin-top: 3%;
-	margin-bottom: 6%;
+	/*margin-top: 3%;*/
+	/*margin-bottom: 6%;*/
 }
 .judul_hal{
 	font-size: 35px;
@@ -142,7 +174,7 @@ black a{
 }
 /*LIST ARTIKEL*/
 .listartikel{
-	margin-top: 230px;
+	/*margin-top: 230px;*/
 	float: left;
 	margin-left: 4%;
 	width: 80%;

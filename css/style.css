@@ -79,6 +79,10 @@ black a{
 	float: left;
 	margin-top: 1%;
 }
+.ubah{
+	color: #93FF9D;
+	background-color: black;
+}
 .right-header{
 	/*background-image: url("../images/logo_header.png");*/
 	width: 90%;

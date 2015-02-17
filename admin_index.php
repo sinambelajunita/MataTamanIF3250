@@ -43,15 +43,20 @@
 				<li><a href="admin_taman.php">Taman</a></li>
 				<li><a href="admin_instansi.php">Instansi</a></li>
 				<li><a href="admin_kategori.php">Kategori</a></li>
+				<li><a href="login.php">Logout</a></li>
 			</ul>
 		</div>	
 		<div class="mini_navbar">
 			<a href="#top"><img src="images/logo_header.png"/></a>
 			<!-- <a href="#raptors"><img src="http://example.typepad.com/raptors.gif" /></a> -->
 			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="taman.php">Taman</a></li>
-				<li><a href="list_artikel.php">Artikel Laporan</a></li>
+				<li><a href="admin_index.php">Home</a></li>
+				<li><a href="admin_list_artikel.php">Artikel</a></li>
+				<li><a href="buat_artikel.php">Buat Artikel</a></li>
+				<li><a href="admin_taman.php">Taman</a></li>
+				<li><a href="admin_instansi.php">Instansi</a></li>
+				<li><a href="admin_kategori.php">Kategori</a></li>
+				<li><a href="login.php">Logout</a></li>
 			</ul>
 		</div><div class="content">
 			<div class="aduan">
@@ -122,7 +127,7 @@
 						$post .= "<option value='proses'>Proses</option>";
 						$post .= "<option value='selesai'>Selesai</option>";
 						$post .= "</select>";
-						$post .= "<input type='submit' name='ubah' value='Ubah'/>";
+						$post .= "<input class='ubah' type='submit' name='ubah' value='Ubah'/>";
 						$post .= "</form>";
 						$post .= "<blue><a href='buat_email.php?aduan_id=".$id_aduan."&nama_taman=".$nama_taman."&kategori=".$kategori."&isi=".$isi_aduan."'>kirim email</a><br></blue>";
 						$post .= "<red><a href='aduan_hapus.php?aduan_id=".$row['id_pengaduan']."' onclick='".'return confirm("Apakah anda yakin ingin menghapus post ini?")'."'>hapus</a></red>";

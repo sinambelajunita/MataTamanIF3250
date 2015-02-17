@@ -102,6 +102,7 @@
 						$post .= 	$mysqldate." WIB <br>";
 						$post .=    "No. Aduan : ".$row['id_pengaduan']."<br>";
 						$id_aduan = $row['id_pengaduan'];
+						$isi_aduan = $row['isi'];
 						$post .= 	"Pengirim : ".$row['nama_pengirim']." - ".$row['email_pengirim']."<br>";
 						$post .=	"<div class='status_aduan'>Status : ".$row['status']."&nbsp&nbsp&nbsp";
 						$post .= "<button class='ubahstatus_btn'>Ubah Status</button></div>";
@@ -113,7 +114,7 @@
 						$post .= "</select>";
 						$post .= "<input type='submit' name='ubah' value='Ubah'/>";
 						$post .= "</form>";
-						$post .= "<blue><a href='buat_email.php?aduan_id=".$id_aduan."&nama_taman=".$nama_taman."&kategori=".$kategori."'>kirim email</a><br></blue>";
+						$post .= "<blue><a href='buat_email.php?aduan_id=".$id_aduan."&nama_taman=".$nama_taman."&kategori=".$kategori."&isi=".$isi_aduan."'>kirim email</a><br></blue>";
 						$post .= "<red><a href='aduan_hapus.php?aduan_id=".$row['id_pengaduan']."' onclick='".'return confirm("Apakah anda yakin ingin menghapus post ini?")'."'>hapus</a></red>";
 						$post .= "</div>";
 						$post .= "<div class='isi_aduan'>";

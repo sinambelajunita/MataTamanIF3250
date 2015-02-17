@@ -54,6 +54,7 @@
 				$aduan_id = $_GET['aduan_id'];
 				$nama_taman = $_GET ['nama_taman'];
 				$kategori = $_GET['kategori'];
+				$isi = $_GET['isi'];
 			?>
 			<div class="aduan">
 				<div class="judul_hal">
@@ -63,7 +64,7 @@
 					<form method="POST" onsubmit="return validate();" action="email_sender.php">
 						Tujuan 
 						<br>
-						<select name='instansi' id='instansi'>
+						<select name='instansi' id='instansi' style="border-color:black;">
 						<option disabled selected> -- pilih salah satu instansi -- </option>
 						<?php
 							$query = "SELECT nama_instansi FROM instansi";
@@ -77,18 +78,20 @@
 						?>
 						<br><br>
 						Subyek<br> 						
-						<input type="text" name="email_subject" id="email_subject" size="35" value="Aduan <?php echo $aduan_id ?> "><br><br>
+						<input type="text" name="email_subject" id="email_subject" size="35" value="Aduan <?php echo $aduan_id ?>"
+								style="border-color:black;"><br><br>
 						Isi 
 						<?php 
 							$content_email = "";
 							$content_email .= "Aduan no : ".$aduan_id."\n";
 							$content_email .= "Taman : ".$nama_taman."\n";
 							$content_email .= "Kategori : ".$kategori."\n";
-							$content_email .= "Aduan : ";
+							$content_email .= "Aduan : ".$isi;
 						?>
 
 						<input type="hidden" name="id_aduan" value="<?php echo $aduan_id; ?>"><br>
-						<textarea name="email_content" id="email_content" rows="10" cols="90" ><?php echo $content_email ?></textarea> <br><br>
+						<textarea name="email_content" id="email_content" rows="10" cols="90" 
+							style="border-color:black;"><?php echo $content_email ?></textarea> <br><br>
 						<input type="submit" name="kirimemail" value="kirimEmail">
 					</form>
 				</div>

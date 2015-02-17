@@ -130,7 +130,6 @@
 						$post .= "<div class='ket_aduan'>";
 						$date = strtotime($row['tanggal']);
 						$mysqldate = date('d M Y / H:i',$date);
-<<<<<<< HEAD
 						$post .= "<div style='color:red'>".$mysqldate." WIB </div><br>";
 						$warna_status = "";
 						if($row['status']=="pending"){
@@ -149,14 +148,12 @@
 						$post .= "Pengirim : ";
 						$post .= $row['nama_pengirim'];
 						$post .= "<br>";
-=======
 						$post .= 	$mysqldate." WIB <br>";
 						$post .= "Pengirim : ";
 						$post .= $row['nama_pengirim'];
 						$post .= "<br>";
 						$post .= "Status : ";
 						$post .= $row['status'];
->>>>>>> parent of c7e33c6... status
 						$post .= "</div>";
 						$post .= "<div class='isi_aduan'>";
 						$post .= '"'.$row['isi'].'"';

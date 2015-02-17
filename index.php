@@ -84,7 +84,7 @@
 		   return $data;
 		}
 	?>
-	<div class="container">
+	<div class="container" id="top">
 		<div class="header">
 			<div class="left-header">
 				<img src="images/logobandung.png" >.
@@ -101,6 +101,8 @@
 			</ul>
 		</div>
 		<div class="mini_navbar">
+			<a href="#top"><img src="images/logo_header.png"/></a>
+			<!-- <a href="#raptors"><img src="http://example.typepad.com/raptors.gif" /></a> -->
 			<ul>
 				<li><a href="index.php">Home</a></li>
 				<li><a href="taman.php">Taman</a></li>
@@ -128,6 +130,7 @@
 						$post .= "<div class='ket_aduan'>";
 						$date = strtotime($row['tanggal']);
 						$mysqldate = date('d M Y / H:i',$date);
+<<<<<<< HEAD
 						$post .= "<div style='color:red'>".$mysqldate." WIB </div><br>";
 						$warna_status = "";
 						if($row['status']=="pending"){
@@ -146,6 +149,14 @@
 						$post .= "Pengirim : ";
 						$post .= $row['nama_pengirim'];
 						$post .= "<br>";
+=======
+						$post .= 	$mysqldate." WIB <br>";
+						$post .= "Pengirim : ";
+						$post .= $row['nama_pengirim'];
+						$post .= "<br>";
+						$post .= "Status : ";
+						$post .= $row['status'];
+>>>>>>> parent of c7e33c6... status
 						$post .= "</div>";
 						$post .= "<div class='isi_aduan'>";
 						$post .= '"'.$row['isi'].'"';
@@ -212,7 +223,7 @@
 	  mysqli_close($con);
 	?>
 	<footer class="footer">
-		
+		<p>copyright &copy Mata Mata 2015</p>
 	</footer>
 
 	</div>
@@ -226,6 +237,22 @@
     }
 	});
 	</script>
+	<script>
+	$(function() {
+	  $('a[href*=#]:not([href=#])').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top
+	        }, 1000);
+	        return false;
+	      }
+	    }
+	  });
+	});
+</script>
 </body>
 
 

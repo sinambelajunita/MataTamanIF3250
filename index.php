@@ -84,7 +84,7 @@
 		   return $data;
 		}
 	?>
-	<div class="container" id="top">
+	<div class="container">
 		<div class="header">
 			<div class="left-header">
 				<img src="images/logobandung.png" >.
@@ -101,8 +101,6 @@
 			</ul>
 		</div>
 		<div class="mini_navbar">
-			<a href="#top"><img src="images/logo_header.png"/></a>
-			<!-- <a href="#raptors"><img src="http://example.typepad.com/raptors.gif" /></a> -->
 			<ul>
 				<li><a href="index.php">Home</a></li>
 				<li><a href="taman.php">Taman</a></li>
@@ -121,7 +119,7 @@
 					while($row = mysqli_fetch_assoc($result)){
 						$post = "<div class='post_aduan'>";					
 						$post .=	"<div class='foto_aduan'>";
-						$post .= "<img src='".$row['link_gambar']."'/>";
+						$post .= "<img class='gambar_artikel' src='".$row['link_gambar']."'/>";
 						$post .=	"</div>";
 						$post .= "<div class='paket_aduan'>";
 						$post .=	"<div class='judul_aduan'>";
@@ -130,12 +128,25 @@
 						$post .= "<div class='ket_aduan'>";
 						$date = strtotime($row['tanggal']);
 						$mysqldate = date('d M Y / H:i',$date);
-						$post .= 	$mysqldate." WIB <br>";
+						$post .= "<div style='color:red'>".$mysqldate." WIB </div><br>";
 						$post .= "Pengirim : ";
 						$post .= $row['nama_pengirim'];
 						$post .= "<br>";
 						$post .= "Status : ";
-						$post .= $row['status'];
+						$warna_status = "<status>";
+						if($row['status']=="pending"){
+							$warna_status = "<img class='gambar_artikel' src=''>";
+						}
+						else if($row['status']=="terkirim"){
+							$warna_status = "<status style='color:blue'>";
+						}
+						else if($row['status']=="proses"){
+							$warna_status = "<status style='color:orange'>";
+						}
+						else if($row['status']=="selesai"){
+							$warna_status = "<status style='color:green'>";
+						}
+						$post .= $warna_status.$row['status']."</status>";
 						$post .= "</div>";
 						$post .= "<div class='isi_aduan'>";
 						$post .= '"'.$row['isi'].'"';
@@ -202,7 +213,7 @@
 	  mysqli_close($con);
 	?>
 	<footer class="footer">
-		<p>copyright &copy Mata Mata 2015</p>
+		
 	</footer>
 
 	</div>
@@ -216,22 +227,6 @@
     }
 	});
 	</script>
-	<script>
-	$(function() {
-	  $('a[href*=#]:not([href=#])').click(function() {
-	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-	      var target = $(this.hash);
-	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-	      if (target.length) {
-	        $('html,body').animate({
-	          scrollTop: target.offset().top
-	        }, 1000);
-	        return false;
-	      }
-	    }
-	  });
-	});
-</script>
 </body>
 
 

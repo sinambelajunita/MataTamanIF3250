@@ -36,6 +36,11 @@ footer{
 footer p{
 	margin-top: 10px;
 }
+button{
+	background-color: black;
+	color: #A8FFAE;
+	padding: 1%;
+}
 red a{
 	color: red;
 }
@@ -174,7 +179,7 @@ black a{
 	width: 25%;
 	float: right;
 	/*background-color: #52BF90;*/
-	background-color: #DFE86D;
+	background-color: #97B33D;
 	height: 70%;
 	/*position: fixed;*/
 	right: 0;

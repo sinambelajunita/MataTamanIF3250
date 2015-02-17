@@ -68,7 +68,10 @@ black a{
 	font-size: 80px;
 	margin-top: 3%;
 }
-
+.right-header img{
+	margin-top: -2%;
+	margin-left: -15%;
+}
 /*navigation bar*/
 .navbar{
 	/*background-color: #317256;*/

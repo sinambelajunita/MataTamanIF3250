@@ -12,10 +12,11 @@
 	<div class="container">
 		<div class="header">
 			<div class="left-header">
-				<img src="images/logobandung.png" >.
+				<img src="images/logobandung.png" >
 			</div>
 			<div class="right-header">
-				MataTaman
+				<!-- MataTaman -->
+				<img src="images/header.png" >
 			</div>
 		</div>
 		<div class="navbar">

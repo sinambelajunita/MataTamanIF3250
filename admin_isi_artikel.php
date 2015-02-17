@@ -42,7 +42,7 @@
 				$id = $_GET['id'];
 				$result = mysqli_query($con,"SELECT * FROM artikel where id_artikel=$id");
 				while($row = mysqli_fetch_assoc($result)) {?>
-				<br><br><br><br><br><br><br><br><br><br><br><br><br>
+				<br>
 			<div class="judul_artikel">
 				<?php $judul = $row['judul'];?>
 				<?php echo $judul;?>

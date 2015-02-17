@@ -11,11 +11,11 @@
 	<div class="container" id="top">
 		<div class="header">
 			<div class="left-header">
-				<img src="images/logobandung.png" >.
+				<img src="images/logobandung.png" >
 			</div>
 			<div class="right-header">
 				<!-- MataTaman -->
-				<!-- <img src="images/header.png"> -->
+				<!-- <img src="images/header.png" > -->
 				<img src="images/logo_header.png" >
 			</div>
 		</div>
@@ -28,7 +28,7 @@
 				<li><a href="admin_instansi.php">Instansi</a></li>
 				<li><a href="admin_kategori.php">Kategori</a></li>
 			</ul>
-		</div>
+		</div>	
 		<div class="mini_navbar">
 			<a href="#top"><img src="images/logo_header.png"/></a>
 			<!-- <a href="#raptors"><img src="http://example.typepad.com/raptors.gif" /></a> -->
@@ -37,7 +37,8 @@
 				<li><a href="taman.php">Taman</a></li>
 				<li><a href="list_artikel.php">Artikel Laporan</a></li>
 			</ul>
-		</div><div class="content">
+		</div>
+		<div class="content">
 			<div class="listartikel">
 				<!-- ini diulang -->
 				<?php

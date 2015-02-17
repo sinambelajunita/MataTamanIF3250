@@ -46,9 +46,9 @@
 		<?php
 		  mysqli_close($con);
 		?>
-	<footer class="footer">
+	<!-- <footer class="footer">
 		<p>copyright &copy Mata Mata 2015</p>
-	</footer>
+	</footer> -->
 	</div>
 	<script>
 	$(document).scroll(function () {

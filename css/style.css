@@ -22,20 +22,6 @@ form input , select, textarea{
 	border: 1px solid #e4e4e4;
 	padding: 5px;
 }
-footer{
-	width:100%;
-	height:40px;
-	position:inherit;
-	overflow: hidden;
-	bottom:0;
-	left:0;
-	background:#0D120E;
-	text-align: center;
-	color: white;
-}
-footer p{
-	margin-top: 10px;
-}
 red a{
 	color: red;
 }
@@ -84,7 +70,6 @@ black a{
 	margin-top: 1%;
 }
 .right-header img{
-	margin-top: 1%;
 	height: 150px;
 }
 /*<<<<<<< HEAD
@@ -97,7 +82,7 @@ black a{
 /*navigation bar*/
 .navbar{
 	/*background-color: #317256;*/
-	background-color: #0D120E;
+	background-color: #ACB726;
 	font-size: 20px;
 	/*position: fixed;*/
 	height: 33px;
@@ -125,24 +110,18 @@ black a{
 /*mini navbar*/
 .mini_navbar{
 	/*background-color: #317256;*/
-	/*background-color: #ACB726;*/
-	background-color: #0D120E;
+	background-color: #ACB726;
 	font-size: 20px;
 	position: fixed;
 	height: 33px;\margin-top: -230px;
 	width: 100%;
-	height: 80px;
+	height: 50px;
 	display: none;
 	position: fixed;
 }
-.mini_navbar img{
-	margin-left: 45%;
-	margin-top: 1%;
-	height: 55px;
-}
 .mini_navbar ul{
 	list-style: none;
-	margin-top: -20px;
+	/*margin-top: 7px;*/
 }
 .mini_navbar ul li{
 	display: inline;
@@ -168,7 +147,7 @@ black a{
 	width: 70%;
 	/*margin-top: 220px;*/
 	float: left;
-	margin-left: 2%;	
+	margin-left: 2%;
 }
 .forminput{
 	width: 25%;
@@ -178,7 +157,7 @@ black a{
 	height: 70%;
 	/*position: fixed;*/
 	right: 0;
-	/*margin-top: -120px;*/	
+	/*margin-top: 200px;*/
 }
 .forminput form{
 	margin-left: 4%;
@@ -325,6 +304,7 @@ td{
 	margin-left: 10%;
 }
 .content-login{
+	/*margin-top: 50%;*/
 	z-index: 99;
 }
 .form_login{
@@ -334,12 +314,11 @@ td{
 	padding-right:8%;
 	padding-top: 3%;
 	padding-bottom: 3%; 
-	margin-left: 25%;
+	margin-left: 35%;
 	font-size: 20px;
 	border-width:3px;
 	border-style:outset;
-	background-color: #DEDEDE;
-	margin-top:10%;
+	background-color: #DEDEDE
 }
 /*END LOGIN*/
 
@@ -389,7 +368,12 @@ td{
 	margin-bottom: 10px;
 	text-align: center;
 }
-
+.gambar_status img{
+	width: 60%;
+	margin-left: 15%;
+	margin-bottom: 10px;
+	text-align: center;
+}
 /*end isi artikel*/
 
 .ubahstatus{

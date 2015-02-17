@@ -369,10 +369,11 @@ td{
 	text-align: center;
 }
 .gambar_status img{
-	width: 60%;
-	margin-left: 15%;
-	margin-bottom: 10px;
-	text-align: center;
+	width: 10px;
+	height: 10px;
+	margin-left: 5%;
+	margin-bottom: 5px;
+	text-align: right;
 }
 /*end isi artikel*/
 

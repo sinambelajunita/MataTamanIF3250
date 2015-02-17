@@ -119,7 +119,7 @@
 					while($row = mysqli_fetch_assoc($result)){
 						$post = "<div class='post_aduan'>";					
 						$post .=	"<div class='foto_aduan'>";
-						$post .= "<img class='gambar_artikel' src='".$row['link_gambar']."'/>";
+						$post .= "<img src='".$row['link_gambar']."'/>";
 						$post .=	"</div>";
 						$post .= "<div class='paket_aduan'>";
 						$post .=	"<div class='judul_aduan'>";
@@ -129,24 +129,23 @@
 						$date = strtotime($row['tanggal']);
 						$mysqldate = date('d M Y / H:i',$date);
 						$post .= "<div style='color:red'>".$mysqldate." WIB </div><br>";
+						$warna_status = "";
+						if($row['status']=="pending"){
+							$warna_status = "<img src='images/pending.png' style='float:left;width:60px;height:60px'/>";
+						}
+						else if($row['status']=="terkirim"){
+							$warna_status = "<img src='images/terkirim.png' style='float:right;width:60px;height:60px'/>";
+						}
+						else if($row['status']=="proses"){
+							$warna_status = "<img src='images/proses.png' width='50' height='50'/>";
+						}
+						else if($row['status']=="selesai"){
+							$warna_status = "<img src='images/selesai.png' width='50' height='50'/>";
+						}
+						$post .= $warna_status;
 						$post .= "Pengirim : ";
 						$post .= $row['nama_pengirim'];
 						$post .= "<br>";
-						$post .= "Status : ";
-						$warna_status = "<status>";
-						if($row['status']=="pending"){
-							$warna_status = "<img class='gambar_artikel' src=''>";
-						}
-						else if($row['status']=="terkirim"){
-							$warna_status = "<status style='color:blue'>";
-						}
-						else if($row['status']=="proses"){
-							$warna_status = "<status style='color:orange'>";
-						}
-						else if($row['status']=="selesai"){
-							$warna_status = "<status style='color:green'>";
-						}
-						$post .= $warna_status.$row['status']."</status>";
 						$post .= "</div>";
 						$post .= "<div class='isi_aduan'>";
 						$post .= '"'.$row['isi'].'"';

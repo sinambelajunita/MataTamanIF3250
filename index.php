@@ -133,16 +133,16 @@
 						$post .= "<div style='color:red'>".$mysqldate." WIB </div><br>";
 						$warna_status = "";
 						if($row['status']=="pending"){
-							$warna_status = "<img src='images/pending.png' style='float:left;width:60px;height:60px'/>";
+							$warna_status = "<img src='images/pending.png' style='float:right;width:60px;height:60px'/>";
 						}
 						else if($row['status']=="terkirim"){
 							$warna_status = "<img src='images/terkirim.png' style='float:right;width:60px;height:60px'/>";
 						}
 						else if($row['status']=="proses"){
-							$warna_status = "<img src='images/proses.png' width='50' height='50'/>";
+							$warna_status = "<img src='images/proses.png' style='float:right;width:60px;height:60px'/>";
 						}
 						else if($row['status']=="selesai"){
-							$warna_status = "<img src='images/selesai.png' width='50' height='50'/>";
+							$warna_status = "<img src='images/selesai.png' style='float:right;width:60px;height:60px'/>";
 						}
 						$post .= $warna_status;
 						$post .= "Pengirim : ";

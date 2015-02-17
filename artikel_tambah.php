@@ -25,8 +25,6 @@
 	}
 	echo $link_gambar;
 
-
-
 	$query= "INSERT INTO artikel (judul, tanggal, isi, link_gambar) 
 	VALUES ('$judul', NOW(), '$content', '$link_gambar')";
 	if (!mysqli_query($con,$query)) {
@@ -37,7 +35,6 @@
 		$row = mysqli_fetch_array($result);
 		$last_id = $row['id_artikel'];
 
-	echo count($no_aduan);
 	for ($i=0; $i<count($no_aduan); $i++) {
 		//ubah status
 		$query_ubahstat= "UPDATE pengaduan SET status='$status' WHERE id_pengaduan='$no_aduan[$i]'";

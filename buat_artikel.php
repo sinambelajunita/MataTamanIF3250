@@ -91,21 +91,21 @@
 					<span class="error">(*) Tidak boleh kosong</span><br>
 					<label for= "judul_artikel">Judul Artikel</label>
 					<span class="error">* <red><?php echo $artikel_judulErr;?></red></span><br>
-					<input type="text" name="artikel_judul"><br>
+					<input type="text" name="artikel_judul" style="border-color:black;"><br>
 					<label for= "aduan_terkait">Aduan Terkait</label>
 					<span class="error">* <red><?php echo $artikel_no_aduanErr;?></red></span><br>
-					<input type="text" name="artikel_no_aduan"><br>
+					<input type="text" name="artikel_no_aduan" style="border-color:black;"><br>
 					<label for= "isi_artikel">Isi Artikel</label>
 					<span class="error">* <?php echo $artikel_contentErr;?></span><br>
-					<textarea name="artikel_content" rows="10" cols="50"></textarea><br>
+					<textarea name="artikel_content" rows="10" cols="50" style="border-color:black;"></textarea><br>
 					<label for= "status">Status</label>
 					<span class="error">*</span><br>
-					<select name="artikel_status">
+					<select name="artikel_status" style="border-color:black;">
 						<option value="Proses">Proses</option>
 						<option value="Selesai">Selesai</option>
 					</select><br>
 					<label for= "UploadFileName">Upload Foto</label><br>
-					<input type ="file" name = "UploadFileName"><br><br>
+					<input type ="file" name = "UploadFileName" style="border-color:black;"><br><br>
 					<button type="submit" value="tambahArtikel">Publikasikan</button>
 					</form>
 				</div>

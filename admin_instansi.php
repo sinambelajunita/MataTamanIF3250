@@ -145,19 +145,16 @@
 					<span class="error">(*) Tidak boleh kosong</span><br>
 					<label for="instansi_name">Nama Instansi</label>
 					<span class="error">* <?php echo $instansi_nameErr;?></span><br>
-					<input type="text" name="instansi_name" style="width:90%;"
-						value="<?php echo $_SESSION["instansi_name"]?>"><br>
+					<input type="text" name="instansi_name" style="width:90%;"><br>
 					<label for="instansi_alamat">Alamat</label> 
 					<span class="error">* <?php echo $instansi_alamatErr;?></span><br>
 					<textarea name="instansi_alamat" cols="38"></textarea><br>
 					<label for="instansi_email">E-mail</label> 
 					<span class="error">* <?php echo $instansi_emailErr;?></span><br> 
-					<input type="text" name="instansi_email" style="width:90%;"
-						value="<?php echo $_SESSION["instansi_email"]?>"><br>
+					<input type="text" name="instansi_email" style="width:90%;"><br>
 					<label for="instansi_pimpinan">Pimpinan</label> 
 					<span class="error">* <?php echo $instansi_pimpinanErr;?></span><br>
-					<input type="text" name="instansi_pimpinan" style="width:90%;"
-						value="<?php echo $_SESSION["instansi_pimpinan"]?>"><br>
+					<input type="text" name="instansi_pimpinan" style="width:90%;"><br>
 					<br/>
 					<button type="submit" value="tambahInstansi">Tambah</button>
 				</form>

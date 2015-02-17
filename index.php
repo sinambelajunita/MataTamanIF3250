@@ -130,7 +130,7 @@
 						$post .= "<div class='ket_aduan'>";
 						$date = strtotime($row['tanggal']);
 						$mysqldate = date('d M Y / H:i',$date);
-						$post .= "<div style='color:red'>".$mysqldate." WIB </div><br>";
+						$post .= "<div style='color:#0C6912'>".$mysqldate." WIB </div><br>";
 						$warna_status = "";
 						if($row['status']=="pending"){
 							$warna_status = "<img src='images/pending.png' style='float:right;width:60px;height:60px'/>";
@@ -145,10 +145,6 @@
 							$warna_status = "<img src='images/selesai.png' style='float:right;width:60px;height:60px'/>";
 						}
 						$post .= $warna_status;
-						$post .= "Pengirim : ";
-						$post .= $row['nama_pengirim'];
-						$post .= "<br>";
-						$post .= 	$mysqldate." WIB <br>";
 						$post .= "Pengirim : ";
 						$post .= $row['nama_pengirim'];
 						$post .= "<br>";

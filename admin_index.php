@@ -118,9 +118,9 @@
 						$post .= "<button class='ubahstatus_btn'>Ubah Status</button></div>";
 						$post .= "<form class ='form_ubahstatus' action='aduan_update.php?id=".$row['id_pengaduan']."' method='post'>";
 						$post .= "<select name='ubahstat'>";
-						$post .= "<option value='terkirim'>Terkirim</option>";
-						$post .= "<option value='proses'>Proses</option>";
-						$post .= "<option value='selesai'>Selesai</option>";
+						$post .= "<option value='Terkirim'>Terkirim</option>";
+						$post .= "<option value='Proses'>Proses</option>";
+						$post .= "<option value='Selesai'>Selesai</option>";
 						$post .= "</select>";
 						$post .= "<input type='submit' name='ubah' value='Ubah'/>";
 						$post .= "</form>";

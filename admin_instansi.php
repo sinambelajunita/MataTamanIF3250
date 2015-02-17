@@ -7,42 +7,43 @@
 
 <body>
 	<?php
+		session_start();
+		$err = 0;
 		// define variables and set to empty values
 		$instansi_nameErr = $instansi_alamatErr = $instansi_emailErr = $instansi_pimpinanErr = "";
 		$instansi_name = $instansi_alamat = $instansi_email = $instansi_pimpinan = $conn_err ="";
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			session_start();
-			$err = 0;
+			
 		  if (empty($_POST["instansi_name"])) {
 		  	$err = 1;
-		    $instansi_nameErr = "Required";
+		    $instansi_nameErr = "Tidak boleh kosong";
 		  } else {
 		    $instansi_name = test_input($_POST["instansi_name"]);
 		    $_SESSION["instansi_name"] = $instansi_name;
 		  }
 		  if (empty($_POST["instansi_alamat"])) {
 		  	$err = 1;
-		    $instansi_alamatErr = "Required";
+		    $instansi_alamatErr = "Tidak boleh kosong";
 		  } else {
 		    $instansi_alamat = test_input($_POST["instansi_alamat"]);
 		    $_SESSION["instansi_alamat"] = $instansi_alamat;
 		  }
 		  if (empty($_POST["instansi_email"])) {
-		     $instansi_emailErr = "Required";
+		     $instansi_emailErr = "Tidak boleh kosong";
 		     $err = 1;
 		   } else {
 		     $instansi_email = test_input($_POST["instansi_email"]);
 		     // check if e-mail address is well-formed
 		     if (!filter_var($instansi_email, FILTER_VALIDATE_EMAIL)) {
-		       $instansi_emailErr = "Invalid email format";
+		       $instansi_emailErr = "Format e-mail salah";
 		       $err = 1;
 		     }
 		     else $_SESSION["instansi_email"] = $instansi_email;
 		 }
 		  if (empty($_POST["instansi_pimpinan"])) {
 		  	$err = 1;
-		    $instansi_pimpinanErr = "Required";
+		    $instansi_pimpinanErr = "Tidak boleh kosong";
 		  } else {
 		    $instansi_pimpinan = test_input($_POST["instansi_pimpinan"]);
 		    $_SESSION["instansi_pimpinan"] = $instansi_pimpinan;
@@ -50,15 +51,18 @@
 		  if($err == 0) {
 		  	include "create_instansi.php";
 		  	if($_SESSION['success'] == 0){
-		  		$conn_err = "Nama Instansi sudah ada!";
+		  		$instansi_nameErr = "Nama Instansi sudah ada!";
 		  	}
 		  }
 		}
 		include "read_instansi.php";
-		$_SESSION["instansi_name"] = "";
-		$_SESSION["instansi_alamat"] = "";
-		$_SESSION["instansi_email"] = "";
-		$_SESSION["instansi_pimpinan"] = "";
+		if($err == 0){
+			$_SESSION["instansi_name"] = "";
+			$_SESSION["instansi_alamat"] = "";
+			$_SESSION["instansi_email"] = "";
+			$_SESSION["instansi_pimpinan"] = "";
+		}
+		
 		function test_input($data) {
 		   $data = trim($data);
 		   $data = stripslashes($data);
@@ -72,8 +76,12 @@
 				<img src="images/logobandung.png" >
 			</div>
 			<div class="right-header">
+<<<<<<< HEAD
 				<!-- MataTaman -->
 				<img src="images/header.png" >
+=======
+				<img src="images/logo_header.png" >
+>>>>>>> 8d9fcdf7d408cc8df4ea6b2ed74f1dabeaeaa371
 			</div>
 		</div>
 		<div class="navbar">
@@ -133,21 +141,24 @@
 					<div class="judulForm">
 						Tambah Instansi
 					</div>
-					<div style="color:red"><?php echo $conn_err;?></div>
-					<span class="error">(*) required</span><br>
-					Nama Instansi<br>
-					<input type="text" name="instansi_name" style="width:90%;">
-					<span class="error">* <?php echo $instansi_nameErr;?></span>
-					<br>Alamat <br>
-					<textarea name="instansi_alamat" cols="38"></textarea>
-					<span class="error">* <?php echo $instansi_alamatErr;?></span>
-					<br>E-mail <br> 
-					<input type="text" name="instansi_email" style="width:90%;">
-					<span class="error">* <?php echo $instansi_emailErr;?></span>
-					<br>Pimpinan <br>
-
-					<input type="text" name="instansi_pimpinan" style="width:90%;">
-					<span class="error">* <?php echo $instansi_pimpinanErr;?></span><br><br>
+					<!-- <div style="color:red"><?php echo $conn_err;?></div> -->
+					<span class="error">(*) Tidak boleh kosong</span><br>
+					<label for="instansi_name">Nama Instansi</label>
+					<span class="error">* <?php echo $instansi_nameErr;?></span><br>
+					<input type="text" name="instansi_name" style="width:90%;"
+						value="<?php echo $_SESSION["instansi_name"]?>"><br>
+					<label for="instansi_alamat">Alamat</label> 
+					<span class="error">* <?php echo $instansi_alamatErr;?></span><br>
+					<textarea name="instansi_alamat" cols="38"></textarea><br>
+					<label for="instansi_email">E-mail</label> 
+					<span class="error">* <?php echo $instansi_emailErr;?></span><br> 
+					<input type="text" name="instansi_email" style="width:90%;"
+						value="<?php echo $_SESSION["instansi_email"]?>"><br>
+					<label for="instansi_pimpinan">Pimpinan</label> 
+					<span class="error">* <?php echo $instansi_pimpinanErr;?></span><br>
+					<input type="text" name="instansi_pimpinan" style="width:90%;"
+						value="<?php echo $_SESSION["instansi_pimpinan"]?>"><br>
+					<br/>
 					<button type="submit" value="tambahInstansi">Tambah</button>
 				</form>
 			</div>

@@ -9,20 +9,24 @@
 	<?php
 		// define variables and set to empty values
 		$kategori_namaErr = "";
-		$kategori_nama = $conn_err ="";
+		$kategori_nama ="";
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			session_start();
 			$err = 0;
 		  if (empty($_POST["kategori_nama"])) {
 		  	$err = 1;
-		    $kategori_namaErr = "Required";
+		    $kategori_namaErr = "Tidak boleh kosong";
 		  } else {
 		    $kategori_nama = test_input($_POST["kategori_nama"]);
 		    $_SESSION["kategori_nama"] = $kategori_nama;
 		  }
-		  if($err == 0)		  include "create_kategori.php";
-		  if($_SESSION['success'] == 0) $conn_err = "Kategori sudah ada";
+		  if($err == 0){
+		  	include "create_kategori.php";
+			if($_SESSION['success'] == 0){
+			  $kategori_namaErr = "Kategori sudah ada!";
+			}
+		  }
 		}
 		include "read_kategori.php";
 		$_SESSION["kategori_nama"] = "";
@@ -39,8 +43,12 @@
 				<img src="images/logobandung.png" >.
 			</div>
 			<div class="right-header">
+<<<<<<< HEAD
 				<!-- MataTaman -->
 				<img src="images/header.png">
+=======
+				<img src="images/logo_header.png" >
+>>>>>>> 8d9fcdf7d408cc8df4ea6b2ed74f1dabeaeaa371
 			</div>
 		</div>
 		<div class="navbar">
@@ -85,9 +93,10 @@
 					<div class="judulForm">
 						Tambah Kategori
 					</div>
-					<div style="color:red"><?php echo $conn_err;?></div>
-					<span class="error">(*) required</span><br>
-					Nama Kategori<br>
+					<span class="error">(*) Tidak boleh kosong</span><br>
+					<!-- <div style="color:red"><?php echo $conn_err;?></div> -->
+					<label for="kategori_nama">Nama Kategori</label>
+					<span class="error">* <?php echo $kategori_namaErr;?></span><br> 
 					<input type="text" name="kategori_nama" style="width:90%;">
 					<br><br>
 					<button type="submit" value="tambahInstansi">Tambah</button>

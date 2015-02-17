@@ -12,8 +12,12 @@
 				<img src="images/logobandung.png" >.
 			</div>
 			<div class="right-header">
+<<<<<<< HEAD
 				<!-- MataTaman -->
 				<img src="images/header.png">
+=======
+				<img src="images/logo_header.png" >
+>>>>>>> 8d9fcdf7d408cc8df4ea6b2ed74f1dabeaeaa371
 			</div>
 		</div>
 		<div class="navbar">

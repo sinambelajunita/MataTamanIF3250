@@ -12,13 +12,13 @@
 		if(empty($taman)) $taman = $_SESSION['taman'];
 		$_SESSION['taman'] = $taman;
 				// define variables and set to empty values
-		$namaErr = $emailErr = $isiAduanErr = "";
+		$namaErr = $emailErr = $isiAduanErr = $kategoriErr = "";
 		$nama = $email = $isiAduan = $kategori = "";
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$err = 0;
 		   if (empty($_POST["warga_name"])) {
-		     $namaErr = "Required";
+		     $namaErr = "Tidak boleh kosong";
 		     $err = 1;
 		   } 
 		   else {
@@ -34,13 +34,13 @@
    			}
 		   
 		   if (empty($_POST["warga_email"])) {
-		     $emailErr = "Required";
+		     $emailErr = "Tidak boleh kosong";
 		     $err = 1;
 		   } else {
 		     $email = test_input($_POST["warga_email"]);
 		     // check if e-mail address is well-formed
 		     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-		       $emailErr = "Invalid email format";
+		       $emailErr = "Format e-mail salah";
 		       $err = 1;
 		     }
 		     else{
@@ -49,16 +49,26 @@
 		   }
 		     
 		   if (empty($_POST["isi_aduan"])) {
-		     $isiAduanErr = "Required";
+		     $isiAduanErr = "Tidak boleh kosong";
 		     $err = 1;
 		   } else {
 		     $isiAduan = test_input($_POST["isi_aduan"]);
 		     $_SESSION["isi_aduan"] = $isiAduan;
 		   }
+		   if (empty($_POST["kategori"])) {
+		     $kategoriErr = "Tidak boleh kosong";
+		     $err = 1;
+		   } else {
+		     $kategori = test_input($_POST["kategori"]);
+		     $_SESSION["kategori"] = $kategori;
+		   }
 		   //panggil SQL tambah aduan
-		   $_SESSION["kategori"] = test_input($_POST["kategori"]);
 		   if($err==0){
 		   		include "aduan_tambah_by_taman.php";
+		   		$_SESSION["warga_name"] = "";
+				$_SESSION["warga_email"] = "";
+				$_SESSION["isi_aduan"] = "";
+				$_SESSION["kategori"] = "";
 		   }
 		}
 		include "read_aduan_by_taman.php";
@@ -76,8 +86,12 @@
 				<img src="images/logobandung.png" >.
 			</div>
 			<div class="right-header">
+<<<<<<< HEAD
 				<!-- MataTaman -->
 				<img src="images/header.png" >.
+=======
+				<img src="images/logo_header.png" >
+>>>>>>> 8d9fcdf7d408cc8df4ea6b2ed74f1dabeaeaa371
 			</div>
 		</div>
 		<div class="navbar">
@@ -105,7 +119,9 @@
 						$post .= $row['kategori'];
 						$post .= "</div>";
 						$post .= "<div class='ket_aduan'>";
-						$post .= $row['tanggal'];
+						$date  = strtotime($row['tanggal']);
+						$mysqldate = date('d M Y / H:i',$date);
+						$post .= 	$mysqldate." WIB";
 						$post .= "<br>";
 						$post .= "Pengirim : ";
 						$post .= $row['nama_pengirim'];
@@ -129,19 +145,23 @@
 					<div class="judulForm">
 						Tambah Aduan <?php echo $taman;?>
 					</div>
-					<span class="error">(*) required</span><br>
+					<span class="error">(*) Tidak boleh kosong</span><br>
 					<label for= "Nama">Nama</label>
 					<span class="error">* <?php echo $namaErr;?></span><br>
-					<input type="text" name="warga_name" id="warga_name" style="width:90%"><br>
+					<input type="text" name="warga_name" id="warga_name" style="width:90%"
+						value="<?php echo $_SESSION["warga_name"]?>"><br>
 					<label for= "E-mail">E-mail</label> 
 					<span class="error">* <?php echo $emailErr;?></span><br>
-					<input type="text" name="warga_email" id="warga_email" style="width:90%">
+					<input type="text" name="warga_email" id="warga_email" style="width:90%"
+						value="<?php echo $_SESSION["warga_email"]?>"><br>
+					<label for= "kategori">Kategori Aduan</label>
+					<span class="error">* <?php echo $kategoriErr;?></span> <br>
 					<?php 
 						include "db-connector.php";
-						echo "<br>Kategori Aduan <br>";
 						$query = "SELECT * FROM kategori";
 						$result = mysqli_query($con,$query);
 						$combobox = "<select name='kategori' id='kategori' style=width:90%>";
+						$combobox .= "<option disabled selected> -- pilih kategori -- </option>";
 						 while($row = mysqli_fetch_assoc($result)){
 						     $combobox .='<option value="' .$row['nama']. '">'.$row['nama'].'</option>';
 						    }
@@ -151,7 +171,8 @@
 					<br>
 					<label for= "isi_aduan">Isi Aduan</label>
 					<span class="error">* <?php echo $isiAduanErr;?></span><br>
-					<textarea name="isi_aduan" id="isi_aduan" rows="3" cols="32"></textarea><br>
+					<textarea name="isi_aduan" id="isi_aduan" rows="3" cols="37">
+						<?php echo $_SESSION["isi_aduan"]?></textarea><br>
 					<label for= "UploadFileName">Upload Foto</label><br>
 					<input type ="file" name = "UploadFileName"><br>
 					<button type="submit" name="submit" value="tambahAduan">Kirim</button>

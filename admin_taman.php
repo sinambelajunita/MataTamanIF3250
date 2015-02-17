@@ -7,50 +7,52 @@
 
 <body>
 	<?php
+		session_start();
 		// define variables and set to empty values
 		$taman_nameErr = $taman_lokasiErr = $taman_telpErr = "";
 		$taman_name = $taman_lokasi = $taman_telp = $conn_err = "";
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			session_start();
+			
 			$err = 0;
 		  if (empty($_POST["taman_name"])) {
 		  	$err = 1;
-		    $taman_nameErr = "Required";
+		    $taman_nameErr = "Tidak boleh kosong";
 		  } else {
 		    $taman_name = test_input($_POST["taman_name"]);
 		  	$_SESSION["taman_name"] = $taman_name;
 		  }
 		  if (empty($_POST["taman_lokasi"])) {
 		    $err = 1;
-		    $taman_lokasiErr = "Required";
+		    $taman_lokasiErr = "Tidak boleh kosong";
 		  } else {
 		    $taman_lokasi = test_input($_POST["taman_lokasi"]);
 		    $_SESSION["taman_lokasi"] = $taman_lokasi;
 		  }
 		  if (empty($_POST["taman_telp"])) {
 		    $err = 1;
-		    $taman_telpErr = "Required";
+		    $taman_telpErr = "Tidak boleh kosong";
 		  } else {
 		    $taman_telp = test_input($_POST["taman_telp"]);
 		    if(!is_numeric($taman_telp)){
 		    	$err = 1;
-			    $taman_telpErr = "Invalid format";
+			    $taman_telpErr = "Format telepon salah";
 		    }
 		    $_SESSION["taman_telp"] = $taman_telp;
 		  }
 		  if($err == 0){
 		   include "create_taman.php";
 		   if($_SESSION['success'] == 0){
-		  		$conn_err = "Nama Instansi sudah ada!";
-		  	}
-		}
+		  		$taman_nameErr = "Nama Instansi sudah ada!";
+			}
+		   else{
+		   		$_SESSION["taman_name"] = "";
+				$_SESSION["taman_lokasi"] = "";
+				$_SESSION["taman_telp"] = "";
+		   	}
+	       }
 		}
 		include "read_taman.php";
-		$_SESSION["instansi_name"] = "";
-		$_SESSION["instansi_alamat"] = "";
-		$_SESSION["instansi_email"] = "";
-		$_SESSION["instansi_pimpinan"] = "";
 		function test_input($data) {
 		   $data = trim($data);
 		   $data = stripslashes($data);
@@ -64,8 +66,12 @@
 				<img src="images/logobandung.png" >.
 			</div>
 			<div class="right-header">
+<<<<<<< HEAD
 				<!-- MataTaman -->
 				<img src="images/header.png">
+=======
+				<img src="images/logo_header.png" >
+>>>>>>> 8d9fcdf7d408cc8df4ea6b2ed74f1dabeaeaa371
 			</div>
 		</div>
 		<div class="navbar">
@@ -121,18 +127,24 @@
 					<div class="judulForm">
 						Tambah Taman
 					</div>
-					<div style="color:red"><?php echo $conn_err;?></div>
-					<span class="error">(*) required</span><br>
-					Nama Taman<br> <input type="text" name="taman_name" style="width:90%;">
-					<span class="error">* <?php echo $taman_nameErr;?></span>
-					<br>Lokasi <br><textarea name="taman_lokasi" cols="38"></textarea>
-					<span class="error">* <?php echo $taman_lokasiErr;?></span>
-					<br>Telepon <br> 
-					<input type="text" name="taman_telp" style="width:90%;">
-					<span class="error">* <?php echo $taman_telpErr;?></span>
-					<p><span class="error">* required field.</span></p>
-					<!-- <input type="text" name="taman_telp"> -->
+					<!-- <div style="color:red"><?php echo $conn_err;?></div> -->
+					<span class="error">(*) Tidak boleh kosong</span><br>
+					<label for="taman_name">Nama Taman</label> 
+					<span class="error">* <?php echo $taman_nameErr;?></span><br>
+					<input type="text" name="taman_name" style="width:90%;"
+						value="<?php echo $_SESSION["taman_name"];?>"><br>
+					<label for="taman_lokasi">Lokasi</label>
+					<span class="error">* <?php echo $taman_lokasiErr;?></span><br>
+					<textarea name="taman_lokasi" cols="38">
+						<?php echo $_SESSION["taman_lokasi"];?>
+					</textarea><br>
+					<label for="taman_telp">Telepon</label>
+					<span class="error">* <?php echo $taman_telpErr;?></span><br>
+					<input type="text" name="taman_telp" style="width:90%;"
+						value="<?php echo $_SESSION["taman_telp"];?>"><br><br/>
 					<!-- <span class="error">* <?php echo $taman_telpErr;?></span><br> -->
+					<!-- <p><span class="error">* required field.</span></p> -->
+					<!-- <input type="text" name="taman_telp"> -->
 					<button type="submit" value="tambahTaman">Tambah</button>
 				</form>
 			</div>

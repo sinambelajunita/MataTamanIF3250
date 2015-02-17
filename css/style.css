@@ -40,7 +40,7 @@ black a{
 }
 .header {
 	background-color: #5f5c50;
-	/*background-image: url("../images/header.jpg");*/
+	background-image: url("../images/background2.png");*/
 	color: white;
 	height: 175px;
 	width: 100%;
@@ -49,7 +49,7 @@ black a{
 	margin-top: -8px;
 	margin-left: -8px;
 }
-.header img{
+.left-header img{
 	text-align: left;
 	height: 130px;
 	margin-top:15%;
@@ -61,17 +61,24 @@ black a{
 	margin-top: 1%;
 }
 .right-header{
+	/*background-image: url("../images/logo_header.png");*/
 	width: 90%;
-	float : right;
+	/*float : right;*/
 	right: 0;
 	text-align: center;
-	font-size: 80px;
-	margin-top: 3%;
+	/*font-size: 80px;*/
+	margin-top: 1%;
 }
+.right-header img{
+	height: 150px;
+}
+/*<<<<<<< HEAD
 .right-header img{
 	margin-top: -2%;
 	margin-left: -15%;
 }
+=======
+>>>>>>> 8d9fcdf7d408cc8df4ea6b2ed74f1dabeaeaa371*/
 /*navigation bar*/
 .navbar{
 	/*background-color: #317256;*/

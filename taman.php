@@ -15,14 +15,18 @@
 				<img src="images/logobandung.png" >
 			</div>
 			<div class="right-header">
+<<<<<<< HEAD
 				<!-- MataTaman -->
 				<img src="images/header.png" >
+=======
+				<img src="images/logo_header.png" >
+>>>>>>> 8d9fcdf7d408cc8df4ea6b2ed74f1dabeaeaa371
 			</div>
 		</div>
 		<div class="navbar">
 			<ul>
 				<li><a href="index.php">Home</a></li>
-				<li><a href="aduan_taman.php">Taman</a></li>
+				<li><a href="taman.php">Taman</a></li>
 				<li><a href="list_artikel.php">Artikel Laporan</a></li>
 			</ul>
 		</div>

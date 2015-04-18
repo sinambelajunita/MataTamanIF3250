@@ -1,0 +1,419 @@
+@font-face{
+	font-family: matataman;
+	src:url('../fonts/ligurino.ttf');
+}
+a{
+	text-decoration: none;
+}
+.error{
+	color: #DD0000;
+}
+/*a:visited {
+    color: #146928;
+}*/
+a:active{
+	color:#1DCF46;
+}
+html{
+	font-family: matataman;
+}
+form input , select, textarea{
+	text-shadow: 1px 1px 1px #fff;
+	border: 1px solid #e4e4e4;
+	padding: 5px;
+}
+footer{
+	width:100%;
+	height:40px;
+	position:inherit;
+	overflow: hidden;
+	bottom:0;
+	left:0;
+	background:#0D120E;
+	text-align: center;
+	color: white;
+}
+footer p{
+	margin-top: 10px;
+}
+button{
+	background-color: black;
+	color: #A8FFAE;
+	padding: 1%;
+}
+red a{
+	color: red;
+}
+blue a{
+	color: blue;
+}
+green a{
+	color : green;
+}
+black a{
+
+}
+.container{
+	width: 100%;
+	height: 100%;
+}
+.header {
+	background-color: #5f5c50;
+	background-image: url("../images/background-header.png");*/
+	color: white;
+	height: 180px;
+	width: 100%;
+	font-family: matataman;
+	/*position: fixed;*/
+	margin-top: -8px;
+	/*margin-left: -8px;*/
+}
+.left-header img{
+	text-align: left;
+	height: 130px;
+	margin-top:15%;
+	margin-left: 10%;
+}
+.left-header{
+	width: 10%;
+	float: left;
+	margin-top: 1%;
+}
+.ubah{
+	color: #93FF9D;
+	background-color: black;
+}
+.right-header{
+	/*background-image: url("../images/logo_header.png");*/
+	width: 90%;
+	/*float : right;*/
+	right: 0;
+	text-align: center;
+	/*font-size: 80px;*/
+	margin-top: 1%;
+}
+.right-header img{
+	margin-top: 1%;
+	height: 150px;
+}
+/*<<<<<<< HEAD
+.right-header img{
+	margin-top: -2%;
+	margin-left: -15%;
+}
+=======
+>>>>>>> 8d9fcdf7d408cc8df4ea6b2ed74f1dabeaeaa371*/
+/*navigation bar*/
+.navbar{
+	/*background-color: #317256;*/
+	background-color: #0D120E;
+	font-size: 20px;
+	/*position: fixed;*/
+	height: 33px;
+	margin-top: -20px;
+	width: 100%;
+	/*margin-left: -8px;*/
+}
+.navbar ul{
+	list-style: none;
+	/*margin-top: 7px;*/
+}
+.navbar ul li{
+	display: inline;
+	color : white;
+	margin-right: 2%;
+}
+.navbar a{
+	color: white;
+}
+.navbar a:hover, {
+	/*color: #52BF90;*/
+	color:#5F5C50;
+}
+
+/*mini navbar*/
+.mini_navbar{
+	/*background-color: #317256;*/
+	/*background-color: #ACB726;*/
+	background-color: #0D120E;
+	font-size: 20px;
+	position: fixed;
+	height: 33px;\margin-top: -230px;
+	width: 100%;
+	height: 80px;
+	display: none;
+	position: fixed;
+}
+.mini_navbar img{
+	margin-left: 45%;
+	margin-top: 1%;
+	height: 55px;
+}
+.mini_navbar ul{
+	list-style: none;
+	margin-top: -20px;
+}
+.mini_navbar ul li{
+	display: inline;
+	color : white;
+	margin-right: 2%;
+}
+.mini_navbar a{
+	color: white;
+}
+.mini_navbar a:hover, {
+	/*color: #52BF90;*/
+	/*color:#5F5C50;*/
+	color:black;
+}
+/*end mini navbar*/
+
+
+
+.content{
+
+}
+.aduan{
+	width: 70%;
+	/*margin-top: 220px;*/
+	float: left;
+	margin-left: 2%;	
+}
+.forminput{
+	width: 25%;
+	float: right;
+	/*background-color: #52BF90;*/
+	background-color: #97B33D;
+	height: 70%;
+	/*position: fixed;*/
+	right: 0;
+	/*margin-top: -120px;*/	
+}
+.forminput form{
+	margin-left: 4%;
+	/*right: 0;*/
+}
+.forminput .judulForm{
+	text-align: center;
+	font-size: 30px;
+	/*margin-top: 3%;*/
+	/*margin-bottom: 6%;*/
+}
+.judul_hal{
+	font-size: 35px;
+	margin-bottom: 3%;
+	margin-top: 2%;
+}
+/*LIST ARTIKEL*/
+.listartikel{
+	/*margin-top: 230px;*/
+	float: left;
+	margin-left: 4%;
+	width: 80%;
+}
+.artikel{
+	margin-left: 10%;
+	padding-right: 4%;
+	margin-bottom: 3%;
+	overflow: hidden;
+}
+.preview_gambar{
+	float: left;
+	width: 20%;
+	margin-top: 4%;
+}
+.preview_gambar img{
+	width: 96%;
+	margin: 1%;
+	text-align: center;		
+	padding: 1%;
+}
+.preview_judul{
+	font-size: 20px;
+	margin-bottom: 2px;
+	color: black;
+}
+.preview_judul a{
+	color: black;
+}
+.preview_artikel{
+	float: right;
+	width: 79%;
+}
+.ket_artikel{
+	/*padding-top: 2%;*/
+	padding-bottom: 2%;
+}
+
+/* LIST BUAT ARTIKEL */
+
+.judul_art{
+	font-size: 35px;
+	margin-left: 25%;
+}
+
+.formartikel{
+	width: 70%;
+	margin-top: 0px;
+	float: left;
+	margin-left: 25%;
+}
+
+/* END OF LIST BUAT ARTIKEL */
+
+/*END LIST ARTIKEL*/
+
+
+/*LIST ADUAN*/
+.post_aduan{
+	/*background-color:#B1D3A4;*/
+	overflow: hidden;
+	margin-bottom: 2%;
+	padding: 1%;
+	/*box-shadow: 8px 8px 10px #888888;*/
+}
+.foto_aduan{
+	/*background-color: white;*/
+	float: left;
+	width: 30%;	
+}
+.foto_aduan img{
+	width: 90%;
+	margin: 1%;
+	text-align: center;
+	margin-top: 2%;
+	margin-left: 4%;
+}
+.paket_aduan{
+	width: 68%;
+	float: right;
+	margin-left: 1%;
+}
+.judul_aduan{
+	font-size: 25px;
+}
+.ket_aduan{
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+.isi_aduan{
+	font-size: 18px;
+}
+
+/*END LIST ADUAN*/
+
+
+/*TABEL-TABEL*/
+.tabel{
+	/*background-color: pink;*/
+}
+table{
+	width: 100%;
+	border: 2px solid #000000;
+}
+td{
+	border: 1px solid #000000;
+	padding: 1%;
+}
+/*END TABEL-TABEL*/
+
+/*LOGIN*/
+.header-login{
+	background-image: url("../images/header.jpg");
+	color: white;
+	height: 40%;
+	width: 100%;
+	font-family: matataman;
+	position: fixed;
+	/*margin-top: 50%;*/
+}
+.header-login img{
+	text-align: left;
+	width: 125px;
+	margin-top:15%;
+	margin-left: 10%;
+}
+.content-login{
+	z-index: 99;
+}
+.form_login{
+	text-align: center;
+	width: 40%;
+	padding-left:8%;
+	padding-right:8%;
+	padding-top: 3%;
+	padding-bottom: 3%; 
+	margin-left: 25%;
+	font-size: 20px;
+	border-width:3px;
+	border-style:outset;
+	background-color: #DEDEDE;
+	margin-top:10%;
+}
+/*END LOGIN*/
+
+/*taman kotak-kotak*/
+.list_taman{
+	width: 100%;
+	margin-left:15%;
+
+}
+.kotak_taman{
+	width:150px;
+	height: 150px;
+	text-align: center;
+	border-width:4px;	
+    border-style:double;
+    display: inline-table;
+    margin:2%;
+    background-color: #3F633F;
+    color: white;
+    font-size: 25px;
+}
+.kotak_taman p{
+	margin-top: 30%;
+	padding: 2%;
+}
+/*end taman kotak2*/
+
+/*isi artikel*/
+.judul_artikel{
+	text-align: center;
+	font-size: 50px;
+	margin-bottom: 3%;
+}
+.tgl_artikel{
+	font-size: 20px;
+}
+.isi_artikel{
+	width: 70%;
+	margin-left: 10%;
+}
+.gambar_artikel{
+	
+}
+.gambar_artikel img{
+	width: 60%;
+	margin-left: 15%;
+	margin-bottom: 10px;
+	text-align: center;
+}
+<<<<<<< HEAD
+.gambar_status img{
+	width: 10px;
+	height: 10px;
+	margin-left: 5%;
+	margin-bottom: 5px;
+	text-align: right;
+}
+=======
+
+>>>>>>> parent of c7e33c6... status
+/*end isi artikel*/
+
+.ubahstatus{
+	width: 30%;
+	text-align: center;
+	margin-left: 50%;
+	margin-top: 15%;
+}
